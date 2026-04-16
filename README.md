@@ -29,13 +29,27 @@ This guide walks you through installing it from the public GitHub marketplace in
 
 ## Step 1 — Add the marketplace
 
-Inside a Claude Code session, run:
+Inside a Claude Code session, run one of these (both work):
 
 ```
 /plugin marketplace add MuhammadAhmad21042002/ECC-SDLC
 ```
 
-This registers the GitHub repo as a plugin marketplace. Claude Code clones it to `~/.claude/plugins/marketplaces/ecc-sdlc/` so it can see what plugins are available to install. (The folder is named after the marketplace's `name` field, not the GitHub repo name.)
+or, using the full git URL (required if the repo ever becomes private, or if GitHub shorthand resolution fails on your network):
+
+```
+/plugin marketplace add https://github.com/MuhammadAhmad21042002/ECC-SDLC.git
+```
+
+**How Claude Code resolves the argument:**
+
+| What you pass | How Claude Code treats it |
+|---|---|
+| `owner/repo` (e.g. `MuhammadAhmad21042002/ECC-SDLC`) | Public GitHub — clones from `https://github.com/owner/repo.git` |
+| Full URL starting with `https://`, `http://`, or `git@` | Git URL — clones directly from that URL |
+| Local filesystem path | Registers a local marketplace (dev use only) |
+
+This registers the GitHub repo as a plugin marketplace. Claude Code clones it to `~/.claude/plugins/marketplaces/ecc-sdlc/` so it can see what plugins are available to install. (The folder is named after the marketplace's `name` field in `marketplace.json`, not the GitHub repo name.)
 
 > **Note:** This step only registers the catalog — no commands or agents are active yet.
 

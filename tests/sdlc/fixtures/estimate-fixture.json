@@ -1,0 +1,133 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "11111111-2222-4333-8444-555555555555",
+  "projectName": "FBR AI Knowledge Platform",
+  "clientName": "Federal Board of Revenue",
+  "currentPhase": "design",
+  "phaseHistory": [
+    { "phase": "discovery",    "startedAt": "2026-03-17T08:00:00Z", "completedAt": "2026-03-17T17:00:00Z" },
+    { "phase": "requirements", "startedAt": "2026-03-18T08:00:00Z", "completedAt": "2026-03-18T17:00:00Z" },
+    { "phase": "design",       "startedAt": "2026-03-19T08:00:00Z", "completedAt": null }
+  ],
+  "artifacts": {
+    "scope":    { "path": ".sdlc/artifacts/scope-v1.md",   "version": 1, "hash": "sha256:aaa", "createdAt": "2026-03-17T17:00:00Z" },
+    "srs":      { "path": ".sdlc/artifacts/srs-v1.docx",   "version": 1, "hash": "sha256:bbb", "createdAt": "2026-03-18T17:00:00Z" },
+    "sds":      { "path": ".sdlc/artifacts/sds-v1.docx",   "version": 1, "hash": "sha256:ccc", "createdAt": "2026-03-19T17:00:00Z" },
+    "sts":      null,
+    "estimate": null,
+    "proposal": null
+  },
+  "rateCard": {
+    "juniorDev":  { "hourlyRate": 30, "currency": "USD" },
+    "seniorDev":  { "hourlyRate": 50, "currency": "USD" },
+    "architect":  { "hourlyRate": 80, "currency": "USD" }
+  },
+  "contingencyPct": 10,
+  "requirements": [],
+  "designComponents": [
+    {
+      "id": "DC-001",
+      "title": "Customer Database",
+      "description": "Core relational data store for all customer records.",
+      "type": "database",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-001"],
+      "responsibilities": [
+        "Store customer records",
+        "Support CRUD operations"
+      ],
+      "interfaces": [],
+      "dataStores": ["customers"]
+    },
+    {
+      "id": "DC-002",
+      "title": "Authentication API",
+      "description": "REST API for user login, token issuance, and session refresh.",
+      "type": "api",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-002"],
+      "complexity": "average",
+      "responsibilities": [
+        "Validate credentials",
+        "Issue JWT tokens",
+        "Refresh sessions"
+      ],
+      "interfaces": [
+        { "name": "POST /auth/login",   "kind": "api", "description": "Accepts credentials, returns JWT" },
+        { "name": "POST /auth/refresh", "kind": "api", "description": "Accepts refresh token, returns new JWT" }
+      ],
+      "dataStores": []
+    },
+    {
+      "id": "DC-003",
+      "title": "Payment Gateway Integration",
+      "description": "Integration layer between the platform and the external payment processor.",
+      "type": "integration",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-003"],
+      "responsibilities": [
+        "Process payments",
+        "Handle webhooks",
+        "Retry failed transactions"
+      ],
+      "interfaces": [
+        { "name": "Payment API",   "kind": "api",   "description": "Calls external payment processor" },
+        { "name": "Webhook event", "kind": "event", "description": "Receives payment status events" },
+        { "name": "Retry queue",   "kind": "api",   "description": "Re-submits failed transactions" }
+      ],
+      "dataStores": ["transactions"]
+    },
+    {
+      "id": "DC-004",
+      "title": "User Registration Form",
+      "description": "UI screen for new user onboarding and account creation.",
+      "type": "ui",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-004"],
+      "complexity": "simple",
+      "responsibilities": [
+        "Collect user data",
+        "Submit registration"
+      ],
+      "interfaces": [
+        { "name": "Submit form", "kind": "ui", "description": "Sends registration data to backend" }
+      ],
+      "dataStores": []
+    },
+    {
+      "id": "DC-005",
+      "title": "Reporting Service",
+      "description": "Background service that generates, exports, and distributes periodic reports.",
+      "type": "service",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-005"],
+      "responsibilities": [
+        "Generate monthly reports",
+        "Export to PDF",
+        "Send email notifications",
+        "Cache results"
+      ],
+      "interfaces": [
+        { "name": "Report API",    "kind": "api",   "description": "Triggers report generation" },
+        { "name": "Report DB",     "kind": "db",    "description": "Reads source data" },
+        { "name": "Email gateway", "kind": "api",   "description": "Sends email with report attachment" },
+        { "name": "Cache event",   "kind": "event", "description": "Emits cache invalidation event" }
+      ],
+      "dataStores": ["reports", "cache"]
+    },
+    {
+      "id": "DC-006",
+      "title": "Load Balancer",
+      "description": "AWS ALB routing traffic across service instances.",
+      "type": "infra",
+      "status": "approved",
+      "requirementIds": ["REQ-NFUNC-001"],
+      "responsibilities": [],
+      "interfaces": [],
+      "dataStores": []
+    }
+  ],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

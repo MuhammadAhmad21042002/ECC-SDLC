@@ -1,0 +1,104 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "11111111-2222-4333-8444-555555555555",
+  "projectName": "Demo Project",
+  "clientName": "Demo Client",
+  "currentPhase": "requirements",
+  "phaseHistory": [
+    { "phase": "discovery",    "startedAt": "2026-03-26T00:00:00Z", "completedAt": "2026-03-27T00:00:00Z" },
+    { "phase": "requirements", "startedAt": "2026-03-27T00:00:00Z", "completedAt": null }
+  ],
+  "artifacts": {
+    "scope":    { "path": ".sdlc/artifacts/scope-v1.docx", "version": 1, "hash": "sha256:abc123" },
+    "srs":      null,
+    "sds":      null,
+    "sts":      null,
+    "estimate": null,
+    "proposal": null
+  },
+  "requirements": [
+    {
+      "id": "REQ-FUNC-001",
+      "type": "functional",
+      "title": "User Authentication",
+      "description": "The system shall authenticate users via username and password and maintain a secure session.",
+      "priority": "must",
+      "source": "RFP Section 3.1",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "Valid credentials allow login",
+        "Invalid credentials are rejected with an error message"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": ["SBP-2024"],
+      "traceForward": {
+        "designComponentIds": [],
+        "testCaseIds": [],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-FUNC-002",
+      "type": "functional",
+      "title": "Role-Based Access Control",
+      "description": "The system shall restrict access to features and data based on the authenticated user's assigned role.",
+      "priority": "must",
+      "source": "RFP Section 3.2",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "Admin users can access all modules",
+        "Standard users cannot access admin-only pages"
+      ],
+      "dependencies": ["REQ-FUNC-001"],
+      "complianceFrameworks": [],
+      "traceForward": {
+        "designComponentIds": [],
+        "testCaseIds": [],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-NFUNC-001",
+      "type": "non-functional",
+      "category": "performance",
+      "title": "API Response Time",
+      "description": "All API endpoints shall respond within 2 seconds under normal load.",
+      "priority": "must",
+      "source": "RFP Section 5.1",
+      "status": "validated",
+      "acceptanceCriteria": [
+        "P95 response time <= 2000ms under 100 concurrent users"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": [],
+      "traceForward": {
+        "designComponentIds": [],
+        "testCaseIds": [],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-CON-001",
+      "type": "constraint",
+      "title": "Data Residency",
+      "description": "All data must be stored on servers physically located within Pakistan.",
+      "priority": "must",
+      "source": "SBP IT Governance Framework 2024",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "Hosting provider attestation confirms Pakistan-based data centres"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": ["SBP-2024"],
+      "traceForward": {
+        "designComponentIds": [],
+        "testCaseIds": [],
+        "costLineItemIds": []
+      }
+    }
+  ],
+  "designComponents": [],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "11111111-2222-4333-8444-555555555555",
+  "projectName": "Demo Project",
+  "clientName": "Demo Client",
+  "eccRoot": "/home/user/.claude/plugins/everything-claude-code",
+  "currentPhase": "discovery",
+  "phaseHistory": [
+    {
+      "phase": "discovery",
+      "startedAt": "2026-03-26T00:00:00Z",
+      "completedAt": null
+    }
+  ],
+  "artifacts": {
+    "scope": null,
+    "srs": null,
+    "sds": null,
+    "sts": null,
+    "estimate": null,
+    "proposal": null,
+    "compliance": null
+  },
+  "requirements": [],
+  "designComponents": [],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

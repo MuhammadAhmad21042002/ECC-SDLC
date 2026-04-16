@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ecc-sdlc.test-case.v1",
+  "title": "ECC-SDLC Test Case Schema",
+  "description": "Structured test case data used in state.json and to render templates/sts-template.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "testCaseId",
+    "linkedRequirements",
+    "testType",
+    "description",
+    "steps",
+    "expectedResult",
+    "status"
+  ],
+  "properties": {
+    "testCaseId": {
+      "type": "string",
+      "pattern": "^TC-[0-9]{3}$",
+      "description": "Unique test case ID in format TC-NNN (zero-padded 3-digit integer, e.g., TC-001, TC-042)"
+    },
+    "linkedRequirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^REQ-(FUNC|NFUNC|CON)-[0-9]{3}$"
+      },
+      "description": "Array of requirement IDs this test case validates. Every test case must link to at least one requirement."
+    },
+    "linkedComponents": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(CMP|DC)-[A-Z]+-[0-9]{3}$"
+      },
+      "description": "Optional array of design component IDs this test case verifies (e.g., CMP-API-001, DC-001)"
+    },
+    "testType": {
+      "type": "string",
+      "enum": ["unit", "integration", "system", "uat", "performance", "security"],
+      "description": "Test level classification"
+    },
+    "testLevel": {
+      "type": "string",
+      "description": "Optional additional test level detail (e.g., 'component', 'end-to-end')"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low"],
+      "description": "Test execution priority"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Clear description of what this test case verifies"
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Optional array of preconditions that must be met before test execution"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Ordered array of test execution steps"
+    },
+    "testData": {
+      "type": "string",
+      "description": "Optional description of test data required"
+    },
+    "expectedResult": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Expected outcome when test passes"
+    },
+    "actualResult": {
+      "type": ["string", "null"],
+      "description": "Actual result after test execution (null if not yet run)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["not-run", "passed", "failed", "blocked"],
+      "default": "not-run",
+      "description": "Current test execution status"
+    },
+    "executionDate": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date the test was last executed (YYYY-MM-DD format)"
+    },
+    "executedBy": {
+      "type": ["string", "null"],
+      "description": "Name of person who executed the test"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional notes, comments, or failure details"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "estimatePlan": {
+    "templatePath": "templates/estimation-template.json",
+    "templateId": "ecc-sdlc.estimation.v1",
+    "projectId": "55555555-0000-4000-8000-000000000005",
+    "projectName": "5-Component FPA Test Project",
+    "clientName": "Test Client",
+    "generatedDate": "2026-04-06",
+    "documentVersion": "1.0",
+    "currency": "USD",
+    "contingencyPct": 10,
+    "infrastructureCost": 0,
+    "licenseCost": 0,
+    "totalFunctionPoints": 24,
+    "totalEffortHours": 192,
+    "totalCost": 10560,
+    "sheets": {
+      "effortBreakdown": [
+        {
+          "phase": "development",
+          "role": "seniorDev",
+          "componentId": "DC-001",
+          "componentTitle": "Authentication API",
+          "componentType": "api",
+          "fpaType": "EO",
+          "fpaTypeFullName": "External Output",
+          "complexity": "average",
+          "functionPoints": 5,
+          "hoursPerFP": 8,
+          "effortHours": 40,
+          "requirementIds": "REQ-FUNC-001",
+          "notes": ""
+        },
+        {
+          "phase": "development",
+          "role": "seniorDev",
+          "componentId": "DC-002",
+          "componentTitle": "User Registration Form",
+          "componentType": "ui",
+          "fpaType": "EI",
+          "fpaTypeFullName": "External Input",
+          "complexity": "simple",
+          "functionPoints": 3,
+          "hoursPerFP": 8,
+          "effortHours": 24,
+          "requirementIds": "REQ-FUNC-002",
+          "notes": ""
+        },
+        {
+          "phase": "development",
+          "role": "seniorDev",
+          "componentId": "DC-003",
+          "componentTitle": "Customer Database",
+          "componentType": "database",
+          "fpaType": "ILF",
+          "fpaTypeFullName": "Internal Logical File",
+          "complexity": "simple",
+          "functionPoints": 7,
+          "hoursPerFP": 8,
+          "effortHours": 56,
+          "requirementIds": "REQ-FUNC-003",
+          "notes": ""
+        },
+        {
+          "phase": "development",
+          "role": "seniorDev",
+          "componentId": "DC-004",
+          "componentTitle": "Payment Gateway Integration",
+          "componentType": "integration",
+          "fpaType": "EIF",
+          "fpaTypeFullName": "External Interface File",
+          "complexity": "simple",
+          "functionPoints": 5,
+          "hoursPerFP": 8,
+          "effortHours": 40,
+          "requirementIds": "REQ-FUNC-004",
+          "notes": ""
+        },
+        {
+          "phase": "development",
+          "role": "seniorDev",
+          "componentId": "DC-005",
+          "componentTitle": "Report Query Service",
+          "componentType": "api",
+          "fpaType": "EQ",
+          "fpaTypeFullName": "External Inquiry",
+          "complexity": "average",
+          "functionPoints": 4,
+          "hoursPerFP": 8,
+          "effortHours": 32,
+          "requirementIds": "REQ-FUNC-005",
+          "notes": ""
+        }
+      ],
+      "resourcePlan": [
+        {
+          "role": "seniorDev",
+          "roleLabel": "Senior Developer",
+          "seniorityLevel": "senior",
+          "headcount": 1,
+          "durationWeeks": 4.8,
+          "allocationPct": 1.0,
+          "totalHours": 192,
+          "storyPoints": 24,
+          "hourlyRate": 50,
+          "currency": "USD",
+          "totalCost": 9600
+        }
+      ],
+      "costSummary": [
+        {
+          "category": "Development Effort",
+          "description": "Total cost of all billed role hours across all phases",
+          "role": "seniorDev",
+          "hours": 192,
+          "hourlyRate": 50,
+          "currency": "USD",
+          "subtotal": 9600
+        },
+        {
+          "category": "Infrastructure",
+          "description": "Hosting, cloud, server, and DevOps infrastructure costs",
+          "role": "",
+          "hours": 0,
+          "hourlyRate": null,
+          "currency": "USD",
+          "subtotal": 0
+        },
+        {
+          "category": "Licences",
+          "description": "Software licences, SaaS subscriptions, and third-party tool costs",
+          "role": "",
+          "hours": 0,
+          "hourlyRate": null,
+          "currency": "USD",
+          "subtotal": 0
+        },
+        {
+          "category": "Contingency",
+          "description": "10% contingency on total effort cost",
+          "role": "",
+          "hours": 0,
+          "hourlyRate": null,
+          "currency": "",
+          "subtotal": 960
+        },
+        {
+          "category": "GRAND TOTAL",
+          "description": "Total project cost including contingency",
+          "role": "",
+          "hours": 192,
+          "hourlyRate": null,
+          "currency": "USD",
+          "subtotal": 10560
+        }
+      ]
+    }
+  }
+}

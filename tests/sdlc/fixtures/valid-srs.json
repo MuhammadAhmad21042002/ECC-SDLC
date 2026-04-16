@@ -1,0 +1,143 @@
+{
+  "projectName": "Demo SRS Project",
+  "clientName": "Demo Client",
+  "preparedBy": "ECC-SDLC",
+  "purposeParagraphs": [
+    "This document defines the software requirements for the Demo SRS Project."
+  ],
+  "scopeParagraphs": [
+    "The system covers onboarding, approvals, and compliance reporting workflows."
+  ],
+  "definitionsTable": [
+    {
+      "term": "SRS",
+      "definition": "Software Requirements Specification",
+      "source": "IEEE 830"
+    }
+  ],
+  "referencesBullets": [
+    "Client brief v1",
+    "Scope document v1"
+  ],
+  "overviewParagraphs": [
+    "Section 2 describes the product context and users.",
+    "Section 3 describes all specific requirements."
+  ],
+  "productPerspective": [
+    "The product integrates with identity, notifications, and reporting services."
+  ],
+  "productFunctionsBullets": [
+    "Authenticate users and enforce role-based access",
+    "Manage workflow submissions and approvals",
+    "Generate traceable audit-ready reports"
+  ],
+  "userClasses": [
+    {
+      "role": "Admin",
+      "description": "Configures system settings and user access",
+      "accessLevel": "High",
+      "frequency": "Daily"
+    }
+  ],
+  "constraintsNumbered": [
+    "The solution shall use existing enterprise SSO.",
+    "The first release shall be delivered within 8 weeks."
+  ],
+  "assumptionsNumbered": [
+    "API access credentials are provided by client during sprint 1."
+  ],
+  "userInterfacesParagraphs": [
+    "The user interface is web-based and optimized for modern desktop browsers."
+  ],
+  "hardwareInterfacesParagraphs": [
+    "No dedicated hardware interfaces are required for this release."
+  ],
+  "softwareInterfacesParagraphs": [
+    "The system interfaces with SSO and notification services using REST APIs."
+  ],
+  "communicationsInterfacesParagraphs": [
+    "All external communication uses HTTPS/TLS 1.2+."
+  ],
+  "requirements": [
+    {
+      "id": "REQ-FUNC-001",
+      "type": "functional",
+      "title": "User authentication",
+      "description": "The system shall authenticate users using enterprise SSO.",
+      "priority": "must",
+      "source": "Scope v1",
+      "status": "draft",
+      "acceptanceCriteria": [
+        "Given a valid enterprise user, when they sign in, then authentication succeeds.",
+        "Given invalid credentials, when sign-in is attempted, then access is denied."
+      ],
+      "dependencies": [],
+      "complianceFrameworks": [
+        "ISO-27001"
+      ]
+    },
+    {
+      "id": "REQ-NFUNC-001",
+      "type": "non-functional",
+      "category": "performance",
+      "title": "Response time",
+      "description": "The system shall return API responses within 2 seconds at p95 under normal load.",
+      "priority": "should",
+      "source": "Scope v1",
+      "status": "draft",
+      "acceptanceCriteria": [
+        "Given normal load, when API endpoints are called, then p95 latency is <= 2 seconds."
+      ],
+      "dependencies": [],
+      "complianceFrameworks": []
+    }
+  ],
+  "designConstraintsParagraphs": [
+    "The application stack must remain compatible with current infrastructure policy."
+  ],
+  "logicalDatabaseParagraphs": [
+    "User, request, and audit entities shall be retained with strict referential integrity."
+  ],
+  "reliabilityParagraphs": [
+    "The system shall recover from transient errors without data loss."
+  ],
+  "availabilityParagraphs": [
+    "The service shall target 99.9% monthly uptime."
+  ],
+  "securityParagraphs": [
+    "All sensitive data shall be encrypted at rest and in transit."
+  ],
+  "maintainabilityParagraphs": [
+    "The codebase shall enforce linting and test checks in CI."
+  ],
+  "portabilityParagraphs": [
+    "The service shall run in containerized environments."
+  ],
+  "otherRequirementsParagraphs": [
+    "Any future AI module requirements are explicitly out of scope for this release."
+  ],
+  "dataModelsParagraphs": [
+    "Appendix includes high-level logical entity descriptions."
+  ],
+  "apiContractsParagraphs": [
+    "Appendix includes endpoint contract summaries."
+  ],
+  "complianceConsiderationsParagraphs": [
+    "Applicable controls from ISO-27001 are captured for implementation planning."
+  ],
+  "signOffRows": [
+    {
+      "name": "Project Sponsor",
+      "title": "Director",
+      "signature": "________________",
+      "date": "YYYY-MM-DD"
+    }
+  ],
+  "indexEntries": [
+    {
+      "term": "REQ-FUNC-001",
+      "location": "3.2.1"
+    }
+  ]
+}
+

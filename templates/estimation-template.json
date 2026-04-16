@@ -1,0 +1,214 @@
+{
+  "$schema": "../schemas/estimation-template.schema.json",
+  "templateId": "ecc-sdlc.estimation.v1",
+  "templateVersion": "1.0",
+  "documentType": "estimate",
+  "format": {
+    "file": "xlsx",
+    "engine": "exceljs",
+    "workbookName": "{projectName} — Estimation Model"
+  },
+  "sheets": {
+    "resourcePlan": {
+      "sheetName": "Resource Plan",
+      "description": "One row per role. Headcount, duration, allocation, and total cost per role. Source: estimatePlan.sheets.resourcePlan.",
+      "columns": [
+        { "key": "role",          "header": "Role Key",         "widthChars": 18 },
+        { "key": "roleLabel",     "header": "Role",             "widthChars": 25 },
+        { "key": "headcount",     "header": "Headcount",        "widthChars": 12, "format": "integer",  "source": "derived", "formula": "headcount = 1 per role by default; override via state.json.headcount[role]" },
+        { "key": "durationWeeks",  "header": "Duration (Weeks)", "widthChars": 16, "format": "decimal1", "source": "derived", "formula": "durationWeeks = totalHours / (40 * headcount)" },
+        { "key": "allocationPct",  "header": "Allocation %",     "widthChars": 14, "format": "pct" },
+        { "key": "totalHours",     "header": "Total Hours",      "widthChars": 14, "format": "decimal1" },
+        { "key": "storyPoints",    "header": "Story Points",     "widthChars": 14, "format": "integer" },
+        { "key": "hourlyRate",     "header": "Hourly Rate",      "widthChars": 14, "format": "currency" },
+        { "key": "currency",       "header": "Currency",         "widthChars": 10 },
+        { "key": "totalCost",      "header": "Total Cost",       "widthChars": 14, "format": "currency" }
+      ],
+      "rows": "{estimatePlan.sheets.resourcePlan}",
+      "totalsRow": {
+        "label": "TOTAL",
+        "sumColumns": ["totalHours", "storyPoints", "totalCost"]
+      }
+    },
+    "effortByPhase": {
+      "sheetName": "Effort by Phase",
+      "description": "One row per design component sorted by phase then role — enabling a pivot-style view of total effort per phase. Source: estimatePlan.sheets.effortBreakdown.",
+      "columns": [
+        { "key": "phase",           "header": "Phase",           "widthChars": 18 },
+        { "key": "role",            "header": "Assigned Role",   "widthChars": 18 },
+        { "key": "componentId",     "header": "Component ID",    "widthChars": 12 },
+        { "key": "componentTitle",  "header": "Component Title", "widthChars": 35 },
+        { "key": "componentType",   "header": "DC Type",         "widthChars": 14 },
+        { "key": "fpaType",         "header": "FPA Type",        "widthChars": 10 },
+        { "key": "fpaTypeFullName", "header": "FPA Type (Full)", "widthChars": 28 },
+        { "key": "complexity",      "header": "Complexity",      "widthChars": 12 },
+        { "key": "functionPoints",  "header": "Function Points", "widthChars": 16, "format": "integer" },
+        { "key": "hoursPerFP",      "header": "Hours / FP",      "widthChars": 12, "format": "decimal1" },
+        { "key": "effortHours",     "header": "Effort Hours",    "widthChars": 14, "format": "decimal1" },
+        { "key": "requirementIds",  "header": "Requirement IDs", "widthChars": 28 },
+        { "key": "notes",           "header": "Notes / Flags",   "widthChars": 40 }
+      ],
+      "rows": "{estimatePlan.sheets.effortBreakdown}",
+      "sortBy": ["phase", "role"],
+      "totalsRow": {
+        "label": "TOTAL",
+        "sumColumns": ["functionPoints", "effortHours"]
+      }
+    },
+    "ganttTimeline": {
+      "sheetName": "Gantt Timeline",
+      "description": "Hierarchical Gantt chart with phase header rows and component child rows. Rendered as a task table with a calendar grid to the right — coloured cells mark each task duration. Saturday/Sunday columns are greyed. Source: estimatePlan.gantt.",
+      "optional": true,
+      "staticColumns": [
+        { "key": "id",           "header": "ID",         "widthChars": 12 },
+        { "key": "task",         "header": "Task",       "widthChars": 38 },
+        { "key": "phase",        "header": "Phase",      "widthChars": 16 },
+        { "key": "role",         "header": "Role",       "widthChars": 16 },
+        { "key": "startDate",    "header": "Start",      "widthChars": 12 },
+        { "key": "endDate",      "header": "End",        "widthChars": 12 },
+        { "key": "durationDays", "header": "Days",       "widthChars": 8,  "format": "integer" },
+        { "key": "effortHours",  "header": "Effort (h)", "widthChars": 12, "format": "decimal1" }
+      ],
+      "calendarColumns": {
+        "generated": "one column per calendar day from estimatePlan.gantt.projectStartDate to estimatePlan.gantt.projectEndDate",
+        "weekendFill": "FFE0E0E0",
+        "header": "MM-DD"
+      },
+      "roleColors": {
+        "architect": "FF4F81BD",
+        "seniorDev": "FF4CAF50",
+        "juniorDev": "FFFFC107"
+      },
+      "rows": "{estimatePlan.gantt.tasks}",
+      "rowSchema": {
+        "id": "task identifier (PHASE-N for phase headers, DC-NNN for components)",
+        "name": "task display name",
+        "phase": "phase key (discovery|requirements|design|development|testing|deployment)",
+        "role": "juniorDev|seniorDev|architect (empty for phase headers)",
+        "startDate": "YYYY-MM-DD",
+        "endDate": "YYYY-MM-DD",
+        "durationDays": "business days between startDate and endDate inclusive",
+        "effortHours": "effort hours (aggregated for phase headers, per-component for children)",
+        "isPhaseHeader": "boolean — true for phase rollup rows"
+      }
+    },
+    "costSummary": {
+      "sheetName": "Cost Summary",
+      "description": "Five named line items rolled up from effortByPhase and resourcePlan, plus manually supplied infrastructure and licence costs. Source: estimatePlan.sheets.costSummary.",
+      "columns": [
+        { "key": "category",    "header": "Category",    "widthChars": 22 },
+        { "key": "description", "header": "Description", "widthChars": 40 },
+        { "key": "currency",    "header": "Currency",    "widthChars": 10 },
+        { "key": "subtotal",    "header": "Subtotal",    "widthChars": 14, "format": "currency" }
+      ],
+      "lineItems": [
+        {
+          "key": "effortCost",
+          "label": "Development Effort",
+          "description": "Total cost of all billed role hours across all phases",
+          "source": "computed",
+          "formulaRef": "effortCost = SUMPRODUCT(effortByPhase.effortHours, resourcePlan.hourlyRate)"
+        },
+        {
+          "key": "infrastructureCost",
+          "label": "Infrastructure",
+          "description": "Hosting, cloud, server, and DevOps infrastructure costs",
+          "source": "manual"
+        },
+        {
+          "key": "licenseCost",
+          "label": "Licences",
+          "description": "Software licences, SaaS subscriptions, and third-party tool costs",
+          "source": "manual"
+        },
+        {
+          "key": "contingency",
+          "label": "Contingency",
+          "description": "Risk buffer applied as a percentage of total effort cost",
+          "source": "computed",
+          "formulaRef": "contingency = effortCost * (state.contingencyPct / 100)"
+        },
+        {
+          "key": "grandTotal",
+          "label": "GRAND TOTAL",
+          "description": "Sum of all cost categories",
+          "source": "computed",
+          "formulaRef": "grandTotal = effortCost + infrastructureCost + licenseCost + contingency"
+        }
+      ],
+      "formulaRelationships": [
+        "effortCost = SUMPRODUCT(effortByPhase.effortHours, resourcePlan.hourlyRate)",
+        "contingency = effortCost * (state.contingencyPct / 100)",
+        "grandTotal = effortCost + infrastructureCost + licenseCost + contingency"
+      ],
+      "rows": "{estimatePlan.sheets.costSummary}",
+      "grandTotalRow": {
+        "label": "GRAND TOTAL",
+        "sumColumns": ["subtotal"]
+      }
+    }
+  },
+  "dataContract": {
+    "sourceObject": "estimatePlan",
+    "requiredTopLevelFields": [
+      "projectId",
+      "projectName",
+      "clientName",
+      "generatedDate",
+      "documentVersion",
+      "currency",
+      "totalFunctionPoints",
+      "totalEffortHours",
+      "totalCost"
+    ],
+    "sheetDataSources": {
+      "resourcePlan":  "estimatePlan.sheets.resourcePlan",
+      "effortByPhase": "estimatePlan.sheets.effortBreakdown",
+      "costSummary":   "estimatePlan.sheets.costSummary"
+    },
+    "agentFieldMapping": {
+      "effortBreakdown": {
+        "mapsToSheet": "effortByPhase",
+        "fields": {
+          "componentId":     "effortByPhase.componentId",
+          "componentTitle":  "effortByPhase.componentTitle",
+          "componentType":   "effortByPhase.componentType",
+          "fpaType":         "effortByPhase.fpaType",
+          "fpaTypeFullName": "effortByPhase.fpaTypeFullName",
+          "complexity":      "effortByPhase.complexity",
+          "functionPoints":  "effortByPhase.functionPoints",
+          "hoursPerFP":      "effortByPhase.hoursPerFP",
+          "effortHours":     "effortByPhase.effortHours",
+          "phase":           "effortByPhase.phase",
+          "requirementIds":  "effortByPhase.requirementIds",
+          "notes":           "effortByPhase.notes"
+        }
+      },
+      "resourcePlan": {
+        "mapsToSheet": "resourcePlan",
+        "fields": {
+          "role":          "resourcePlan.role",
+          "roleLabel":     "resourcePlan.roleLabel",
+          "allocationPct": "resourcePlan.allocationPct",
+          "totalHours":     "resourcePlan.totalHours",
+          "storyPoints":    "resourcePlan.storyPoints",
+          "hourlyRate":     "resourcePlan.hourlyRate",
+          "currency":       "resourcePlan.currency",
+          "totalCost":      "resourcePlan.totalCost"
+        }
+      },
+      "costSummary": {
+        "mapsToSheet": "costSummary",
+        "fields": {
+          "category":    "costSummary.category",
+          "description": "costSummary.description",
+          "role":        "costSummary.role",
+          "hours":       "costSummary.hours",
+          "hourlyRate":  "costSummary.hourlyRate",
+          "currency":    "costSummary.currency",
+          "subtotal":    "costSummary.subtotal"
+        }
+      }
+    }
+  }
+}

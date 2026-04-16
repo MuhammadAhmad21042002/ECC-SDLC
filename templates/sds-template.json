@@ -1,0 +1,440 @@
+{
+  "templateSchema": "ecc-sdlc.template.v1",
+  "templateId": "ecc-sdlc.sds.v10",
+  "documentType": "sds",
+  "version": 10,
+  "format": {
+    "page": {
+      "size": "A4",
+      "orientation": "portrait",
+      "marginsMm": {
+        "top": 25,
+        "right": 20,
+        "bottom": 25,
+        "left": 25
+      }
+    },
+    "defaults": {
+      "fontFamily": "Calibri",
+      "fontSizePt": 11,
+      "lineSpacing": 1.15,
+      "paragraphSpacingAfterPt": 10
+    },
+    "layout": {
+      "structure": "cover-toc-body",
+      "spacing": {
+        "paragraphAfterPt": 10,
+        "headingBeforePt": 20,
+        "headingAfterPt": 8,
+        "tableAfterPt": 14,
+        "h2BeforePt": 14
+      }
+    },
+    "styles": {
+      "title": {
+        "fontSizePt": 28,
+        "bold": true
+      },
+      "subtitle": {
+        "fontSizePt": 14,
+        "italic": true
+      },
+      "h1": {
+        "fontSizePt": 16,
+        "bold": true,
+        "spacingBeforePt": 20,
+        "spacingAfterPt": 8
+      },
+      "h2": {
+        "fontSizePt": 13,
+        "bold": true,
+        "spacingBeforePt": 14,
+        "spacingAfterPt": 6
+      },
+      "h3": {
+        "fontSizePt": 12,
+        "bold": true,
+        "spacingBeforePt": 10,
+        "spacingAfterPt": 4
+      },
+      "normal": {
+        "fontSizePt": 11
+      },
+      "tableHeader": {
+        "bold": true
+      },
+      "tableCell": {
+        "fontSizePt": 10
+      }
+    },
+    "header": {
+      "left": "{projectName}",
+      "right": "Software Design Specification",
+      "showOnFirstPage": false
+    },
+    "footer": {
+      "left": "Confidential \u2014 {clientName}",
+      "center": "v{documentVersion}  \u00b7  {generatedDate}",
+      "right": "Page {pageNumber} of {pageCount}"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "content": {
+        "title": "{projectName}",
+        "subtitle": "Software Design Specification",
+        "clientLine": "Prepared for: {clientName}",
+        "preparedByLine": "Prepared by: {preparedBy}",
+        "dateLine": "Date: {generatedDate}",
+        "versionLine": "Version: {documentVersion}"
+      }
+    },
+    {
+      "id": "toc",
+      "type": "tableOfContents",
+      "content": {
+        "title": "Table of Contents",
+        "includeHeadingLevels": [1, 2]
+      }
+    },
+    {
+      "id": "versionHistory",
+      "type": "table",
+      "content": {
+        "title": "Version History",
+        "columns": [
+          {
+            "key": "version",
+            "label": "Version",
+            "widthPct": 12
+          },
+          {
+            "key": "date",
+            "label": "Date",
+            "widthPct": 16
+          },
+          {
+            "key": "author",
+            "label": "Author",
+            "widthPct": 22
+          },
+          {
+            "key": "changes",
+            "label": "Change Summary",
+            "widthPct": 38
+          },
+          {
+            "key": "status",
+            "label": "Status",
+            "widthPct": 12
+          }
+        ],
+        "rows": "{versionHistory}"
+      }
+    },
+    {
+      "id": "architectureOverview",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1. Architecture Overview",
+        "paragraphs": "{architectureOverviewParagraphs}"
+      }
+    },
+    {
+      "id": "architectureDiagramRendered",
+      "type": "diagram",
+      "content": {
+        "heading": "1.1 System Architecture Diagram",
+        "caption": "Figure 1 \u2014 System architecture diagram",
+        "dataKey": "architecturePng",
+        "dimsKey": "architectureDims",
+        "widthPct": 92
+      }
+    },
+    {
+      "id": "architectureDecisions",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1.2 Key Architectural Decisions",
+        "numbered": "{architectureDecisionsNumbered}"
+      }
+    },
+    {
+      "id": "dataFlowDiagram",
+      "type": "diagram",
+      "content": {
+        "heading": "1.2 Data Flow Overview",
+        "caption": "Figure 2 \u2014 End-to-end data flow",
+        "dataKey": "dataFlowPng",
+        "dimsKey": "dataFlowDims",
+        "widthPct": 92
+      }
+    },
+    {
+      "id": "sequenceDiagrams",
+      "type": "sequenceDiagrams",
+      "content": {
+        "headingPrefix": "1.3",
+        "captionStartIndex": 3,
+        "widthPct": 95
+      }
+    },
+    {
+      "id": "networkDiagram",
+      "type": "diagram",
+      "content": {
+        "heading": "1.4 Network Architecture Diagram",
+        "caption": "Figure 3 \u2014 Network topology and zone boundaries",
+        "dataKey": "networkPng",
+        "dimsKey": "networkDims",
+        "widthPct": 88
+      }
+    },
+    {
+      "id": "componentSpecifications",
+      "type": "table",
+      "content": {
+        "title": "2. Component Specifications",
+        "columns": [
+          {
+            "key": "id",
+            "label": "DC ID",
+            "widthPct": 12
+          },
+          {
+            "key": "name",
+            "label": "Component",
+            "widthPct": 18
+          },
+          {
+            "key": "responsibility",
+            "label": "Responsibility",
+            "widthPct": 30
+          },
+          {
+            "key": "interfaces",
+            "label": "Interfaces",
+            "widthPct": 22
+          },
+          {
+            "key": "tracesToReq",
+            "label": "REQ Links",
+            "widthPct": 18
+          }
+        ],
+        "rows": "{designComponents}"
+      }
+    },
+    {
+      "id": "useCaseDiagrams",
+      "type": "useCaseDiagrams",
+      "content": {
+        "headingPrefix": "2.1",
+        "captionStartIndex": 4,
+        "widthPct": 90
+      }
+    },
+    {
+      "id": "flowchartDiagram",
+      "type": "diagram",
+      "content": {
+        "heading": "2.2 Process Flow Diagram",
+        "caption": "Figure 5 \u2014 Core process flow",
+        "dataKey": "flowchartPng",
+        "dimsKey": "flowchartDims",
+        "widthPct": 88
+      }
+    },
+    {
+      "id": "databaseSchema",
+      "type": "contentBlock",
+      "content": {
+        "heading": "3. Database Schema",
+        "paragraphs": "{databaseSchemaIntroParagraphs}"
+      }
+    },
+    {
+      "id": "erDiagramRendered",
+      "type": "diagram",
+      "content": {
+        "heading": "3.1 Entity-Relationship Diagram",
+        "caption": "Figure 6 \u2014 Full ER diagram with all entities (PK/FK relationships shown)",
+        "dataKey": "erDiagramPng",
+        "dimsKey": "erDiagramDims",
+        "widthPct": 100
+      }
+    },
+    {
+      "id": "databaseTables",
+      "type": "table",
+      "content": {
+        "title": "3.2 Database Tables",
+        "columns": [
+          {
+            "key": "table",
+            "label": "Table",
+            "widthPct": 20
+          },
+          {
+            "key": "primaryKey",
+            "label": "Primary Key",
+            "widthPct": 15
+          },
+          {
+            "key": "fields",
+            "label": "Fields",
+            "widthPct": 35
+          },
+          {
+            "key": "relationships",
+            "label": "Relationships",
+            "widthPct": 30
+          }
+        ],
+        "rows": "{databaseTables}"
+      }
+    },
+    {
+      "id": "apiContracts",
+      "type": "table",
+      "content": {
+        "title": "4. API Contracts",
+        "columns": [
+          {
+            "key": "method",
+            "label": "Method",
+            "widthPct": 10
+          },
+          {
+            "key": "path",
+            "label": "Endpoint",
+            "widthPct": 22
+          },
+          {
+            "key": "description",
+            "label": "Description",
+            "widthPct": 25
+          },
+          {
+            "key": "request",
+            "label": "Request",
+            "widthPct": 22
+          },
+          {
+            "key": "response",
+            "label": "Response",
+            "widthPct": 21
+          }
+        ],
+        "rows": "{apiEndpoints}"
+      }
+    },
+    {
+      "id": "integrationPoints",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5. Integration Points",
+        "paragraphs": "{integrationIntroParagraphs}",
+        "bullets": "{integrationPointsBullets}"
+      }
+    },
+    {
+      "id": "securityArchitecture",
+      "type": "contentBlock",
+      "content": {
+        "heading": "6. Security Architecture",
+        "paragraphs": "{securityArchitectureParagraphs}",
+        "subsections": [
+          {
+            "heading": "6.1 Authentication",
+            "paragraphs": "{securityAuthParagraphs}"
+          },
+          {
+            "heading": "6.2 Authorisation",
+            "paragraphs": "{securityAuthorizationParagraphs}"
+          },
+          {
+            "heading": "6.3 Data Protection",
+            "paragraphs": "{securityDataProtectionParagraphs}"
+          },
+          {
+            "heading": "6.4 Audit Logging",
+            "paragraphs": "{securityAuditLoggingParagraphs}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "traceabilityMatrix",
+      "type": "table",
+      "content": {
+        "title": "7. Requirements Traceability Matrix",
+        "columns": [
+          {
+            "key": "reqId",
+            "label": "REQ ID",
+            "widthPct": 18
+          },
+          {
+            "key": "requirementTitle",
+            "label": "Requirement",
+            "widthPct": 42
+          },
+          {
+            "key": "designComponentIds",
+            "label": "DC IDs",
+            "widthPct": 22
+          },
+          {
+            "key": "coverage",
+            "label": "Coverage",
+            "widthPct": 18
+          }
+        ],
+        "rows": "{traceabilityMatrixRows}"
+      }
+    }
+  ],
+  "dataContract": {
+    "requiredFields": [
+      "projectName",
+      "clientName",
+      "preparedBy",
+      "generatedDate",
+      "documentVersion",
+      "versionHistory",
+      "architectureOverviewParagraphs",
+      "architectureDecisionsNumbered",
+      "architectureDiagramLines",
+      "designComponents",
+      "databaseSchemaIntroParagraphs",
+      "databaseErDiagramLines",
+      "databaseTables",
+      "apiEndpoints",
+      "integrationIntroParagraphs",
+      "integrationPointsBullets",
+      "securityArchitectureParagraphs",
+      "securityAuthParagraphs",
+      "securityAuthorizationParagraphs",
+      "securityDataProtectionParagraphs",
+      "securityAuditLoggingParagraphs",
+      "traceabilityMatrixRows"
+    ],
+    "diagramPngKeys": [
+      "architecturePng",
+      "architectureDims",
+      "erDiagramPng",
+      "erDiagramDims",
+      "dataFlowPng",
+      "dataFlowDims",
+      "networkPng",
+      "networkDims",
+      "useCasePng",
+      "useCaseDims",
+      "flowchartPng",
+      "flowchartDims"
+    ]
+  }
+}

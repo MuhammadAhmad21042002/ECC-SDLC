@@ -1,0 +1,908 @@
+{
+  "templateSchema": "ecc-sdlc.template.v1",
+  "templateId": "ecc-sdlc.srs.v2",
+  "documentType": "srs",
+  "version": 4,
+  "format": {
+    "page": {
+      "size": "A4",
+      "orientation": "portrait",
+      "marginsMm": {
+        "top": 25,
+        "right": 20,
+        "bottom": 25,
+        "left": 20
+      }
+    },
+    "defaults": {
+      "fontFamily": "Calibri",
+      "fontSizePt": 11,
+      "lineSpacing": 1.15,
+      "paragraphSpacingAfterPt": 6
+    },
+    "layout": {
+      "structure": "cover-toc-body",
+      "spacing": {
+        "paragraphAfterPt": 6,
+        "headingBeforePt": 12,
+        "headingAfterPt": 6,
+        "tableAfterPt": 14,
+        "h2BeforePt": 10
+      }
+    },
+    "styles": {
+      "title": {
+        "fontSizePt": 20,
+        "bold": true,
+        "spacingAfterPt": 12
+      },
+      "subtitle": {
+        "fontSizePt": 12,
+        "italic": true,
+        "spacingAfterPt": 18
+      },
+      "h1": {
+        "fontSizePt": 16,
+        "bold": true,
+        "spacingBeforePt": 12,
+        "spacingAfterPt": 6
+      },
+      "h2": {
+        "fontSizePt": 13,
+        "bold": true,
+        "spacingBeforePt": 10,
+        "spacingAfterPt": 4
+      },
+      "h3": {
+        "fontSizePt": 12,
+        "bold": true,
+        "spacingBeforePt": 8,
+        "spacingAfterPt": 3
+      },
+      "normal": {
+        "fontSizePt": 11
+      },
+      "bullet": {
+        "indentLeftMm": 8,
+        "hangingIndentMm": 4
+      },
+      "numbered": {
+        "indentLeftMm": 8,
+        "hangingIndentMm": 4
+      },
+      "tableHeader": {
+        "bold": true
+      },
+      "tableCell": {
+        "fontSizePt": 10
+      },
+      "must": {
+        "fillColor": "C6EFCE"
+      },
+      "should": {
+        "fillColor": "FFEB9C"
+      },
+      "could": {
+        "fillColor": "DAEEF3"
+      },
+      "wont": {
+        "fillColor": "FFC7CE"
+      }
+    },
+    "header": {
+      "left": "{projectName} \u2014 SRS",
+      "right": "Version {documentVersion}",
+      "showOnFirstPage": false
+    },
+    "footer": {
+      "left": "Confidential",
+      "center": "{documentVersion} \u2014 {generatedDate}",
+      "right": "Page {pageNumber} of {pageCount}"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "content": {
+        "title": "{projectName}",
+        "subtitle": "Software Requirements Specification",
+        "clientLine": "Prepared for: {clientName}",
+        "preparedByLine": "Prepared by: {preparedBy}",
+        "dateLine": "Date: {generatedDate}",
+        "versionLine": "Version: {documentVersion}",
+        "classificationLine": "Classification: Confidential"
+      }
+    },
+    {
+      "id": "toc",
+      "type": "tableOfContents",
+      "content": {
+        "title": "Table of Contents",
+        "includeHeadingLevels": [1, 2, 3]
+      }
+    },
+    {
+      "id": "versionHistory",
+      "type": "table",
+      "content": {
+        "title": "Revision History",
+        "columns": [
+          {
+            "key": "version",
+            "label": "Version",
+            "widthPct": 12
+          },
+          {
+            "key": "date",
+            "label": "Date",
+            "widthPct": 18
+          },
+          {
+            "key": "author",
+            "label": "Author",
+            "widthPct": 25
+          },
+          {
+            "key": "changes",
+            "label": "Change Summary",
+            "widthPct": 35
+          },
+          {
+            "key": "status",
+            "label": "Status",
+            "widthPct": 10
+          }
+        ],
+        "rows": "{versionHistory}"
+      }
+    },
+    {
+      "id": "introduction",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1. Introduction",
+        "subsections": [
+          {
+            "heading": "1.1 Purpose",
+            "paragraphs": "{purposeParagraphs}"
+          },
+          {
+            "heading": "1.2 Document Conventions",
+            "paragraphs": "{documentConventionsParagraphs}"
+          },
+          {
+            "heading": "1.3 Intended Audience and Reading Suggestions",
+            "paragraphs": "{intendedAudienceParagraphs}"
+          },
+          {
+            "heading": "1.4 Product Scope",
+            "paragraphs": "{scopeParagraphs}"
+          },
+          {
+            "heading": "1.5 Definitions, Acronyms, and Abbreviations",
+            "tableId": "definitionsTable"
+          },
+          {
+            "heading": "1.6 References",
+            "bullets": "{referencesBullets}"
+          },
+          {
+            "heading": "1.7 Overview",
+            "paragraphs": "{overviewParagraphs}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overallDescription",
+      "type": "contentBlock",
+      "content": {
+        "heading": "2. Overall Description",
+        "subsections": [
+          {
+            "heading": "2.1 Product Perspective",
+            "paragraphs": "{productPerspective}"
+          },
+          {
+            "heading": "2.2 Product Functions",
+            "bullets": "{productFunctionsBullets}"
+          },
+          {
+            "heading": "2.3 User Classes and Characteristics",
+            "tableId": "userClassesTable"
+          },
+          {
+            "heading": "2.4 Operating Environment",
+            "paragraphs": "{operatingEnvironmentParagraphs}"
+          },
+          {
+            "heading": "2.5 Design and Implementation Constraints",
+            "numbered": "{constraintsNumbered}"
+          },
+          {
+            "heading": "2.6 User Documentation",
+            "paragraphs": "{userDocumentationParagraphs}"
+          },
+          {
+            "heading": "2.7 Assumptions and Dependencies",
+            "numbered": "{assumptionsNumbered}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "externalInterfaces",
+      "type": "contentBlock",
+      "content": {
+        "heading": "3. External Interface Requirements",
+        "subsections": [
+          {
+            "heading": "3.1 User Interfaces",
+            "paragraphs": "{userInterfacesParagraphs}"
+          },
+          {
+            "heading": "3.2 Hardware Interfaces",
+            "paragraphs": "{hardwareInterfacesParagraphs}"
+          },
+          {
+            "heading": "3.3 Software Interfaces",
+            "paragraphs": "{softwareInterfacesParagraphs}"
+          },
+          {
+            "heading": "3.4 Communications Interfaces",
+            "paragraphs": "{communicationsInterfacesParagraphs}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "systemFeaturesIntro",
+      "type": "contentBlock",
+      "content": {
+        "heading": "4. System Features",
+        "paragraphs": "{systemFeaturesIntroParagraphs}"
+      }
+    },
+    {
+      "id": "systemFeaturesBlock",
+      "type": "repeatingBlock",
+      "content": {
+        "heading": "4.1 Feature Specifications",
+        "note": "Each subsection describes a system feature with its description, priority, stimulus-response sequences, and the functional requirements that implement it.",
+        "itemTemplate": {
+          "layout": "table",
+          "titleFormat": "4.{sectionNumber} {name}",
+          "fields": [
+            {
+              "label": "Feature ID",
+              "key": "featureId"
+            },
+            {
+              "label": "Description and Priority",
+              "key": "descriptionPriority"
+            },
+            {
+              "label": "Stimulus-Response Sequences",
+              "key": "stimulusResponse",
+              "format": "numberedList"
+            },
+            {
+              "label": "Associated Functional Requirements",
+              "key": "functionalRequirementIds",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Associated Use Cases",
+              "key": "useCaseIds",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Primary Actors",
+              "key": "primaryActors",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Preconditions",
+              "key": "preconditions",
+              "format": "numberedList"
+            },
+            {
+              "label": "Postconditions",
+              "key": "postconditions",
+              "format": "numberedList"
+            },
+            {
+              "label": "Business Rules Enforced",
+              "key": "businessRuleIds",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Notes",
+              "key": "notes",
+              "optional": true
+            }
+          ]
+        },
+        "rows": "{systemFeatures}"
+      }
+    },
+    {
+      "id": "useCasesBlock",
+      "type": "repeatingBlock",
+      "content": {
+        "heading": "4.2 Use Case Specifications",
+        "note": "Each use case is shown with its inline use case diagram followed by a 2-column detail table. Use cases are numbered UC-NN and refer back to the system features they support.",
+        "itemTemplate": {
+          "layout": "table",
+          "titleFormat": "{id} \u2014 {name}",
+          "fields": [
+            {
+              "label": "Use Case ID",
+              "key": "id"
+            },
+            {
+              "label": "Use Case Name",
+              "key": "name"
+            },
+            {
+              "label": "Primary Actor",
+              "key": "primaryActor"
+            },
+            {
+              "label": "Secondary Actors",
+              "key": "secondaryActors",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Stakeholders",
+              "key": "stakeholders",
+              "format": "commaSeparated",
+              "optional": true
+            },
+            {
+              "label": "Preconditions",
+              "key": "preconditions",
+              "format": "numberedList"
+            },
+            {
+              "label": "Trigger",
+              "key": "trigger"
+            },
+            {
+              "label": "Main Success Scenario",
+              "key": "mainFlow",
+              "format": "numberedList"
+            },
+            {
+              "label": "Alternate Flows",
+              "key": "alternateFlows",
+              "format": "numberedList"
+            },
+            {
+              "label": "Exception Flows",
+              "key": "exceptionFlows",
+              "format": "numberedList"
+            },
+            {
+              "label": "Postconditions",
+              "key": "postconditions",
+              "format": "numberedList"
+            },
+            {
+              "label": "Associated Requirements",
+              "key": "requirementIds",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "System Feature",
+              "key": "featureId"
+            }
+          ]
+        },
+        "rows": "{useCases}"
+      }
+    },
+    {
+      "id": "useCaseDiagramsSection",
+      "type": "useCaseDiagramsSection",
+      "content": {
+        "heading": "4.3 Use Case Diagrams",
+        "note": "One diagram per system feature group, showing the actors and use cases for that feature.",
+        "dataKey": "ucDiagramsMap",
+        "ucListKey": "useCases",
+        "widthPct": 75,
+        "featuresKey": "systemFeatures"
+      }
+    },
+    {
+      "id": "specificRequirements",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5. Specific Requirements"
+      }
+    },
+    {
+      "id": "functionalRequirementsTable",
+      "type": "requirementsTable",
+      "content": {
+        "heading": "5.1 Functional Requirements",
+        "subheading": "5.1.1 Functional Requirements Table",
+        "caption": "Table \u2014 Functional Requirements",
+        "filter": "functional",
+        "groupBy": "category",
+        "sortBy": ["priority", "id"],
+        "priorityOrder": ["must", "should", "could", "wont"],
+        "applyPriorityRowColor": true,
+        "columns": [
+          {
+            "key": "id",
+            "label": "REQ ID",
+            "widthPct": 13
+          },
+          {
+            "key": "title",
+            "label": "Title",
+            "widthPct": 22
+          },
+          {
+            "key": "priority",
+            "label": "Priority",
+            "widthPct": 10
+          },
+          {
+            "key": "description",
+            "label": "Description",
+            "widthPct": 30
+          },
+          {
+            "key": "acceptanceCriteria",
+            "label": "Acceptance Criteria",
+            "widthPct": 25,
+            "format": "bulletList"
+          }
+        ],
+        "rows": "{functionalRequirements}"
+      }
+    },
+    {
+      "id": "functionalRequirementsDetail",
+      "type": "repeatingBlock",
+      "content": {
+        "heading": "5.1.2 Detailed Functional Requirement Specifications",
+        "note": "One 2-column table per functional requirement. Label column (shaded) on the left; value on the right.",
+        "itemTemplate": {
+          "layout": "table",
+          "titleFormat": "{id} \u2014 {title}",
+          "fields": [
+            {
+              "label": "Type",
+              "key": "type"
+            },
+            {
+              "label": "Category",
+              "key": "category",
+              "optional": true
+            },
+            {
+              "label": "Priority",
+              "key": "priority"
+            },
+            {
+              "label": "Status",
+              "key": "status"
+            },
+            {
+              "label": "Source",
+              "key": "source"
+            },
+            {
+              "label": "System Feature",
+              "key": "systemFeatureId",
+              "optional": true
+            },
+            {
+              "label": "Use Cases",
+              "key": "useCaseIds",
+              "format": "commaSeparated",
+              "optional": true
+            },
+            {
+              "label": "Dependencies",
+              "key": "dependencies",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Compliance Frameworks",
+              "key": "complianceFrameworks",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Description",
+              "key": "description"
+            },
+            {
+              "label": "Acceptance Criteria",
+              "key": "acceptanceCriteria",
+              "format": "numberedList"
+            },
+            {
+              "label": "Rationale / Notes",
+              "key": "rationale",
+              "optional": true
+            }
+          ]
+        },
+        "rows": "{functionalRequirements}"
+      }
+    },
+    {
+      "id": "nonFunctionalRequirementsIntro",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.2 Other Non-Functional Requirements",
+        "paragraphs": "{nonFunctionalRequirementsIntroParagraphs}"
+      }
+    },
+    {
+      "id": "nonFunctionalRequirementsTable",
+      "type": "requirementsTable",
+      "content": {
+        "heading": "5.2.1 Non-Functional Requirements Table",
+        "caption": "Table \u2014 Non-Functional Requirements",
+        "filter": "non-functional",
+        "groupBy": "category",
+        "sortBy": ["priority", "id"],
+        "categoryOrder": ["performance", "security", "scalability", "availability", "usability", "compliance", "maintainability", "portability"],
+        "applyPriorityRowColor": true,
+        "columns": [
+          {
+            "key": "id",
+            "label": "REQ ID",
+            "widthPct": 13
+          },
+          {
+            "key": "category",
+            "label": "Category",
+            "widthPct": 15
+          },
+          {
+            "key": "title",
+            "label": "Title",
+            "widthPct": 17
+          },
+          {
+            "key": "priority",
+            "label": "Priority",
+            "widthPct": 10
+          },
+          {
+            "key": "description",
+            "label": "Description",
+            "widthPct": 25
+          },
+          {
+            "key": "acceptanceCriteria",
+            "label": "Acceptance Criteria",
+            "widthPct": 20,
+            "format": "bulletList"
+          }
+        ],
+        "rows": "{nonFunctionalRequirements}"
+      }
+    },
+    {
+      "id": "nonFunctionalRequirementsDetail",
+      "type": "repeatingBlock",
+      "content": {
+        "heading": "5.2.2 Detailed Non-Functional Requirement Specifications",
+        "note": "One 2-column table per non-functional requirement.",
+        "itemTemplate": {
+          "layout": "table",
+          "titleFormat": "{id} \u2014 {title}",
+          "fields": [
+            {
+              "label": "Category",
+              "key": "category"
+            },
+            {
+              "label": "Priority",
+              "key": "priority"
+            },
+            {
+              "label": "Status",
+              "key": "status"
+            },
+            {
+              "label": "Source",
+              "key": "source"
+            },
+            {
+              "label": "Dependencies",
+              "key": "dependencies",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Compliance Frameworks",
+              "key": "complianceFrameworks",
+              "format": "commaSeparated"
+            },
+            {
+              "label": "Description",
+              "key": "description"
+            },
+            {
+              "label": "Acceptance Criteria",
+              "key": "acceptanceCriteria",
+              "format": "numberedList"
+            },
+            {
+              "label": "Rationale / Notes",
+              "key": "rationale",
+              "optional": true
+            }
+          ]
+        },
+        "rows": "{nonFunctionalRequirements}"
+      }
+    },
+    {
+      "id": "performanceRequirements",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.3 Performance Requirements",
+        "paragraphs": "{performanceParagraphs}"
+      }
+    },
+    {
+      "id": "safetyRequirements",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.4 Safety Requirements",
+        "paragraphs": "{safetyParagraphs}"
+      }
+    },
+    {
+      "id": "securityRequirements",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.5 Security Requirements",
+        "paragraphs": "{securityParagraphs}"
+      }
+    },
+    {
+      "id": "softwareQualityAttributes",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.6 Software Quality Attributes",
+        "subsections": [
+          {
+            "heading": "5.6.1 Reliability",
+            "paragraphs": "{reliabilityParagraphs}"
+          },
+          {
+            "heading": "5.6.2 Availability",
+            "paragraphs": "{availabilityParagraphs}"
+          },
+          {
+            "heading": "5.6.3 Maintainability",
+            "paragraphs": "{maintainabilityParagraphs}"
+          },
+          {
+            "heading": "5.6.4 Portability",
+            "paragraphs": "{portabilityParagraphs}"
+          },
+          {
+            "heading": "5.6.5 Usability",
+            "paragraphs": "{usabilityParagraphs}"
+          },
+          {
+            "heading": "5.6.6 Interoperability",
+            "paragraphs": "{interoperabilityParagraphs}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "designConstraints",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.7 Design Constraints",
+        "paragraphs": "{designConstraintsParagraphs}"
+      }
+    },
+    {
+      "id": "logicalDatabaseRequirements",
+      "type": "contentBlock",
+      "content": {
+        "heading": "5.8 Logical Database Requirements",
+        "paragraphs": "{logicalDatabaseParagraphs}"
+      }
+    },
+    {
+      "id": "businessRules",
+      "type": "table",
+      "content": {
+        "title": "6. Business Rules",
+        "columns": [
+          {
+            "key": "id",
+            "label": "Rule ID",
+            "widthPct": 12
+          },
+          {
+            "key": "statement",
+            "label": "Statement",
+            "widthPct": 50
+          },
+          {
+            "key": "enforcedBy",
+            "label": "Enforced By",
+            "widthPct": 22
+          },
+          {
+            "key": "references",
+            "label": "References",
+            "widthPct": 16
+          }
+        ],
+        "rows": "{businessRules}"
+      }
+    },
+    {
+      "id": "otherRequirements",
+      "type": "contentBlock",
+      "content": {
+        "heading": "7. Other Requirements",
+        "paragraphs": "{otherRequirementsParagraphs}"
+      }
+    },
+    {
+      "id": "ganttChart",
+      "type": "ganttBlock",
+      "content": {
+        "heading": "8. Project Schedule \u2014 Gantt Chart",
+        "label": "Figure \u2014 Project Schedule (Gantt Chart). Bars: blue = completed, green = in progress, grey = planned.",
+        "dataKey": "ganttMermaid",
+        "pngKey": "ganttPng",
+        "dimsKey": "ganttDims",
+        "tasksKey": "ganttTasks",
+        "titleKey": "projectName"
+      }
+    },
+    {
+      "id": "appendixGlossary",
+      "type": "appendix",
+      "content": {
+        "heading": "Appendix A \u2014 Glossary",
+        "paragraphs": "{glossaryParagraphs}"
+      }
+    },
+    {
+      "id": "appendixAnalysisModels",
+      "type": "appendix",
+      "content": {
+        "heading": "Appendix B \u2014 Analysis Models",
+        "paragraphs": "{analysisModelsIntroParagraphs}"
+      }
+    },
+    {
+      "id": "appendixTbdList",
+      "type": "table",
+      "content": {
+        "title": "Appendix C \u2014 To Be Determined List",
+        "columns": [
+          {
+            "key": "id",
+            "label": "TBD ID",
+            "widthPct": 10
+          },
+          {
+            "key": "description",
+            "label": "Description",
+            "widthPct": 40
+          },
+          {
+            "key": "owner",
+            "label": "Owner",
+            "widthPct": 20
+          },
+          {
+            "key": "deadline",
+            "label": "Target Date",
+            "widthPct": 15
+          },
+          {
+            "key": "references",
+            "label": "References",
+            "widthPct": 15
+          }
+        ],
+        "rows": "{tbdList}"
+      }
+    },
+    {
+      "id": "appendixSupportingInfo",
+      "type": "appendix",
+      "renderCondition": "dataModelsParagraphs.length > 0 || apiContractsParagraphs.length > 0 || complianceConsiderationsParagraphs.length > 0",
+      "content": {
+        "heading": "Appendix D \u2014 Supporting Information",
+        "subsections": [
+          {
+            "heading": "D.1 Data Models",
+            "paragraphs": "{dataModelsParagraphs}"
+          },
+          {
+            "heading": "D.2 API Contracts",
+            "paragraphs": "{apiContractsParagraphs}"
+          },
+          {
+            "heading": "D.3 Compliance Considerations",
+            "paragraphs": "{complianceConsiderationsParagraphs}"
+          }
+        ]
+      }
+    }
+  ],
+  "dataContract": {
+    "requiredFields": [
+      "projectName",
+      "clientName",
+      "preparedBy",
+      "generatedDate",
+      "documentVersion",
+      "versionHistory",
+      "purposeParagraphs",
+      "documentConventionsParagraphs",
+      "intendedAudienceParagraphs",
+      "scopeParagraphs",
+      "definitionsTable",
+      "referencesBullets",
+      "overviewParagraphs",
+      "productPerspective",
+      "productFunctionsBullets",
+      "userClasses",
+      "operatingEnvironmentParagraphs",
+      "constraintsNumbered",
+      "userDocumentationParagraphs",
+      "assumptionsNumbered",
+      "userInterfacesParagraphs",
+      "hardwareInterfacesParagraphs",
+      "softwareInterfacesParagraphs",
+      "communicationsInterfacesParagraphs",
+      "systemFeaturesIntroParagraphs",
+      "systemFeatures",
+      "useCases",
+      "functionalRequirements",
+      "nonFunctionalRequirements",
+      "nonFunctionalRequirementsIntroParagraphs",
+      "performanceParagraphs",
+      "safetyParagraphs",
+      "securityParagraphs",
+      "reliabilityParagraphs",
+      "availabilityParagraphs",
+      "maintainabilityParagraphs",
+      "portabilityParagraphs",
+      "usabilityParagraphs",
+      "interoperabilityParagraphs",
+      "designConstraintsParagraphs",
+      "logicalDatabaseParagraphs",
+      "businessRules",
+      "otherRequirementsParagraphs",
+      "ganttMermaid",
+      "glossaryParagraphs",
+      "analysisModelsIntroParagraphs",
+      "useCaseDiagramMermaid",
+      "erDiagramMermaid",
+      "stateDiagramMermaid",
+      "dataFlowDiagramMermaid",
+      "sequenceDiagramsMermaid",
+      "tbdList",
+      "dataModelsParagraphs",
+      "apiContractsParagraphs",
+      "complianceConsiderationsParagraphs",
+      "signOffRows",
+      "indexEntries"
+    ]
+  }
+}

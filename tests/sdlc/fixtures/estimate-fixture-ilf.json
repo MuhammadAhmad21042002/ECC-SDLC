@@ -1,0 +1,43 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "22222222-2222-4333-8444-555555555555",
+  "projectName": "ILF Accuracy Test Project",
+  "clientName": "Test Client",
+  "currentPhase": "design",
+  "phaseHistory": [
+    { "phase": "discovery",    "startedAt": "2026-03-17T08:00:00Z", "completedAt": "2026-03-17T17:00:00Z" },
+    { "phase": "requirements", "startedAt": "2026-03-18T08:00:00Z", "completedAt": "2026-03-18T17:00:00Z" },
+    { "phase": "design",       "startedAt": "2026-03-19T08:00:00Z", "completedAt": null }
+  ],
+  "artifacts": {
+    "scope":    { "path": ".sdlc/artifacts/scope-v1.md",  "version": 1, "hash": "sha256:aaa", "createdAt": "2026-03-17T17:00:00Z" },
+    "srs":      { "path": ".sdlc/artifacts/srs-v1.docx",  "version": 1, "hash": "sha256:bbb", "createdAt": "2026-03-18T17:00:00Z" },
+    "sds":      { "path": ".sdlc/artifacts/sds-v1.docx",  "version": 1, "hash": "sha256:ccc", "createdAt": "2026-03-19T17:00:00Z" },
+    "sts":      null,
+    "estimate": null,
+    "proposal": null
+  },
+  "rateCard": {
+    "juniorDev": { "hourlyRate": 30, "currency": "USD" },
+    "seniorDev": { "hourlyRate": 50, "currency": "USD" },
+    "architect": { "hourlyRate": 80, "currency": "USD" }
+  },
+  "requirements": [],
+  "designComponents": [
+    {
+      "id": "DC-001",
+      "title": "Core Data Store",
+      "description": "Single internal logical file — used to verify ILF simple = 7 FP exactly.",
+      "type": "database",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-001"],
+      "complexity": "simple",
+      "responsibilities": [],
+      "interfaces": [],
+      "dataStores": []
+    }
+  ],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

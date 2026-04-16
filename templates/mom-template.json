@@ -1,0 +1,199 @@
+{
+  "templateSchema": "ecc-sdlc.template.v1",
+  "templateId": "ecc-sdlc.mom.v1",
+  "documentType": "mom",
+  "version": 1,
+  "format": {
+    "page": {
+      "size": "A4",
+      "orientation": "portrait",
+      "marginsMm": { "top": 25, "right": 20, "bottom": 25, "left": 25 }
+    },
+    "defaults": {
+      "fontFamily": "Calibri",
+      "fontSizePt": 11,
+      "lineSpacing": 1.15,
+      "paragraphSpacingAfterPt": 10
+    },
+    "layout": {
+      "structure": "cover-toc-body",
+      "spacing": {
+        "paragraphAfterPt": 10,
+        "headingBeforePt": 20,
+        "headingAfterPt": 8,
+        "tableAfterPt": 14,
+        "h2BeforePt": 14
+      }
+    },
+    "styles": {
+      "title":       { "fontSizePt": 26, "bold": true },
+      "subtitle":    { "fontSizePt": 13, "italic": true },
+      "h1":          { "fontSizePt": 15, "bold": true, "spacingBeforePt": 20, "spacingAfterPt": 8 },
+      "h2":          { "fontSizePt": 12, "bold": true, "spacingBeforePt": 14, "spacingAfterPt": 6 },
+      "h3":          { "fontSizePt": 11, "bold": true, "spacingBeforePt": 10, "spacingAfterPt": 4 },
+      "normal":      { "fontSizePt": 11 },
+      "tableHeader": { "bold": true },
+      "tableCell":   { "fontSizePt": 10 }
+    },
+    "header": {
+      "left": "{projectName}",
+      "right": "Minutes of Meeting",
+      "showOnFirstPage": false
+    },
+    "footer": {
+      "left": "Confidential \u2014 {clientName}",
+      "center": "v{documentVersion}  \u00b7  {generatedDate}",
+      "right": "Page {pageNumber} of {pageCount}"
+    }
+  },
+  "dataContract": {
+    "requiredFields": [
+      "projectName", "clientName", "meetingTitle", "meetingDate",
+      "meetingType", "attendees", "agendaItems",
+      "decisions", "actionItems", "requirementSignals",
+      "summary", "complianceFlags"
+    ]
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "content": {
+        "title": "{meetingTitle}",
+        "subtitle": "Minutes of Meeting",
+        "clientLine": "Project: {projectName}",
+        "preparedByLine": "Client: {clientName}",
+        "dateLine": "Meeting Date: {meetingDate}",
+        "versionLine": "Document v{documentVersion} \u00b7 Prepared: {generatedDate}"
+      }
+    },
+    {
+      "id": "toc",
+      "type": "tableOfContents",
+      "content": {
+        "title": "Table of Contents",
+        "includeHeadingLevels": [1, 2]
+      }
+    },
+    {
+      "id": "versionHistory",
+      "type": "table",
+      "content": {
+        "title": "Version History",
+        "columns": [
+          { "key": "version",  "label": "Version", "widthPct": 12 },
+          { "key": "date",     "label": "Date",     "widthPct": 18 },
+          { "key": "author",   "label": "Author",   "widthPct": 25 },
+          { "key": "changes",  "label": "Changes",  "widthPct": 45 }
+        ],
+        "rows": "{versionHistory}"
+      }
+    },
+    {
+      "id": "meetingDetails",
+      "type": "table",
+      "content": {
+        "title": "1. Meeting Details",
+        "columns": [
+          { "key": "field", "label": "Field",  "widthPct": 30 },
+          { "key": "value", "label": "Value",  "widthPct": 70 }
+        ],
+        "rows": "{meetingDetailsRows}"
+      }
+    },
+    {
+      "id": "attendees",
+      "type": "table",
+      "content": {
+        "title": "2. Attendees",
+        "columns": [
+          { "key": "name",         "label": "Name / Role",    "widthPct": 28 },
+          { "key": "role",         "label": "Title",          "widthPct": 24 },
+          { "key": "organization", "label": "Organisation",   "widthPct": 28 },
+          { "key": "status",       "label": "Status",         "widthPct": 20 }
+        ],
+        "rows": "{attendeeRows}"
+      }
+    },
+    {
+      "id": "agenda",
+      "type": "contentBlock",
+      "content": {
+        "heading": "3. Agenda",
+        "numbered": "{agendaItems}"
+      }
+    },
+    {
+      "id": "summary",
+      "type": "contentBlock",
+      "content": {
+        "heading": "4. Meeting Summary",
+        "paragraphs": "{summaryParagraphs}"
+      }
+    },
+    {
+      "id": "decisions",
+      "type": "table",
+      "content": {
+        "title": "5. Decisions Made",
+        "columns": [
+          { "key": "id",       "label": "ID",        "widthPct": 10 },
+          { "key": "decision", "label": "Decision",  "widthPct": 46 },
+          { "key": "owner",    "label": "Owner",     "widthPct": 22 },
+          { "key": "dueDate",  "label": "Due Date",  "widthPct": 22 }
+        ],
+        "rows": "{decisionRows}"
+      }
+    },
+    {
+      "id": "actionItems",
+      "type": "table",
+      "content": {
+        "title": "6. Action Items",
+        "columns": [
+          { "key": "id",       "label": "ID",       "widthPct": 10 },
+          { "key": "action",   "label": "Action",   "widthPct": 38 },
+          { "key": "owner",    "label": "Owner",    "widthPct": 20 },
+          { "key": "dueDate",  "label": "Due Date", "widthPct": 16 },
+          { "key": "priority", "label": "Priority", "widthPct": 16 }
+        ],
+        "rows": "{actionItemRows}"
+      }
+    },
+    {
+      "id": "requirementSignals",
+      "type": "contentBlock",
+      "content": {
+        "heading": "7. Requirement Signals",
+        "note": "The following needs and constraints were raised during the meeting but have not yet been formalised as REQ-* entries. Run /srs or use /mom --promote-signals to convert these into requirements.",
+        "bullets": "{requirementSignalBullets}"
+      }
+    },
+    {
+      "id": "openQuestions",
+      "type": "contentBlock",
+      "content": {
+        "heading": "8. Open Questions",
+        "bullets": "{openQuestionBullets}"
+      }
+    },
+    {
+      "id": "complianceFlags",
+      "type": "contentBlock",
+      "content": {
+        "heading": "9. Compliance Flags",
+        "note": "The following regulatory frameworks were mentioned or implied during this meeting. These will be cross-checked during /compliance.",
+        "bullets": "{complianceFlagBullets}"
+      }
+    },
+    {
+      "id": "nextMeeting",
+      "type": "contentBlock",
+      "renderCondition": "data.hasNextMeeting",
+      "content": {
+        "heading": "10. Next Meeting",
+        "paragraphs": "{nextMeetingParagraphs}"
+      }
+    }
+  ]
+}

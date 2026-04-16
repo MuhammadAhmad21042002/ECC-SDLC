@@ -1,0 +1,239 @@
+{
+  "frameworkId": "AAOIFI",
+  "frameworkName": "Accounting and Auditing Organisation for Islamic Financial Institutions — IT Governance and Sharia Compliance Standards",
+  "version": "2024.1",
+  "effectiveDate": "2024-01-01",
+  "applicability": "Islamic banks, Islamic windows of conventional banks, takaful operators, Islamic investment companies, and financial institutions offering Sharia-compliant products in GCC, Pakistan, Malaysia, and global Islamic finance markets",
+  "controls": [
+    {
+      "controlId": "AAOIFI-GOV-001",
+      "title": "Sharia Supervisory Board Oversight of Technology",
+      "description": "Any technology system used by an Islamic financial institution to execute or record financial transactions must be reviewed and approved by the Sharia Supervisory Board to ensure conformity with Sharia principles.",
+      "keywords": [
+        "Sharia supervisory board technology approval",
+        "SSB IT oversight Islamic finance",
+        "Sharia compliance technology review",
+        "Islamic banking system approval",
+        "Sharia board fintech review",
+        "halal technology certification",
+        "Sharia compliant software",
+        "Islamic finance system review",
+        "Sharia supervisory oversight digital",
+        "SSB fintech approval process"
+      ],
+      "requiredEvidence": [
+        "Sharia Supervisory Board approval requirement documented in SRS constraint requirements (REQ-CON-*) citing AAOIFI Governance Standards",
+        "SSB review and approval process referenced in project scope documentation",
+        "Sharia compliance sign-off milestone referenced in SRS constraint requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "AAOIFI-GOV-002",
+      "title": "Prohibition of Riba in System Logic",
+      "description": "Software systems must not embed or calculate interest-based returns (riba) in any financial transaction logic. Profit-sharing, markup, and lease-based transaction models must be implemented per AAOIFI Sharia Standards.",
+      "keywords": [
+        "riba prohibition banking system",
+        "interest-free banking software",
+        "profit sharing mudarabah calculation",
+        "murabaha markup calculation system",
+        "ijara lease calculation Islamic",
+        "sukuk profit distribution system",
+        "Islamic finance transaction logic",
+        "non-interest banking system",
+        "Sharia compliant return calculation",
+        "AAOIFI transaction standards compliance"
+      ],
+      "requiredEvidence": [
+        "Transaction logic description confirming no interest calculation in SRS functional requirements (REQ-FUNC-*)",
+        "Profit-sharing and markup calculation models described in SDS Component Specifications section",
+        "Sharia-compliant transaction type definitions in SRS functional requirements with acceptance criteria"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "AAOIFI-GOV-003",
+      "title": "Zakat Calculation and Distribution Module",
+      "description": "Islamic financial institutions with asset management functions must provide a Zakat calculation engine compliant with AAOIFI FAS standards, enabling accurate calculation and distribution of Zakat obligations.",
+      "keywords": [
+        "zakat calculation system",
+        "AAOIFI zakat standard",
+        "zakat distribution module",
+        "Islamic wealth management zakat",
+        "nisab calculation system",
+        "zakat on financial assets",
+        "AAOIFI FAS zakat",
+        "obligatory almsgiving system",
+        "Islamic banking zakat engine",
+        "charitable distribution zakat"
+      ],
+      "requiredEvidence": [
+        "Zakat calculation requirements documented in SRS functional requirements (REQ-FUNC-*) where asset management is in scope",
+        "Zakat engine component described in SDS Component Specifications section where applicable",
+        "AAOIFI FAS Zakat standard reference cited in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "AAOIFI-AUDIT-001",
+      "title": "Sharia Audit Trail for Financial Transactions",
+      "description": "All financial transactions in Islamic banking systems must maintain a complete and immutable audit trail enabling Sharia auditors to verify compliance of each transaction with approved Sharia contract types.",
+      "keywords": [
+        "Sharia audit trail banking",
+        "Islamic finance transaction log",
+        "Sharia compliance audit system",
+        "murabaha transaction audit trail",
+        "Islamic contract type logging",
+        "Sharia auditor access system",
+        "Islamic banking immutable log",
+        "transaction Sharia certificate trail",
+        "AAOIFI audit standard",
+        "Islamic finance compliance log"
+      ],
+      "requiredEvidence": [
+        "Sharia audit trail requirements documented in SRS non-functional requirements (REQ-NFUNC-*) and constraint requirements (REQ-CON-*)",
+        "Audit logging component with Sharia contract type tagging described in SDS Security Architecture — Audit Logging subsection",
+        "Sharia auditor access and reporting functionality described in SDS Component Specifications section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "AAOIFI-DATA-001",
+      "title": "Accounting Standards Compliance (AAOIFI FAS)",
+      "description": "Financial reporting and accounting modules must comply with AAOIFI Financial Accounting Standards (FAS), including correct recognition and measurement of Islamic finance instruments such as murabaha, ijarah, musharakah, and sukuk.",
+      "keywords": [
+        "AAOIFI financial accounting standard",
+        "AAOIFI FAS compliance",
+        "Islamic accounting standards",
+        "murabaha accounting recognition",
+        "ijarah accounting treatment",
+        "musharakah financial reporting",
+        "sukuk accounting AAOIFI",
+        "Islamic instrument recognition",
+        "profit distribution accounting Islamic",
+        "AAOIFI IFRS convergence"
+      ],
+      "requiredEvidence": [
+        "AAOIFI FAS compliance requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Financial reporting module and accounting treatment described in SDS Component Specifications section",
+        "AAOIFI accounting standard references cited in SRS functional requirements (REQ-FUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "AAOIFI-DATA-002",
+      "title": "Profit and Loss Sharing Calculation Accuracy",
+      "description": "Systems implementing mudarabah, musharakah, or diminishing musharakah contracts must calculate profit and loss sharing ratios with full auditability, traceable to the approved contract terms.",
+      "keywords": [
+        "mudarabah profit calculation",
+        "musharakah profit loss sharing",
+        "profit sharing ratio Islamic bank",
+        "diminishing musharakah calculation",
+        "Islamic finance profit distribution",
+        "PLS calculation audit Islamic",
+        "profit sharing agreement system",
+        "loss allocation Islamic finance",
+        "mudarabah rabb ul maal",
+        "wakala fee calculation Islamic"
+      ],
+      "requiredEvidence": [
+        "Profit and loss sharing calculation logic documented in SRS functional requirements (REQ-FUNC-*) with acceptance criteria",
+        "Calculation engine for mudarabah/musharakah described in SDS Component Specifications section",
+        "Audit trail for profit distribution decisions referenced in SDS Security Architecture — Audit Logging subsection"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "AAOIFI-SEC-001",
+      "title": "Ethical Investment Screening (Halal Filter)",
+      "description": "Investment and portfolio management systems must implement an ethical screening engine that prevents investment in industries prohibited by Sharia, including alcohol, tobacco, conventional finance, and weapons.",
+      "keywords": [
+        "halal investment screening",
+        "Sharia screening Islamic fund",
+        "prohibited industry filter Islamic",
+        "alcohol tobacco exclusion Islamic",
+        "haram investment exclusion",
+        "ESG Sharia screening",
+        "Islamic equity screening",
+        "socially responsible Islamic investment",
+        "prohibited sector Islamic finance",
+        "halal portfolio management"
+      ],
+      "requiredEvidence": [
+        "Ethical investment screening requirements documented in SRS functional requirements (REQ-FUNC-*) where investment management is in scope",
+        "Halal filter component described in SDS Component Specifications section with prohibited sector list",
+        "Screening update mechanism and data source referenced in SDS Integration Points section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "AAOIFI-GOV-004",
+      "title": "Islamic Finance Product Documentation",
+      "description": "Every Islamic financial product offered through the system must be backed by AAOIFI-compliant product documentation including approved contract templates, Sharia certificates, and fatwa references.",
+      "keywords": [
+        "Islamic product documentation",
+        "AAOIFI contract template",
+        "Sharia certificate product",
+        "fatwa reference Islamic product",
+        "Islamic finance product approval",
+        "takaful product documentation",
+        "sukuk product documentation AAOIFI",
+        "Islamic product disclosure",
+        "Sharia compliant product catalogue",
+        "Islamic finance product governance"
+      ],
+      "requiredEvidence": [
+        "Product documentation requirements documented in SRS functional requirements (REQ-FUNC-*)",
+        "Product document management component described in SDS Component Specifications section",
+        "Sharia certificate storage and versioning referenced in SDS Database Schema section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "AAOIFI-RISK-001",
+      "title": "Displaced Commercial Risk and Rate of Return Risk",
+      "description": "Systems managing investment accounts must implement controls to identify and report displaced commercial risk and rate of return risk per AAOIFI Governance Standard No. 1.",
+      "keywords": [
+        "displaced commercial risk Islamic",
+        "rate of return risk Islamic bank",
+        "AAOIFI governance standard 1",
+        "investment account risk Islamic",
+        "PSIA risk management",
+        "profit equalization reserve Islamic",
+        "investment risk reserve Islamic bank",
+        "unrestricted investment account risk",
+        "Islamic bank income smoothing",
+        "AAOIFI governance risk"
+      ],
+      "requiredEvidence": [
+        "Displaced commercial risk and rate of return risk controls documented in SRS non-functional requirements (REQ-NFUNC-*) where investment accounts are in scope",
+        "Risk calculation and reporting component described in SDS Component Specifications section",
+        "AAOIFI Governance Standard No. 1 cited in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "AAOIFI-REPORT-001",
+      "title": "Islamic Financial Reporting and Disclosure",
+      "description": "Financial reporting systems must support AAOIFI-compliant financial statements including statements of financial position, income, changes in equity, cash flows, and restricted and unrestricted investment accounts.",
+      "keywords": [
+        "AAOIFI financial statement",
+        "Islamic bank financial report",
+        "investment account disclosure AAOIFI",
+        "Islamic finance regulatory reporting",
+        "Sharia compliant financial disclosure",
+        "AAOIFI balance sheet",
+        "restricted investment account report",
+        "unrestricted investment disclosure",
+        "Islamic financial institution reporting",
+        "AAOIFI transparency requirement"
+      ],
+      "requiredEvidence": [
+        "AAOIFI financial reporting requirements documented in SRS functional requirements (REQ-FUNC-*)",
+        "Financial reporting module and statement generation described in SDS Component Specifications section",
+        "AAOIFI standard references cited in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "high"
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+REQUEST FOR PROPOSAL
+Vendor Management & Procurement Portal
+Issued by: Ministry of Finance — Procurement Directorate
+RFP Reference: MoF-IT-2026-014
+Date: March 2026
+Submission Deadline: April 15, 2026
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. BACKGROUND
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Ministry of Finance currently manages vendor registrations, procurement approvals,
+and contract lifecycle tracking through a combination of spreadsheets, email chains,
+and a legacy system that has been out of support since 2021. This results in:
+
+- Duplicate vendor registrations across departments
+- Approval bottlenecks averaging 12–18 days per procurement request
+- No audit trail for contract amendments
+- Manual effort estimated at 3,200 person-hours per year for data entry alone
+- Inconsistent vendor qualification records spread across four databases
+- No central repository for contract amendments, leading to repeated legal review
+- Inability to produce audit-ready reports without 5–7 days of manual consolidation
+- No visibility into procurement cycle KPIs for Ministry leadership
+- Repeated regulatory findings from the Auditor General's office regarding
+  incomplete or missing procurement documentation
+
+The Ministry seeks a modern, web-based Vendor Management & Procurement Portal to
+replace these manual processes and serve approximately 400 internal staff users
+across 12 departments, plus an unrestricted number of external registered vendors.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. OBJECTIVES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Ministry of Finance requires the system to:
+
+a) Centralise vendor registration and qualification with a self-service vendor portal
+b) Automate multi-stage procurement approval workflows with configurable rules
+c) Maintain a complete, immutable audit trail of all procurement decisions
+d) Integrate with the Ministry's existing SAP-based financial system for budget checks
+e) Provide real-time reporting dashboards for procurement KPIs and spend analytics
+f) Comply with PPRA 2024 procurement rules and Government of Pakistan data residency requirements
+g) Provide secure, standards-based user authentication, account lifecycle management,
+   and self-service password recovery for all user populations
+h) Establish a consistent, role-based access control model across all modules
+i) Deliver full bilingual support in English and Urdu across every user-facing screen
+j) Reduce average procurement cycle time by at least 50% within 12 months of go-live
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. SCOPE OF WORK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 Vendor Portal (External-Facing)
+- Online vendor registration with email verification and CAPTCHA protection
+- Vendor profile management (company details, address, banking, tax, contacts)
+- Document upload for SECP registration, NTN, financial statements, and ISO certifications
+- Document re-upload with version history and automatic expiry detection
+- Vendor qualification status tracking with automated notifications
+- Re-registration reminder workflows (annual renewal with 90/60/30/7-day reminders)
+- Vendor dashboard showing open RFQs/RFPs, bid status, and qualification alerts
+- Notification preference centre (email, SMS, in-app)
+- Vendor-initiated account deactivation request (subject to Ministry review)
+- View of historical bid submissions and outcomes
+
+3.2 Procurement Workflow Engine (Internal)
+- Requisition creation and department-level approval routing
+- Draft-and-save requisitions with auto-save every 60 seconds
+- Reusable requisition templates maintained by each department
+- Configurable approval tiers based on procurement value thresholds
+  (< PKR 500K: 1-tier; PKR 500K–5M: 2-tier; > PKR 5M: 3-tier + Finance Director sign-off)
+- Approver delegation for scheduled leave, with automatic reversion
+- Requisition recall and withdrawal before approval completion
+- Approval escalation after configurable SLA expiry (default 5 working days)
+- RFQ/RFP issuance and bid comparison module
+- Sealed bid submission enforcing financial-proposal confidentiality
+- Bid evaluation using configurable weighted scoring criteria
+- Purchase order generation with SAP integration
+- Purchase order amendment workflow with change reason and impact analysis
+
+3.3 Contract Management
+- Contract creation from approved POs with template library
+- Template version control and approval workflow for template changes
+- Milestone and payment schedule tracking
+- Bulk milestone import via CSV for large infrastructure contracts
+- Amendment history with digital signature support (electronic signature capture)
+- Amendment reason codes aligned with PPRA 2024 Article 45
+- Contract renewal negotiation workflow with variation tracking
+- Contract expiry alerts (90/30/7-day notifications)
+- Contract closure checklist (final payment, deliverable confirmation, vendor review)
+
+3.4 Audit & Compliance
+- Immutable audit log for all system actions (PPRA Article 44 compliance)
+- Audit log integrity verified by cryptographic hash chaining (tamper-evident)
+- Role-based access control (Requester, Approver, Finance Officer, Admin, Auditor)
+- Conflict-of-interest declaration workflow for approvers
+- Export to PDF/Excel for external audit submissions
+- Audit log retention minimum 7 years with archival export at retention end
+- Mandatory retention-lock: audit logs cannot be edited or deleted by any role
+- Per-user access history available to Admin and Auditor roles
+
+3.5 Reporting & Analytics
+- Real-time spend analytics dashboard (by department, vendor, category)
+- Procurement cycle time metrics
+- Vendor performance scorecard
+- Custom report builder with scheduled email delivery
+- Saved reports with role-based share permissions
+- Drill-down from summary to transaction-level detail with one click
+- Pinned/favourite widgets per user
+- Scheduled distribution lists with opt-out and subscription management
+- Export size limit: configurable, default 50,000 rows per export
+
+3.6 User Account & Authentication Management
+This is a distinct functional domain and shall be delivered for every user
+population (external vendors and all internal roles) with equivalent security
+guarantees. The scope below is non-negotiable and applies uniformly.
+
+3.6.1 Registration and Identity Establishment
+- Vendor self-service registration with mandatory email verification (link expires
+  within 24 hours, single use)
+- Vendor registration CAPTCHA and rate limiting (maximum 3 registrations per IP
+  per 24 hours) to prevent automated signup abuse
+- Internal user accounts provisioned by Ministry IT Admin; no self-service
+  registration for internal roles
+- First-time login shall force a password change before any other action is allowed
+- Mandatory acceptance of Terms of Use, Privacy Policy, and Data Processing Consent
+  at registration, with versioned records stored for audit purposes
+- Users shall be required to re-accept updated Terms or Privacy Policy versions on
+  next login after policy publication
+
+3.6.2 Login and Session Management
+- Login using username or verified email plus password as the primary credential
+- Multi-factor authentication (MFA) mandatory for all internal users; vendors may
+  opt into MFA voluntarily but vendor MFA becomes mandatory for bid submission
+- MFA methods shall include: Time-based One-Time Password (TOTP) via authenticator
+  app (e.g. Google Authenticator, Microsoft Authenticator), email OTP, and SMS OTP
+- "Remember this device for 30 days" option using a signed, HTTP-only device token
+- Session timeout after 15 minutes of inactivity with a 2-minute warning dialog
+  presenting an "Extend Session" button
+- Concurrent session limit of 3 per user (configurable by Admin)
+- Active session list viewable by the user with remote revoke capability
+  ("Sign out all other sessions")
+- Logout shall invalidate the current session server-side; "logout everywhere"
+  shall invalidate all active sessions for the user
+- Failed login attempts shall trigger an email notification to the account
+  holder after 3 failed attempts within 15 minutes
+- Account lockout after 5 consecutive failed login attempts within 15 minutes;
+  lockout duration 15 minutes auto-unlock, or immediate admin unlock via
+  Ministry IT helpdesk
+
+3.6.3 Password Recovery and Reset
+- "Forgot password" link on login screen initiates a reset workflow
+- Reset token delivered via the user's verified email address; token single-use
+  with 15-minute expiry
+- Alternate SMS-based reset flow available for internal users with a registered
+  mobile number
+- Reset link shall land on a protected reset page requiring the token and a new
+  password conforming to policy
+- After reset, all existing sessions for the user shall be invalidated; the user
+  shall be required to log in fresh with the new credentials
+- Email notification sent to the user after a successful password reset
+  ("Your password was changed on <timestamp> from <IP>. If this was not you,
+  contact helpdesk immediately.")
+
+3.6.4 In-Session Account Self-Service
+- Change password (while authenticated) requires current password, new password,
+  and confirmation — new password subject to full policy enforcement
+- Change username — subject to uniqueness constraint and, for internal users,
+  Admin approval before it takes effect
+- Change email — new email must be verified by a confirmation link sent to the
+  new address; old email remains active until verification completes
+- Change phone number — requires verification via SMS OTP
+- Update profile (display name, phone, department, preferred language,
+  avatar image up to 2 MB PNG/JPG)
+- View own login history (date/time, IP address, device, success/failure)
+  for the trailing 12 months
+- Self-service account deactivation request — for vendors only; internal users
+  must request deactivation through their department head
+
+3.6.5 MFA Lifecycle Management
+- Enrol a new MFA factor (TOTP, email, SMS) from the user's security settings
+- Set a primary MFA method and one fallback method
+- View and revoke enrolled factors (e.g. a lost authenticator device)
+- Generate one-time recovery codes (10 codes, single-use each) at MFA enrolment;
+  user must acknowledge they have stored them before proceeding
+- Regenerate recovery codes, invalidating previously generated codes
+- Admin-assisted MFA reset requires identity verification in person or via a
+  Ministry-approved video call; reset action is logged in the audit trail
+
+3.6.6 Password Policy and Credential Hygiene
+- Minimum 12 characters
+- At least one uppercase, one lowercase, one digit, one special character
+- Maximum 128 characters
+- Disallow the user's username, display name, or email local-part from appearing
+  in the password
+- Disallow the 10,000 most common passwords (checked against a curated blocklist)
+- Password expiry every 90 days (internal users); every 180 days (vendors)
+- Password history: cannot reuse last 10 passwords
+- Minimum password age 1 day (to prevent rapid cycling to defeat history)
+- On-screen password strength meter during password entry
+- Password stored using a modern adaptive hash (Argon2id or bcrypt cost ≥ 12);
+  never plaintext, never reversibly encrypted
+
+3.6.7 Account Administration (Admin Role)
+- Create, view, edit, deactivate, and reactivate internal user accounts
+- Assign and reassign roles (Requester, Approver, Finance Officer, Admin, Auditor)
+- Unlock locked accounts
+- Force password reset on next login for a given user
+- Force MFA re-enrolment for a given user
+- Revoke all active sessions for a given user
+- View system-wide login history, filtered by user, date, success/failure
+- Export user directory with role assignments for audit purposes
+- Admin actions on user accounts are irrevocably logged in the audit trail with
+  the acting Admin's identity and the target user's identifier
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. USE CASES (INDICATIVE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The following use cases are indicative of the workflows the system shall
+support. The vendor is expected to expand and detail these in the SRS
+deliverable using the Stimulus-Response or equivalent IEEE 830 convention.
+
+UC-01  Vendor Registration (External Vendor)
+UC-02  Vendor Email Verification (External Vendor)
+UC-03  Vendor Login with Optional MFA (External Vendor)
+UC-04  Internal User First-Time Login with Forced Password Change (All Internal Roles)
+UC-05  Internal User Login with Mandatory MFA (All Internal Roles)
+UC-06  Forgot Password — Email-based Reset (All Users)
+UC-07  Forgot Password — SMS-based Reset (Internal Users)
+UC-08  Change Password (Authenticated) (All Users)
+UC-09  Change Username (All Users, with approval for internal)
+UC-10  Change Email Address (All Users)
+UC-11  Change Phone Number (All Users)
+UC-12  Update Profile Details (All Users)
+UC-13  Enrol MFA (TOTP) (All Users)
+UC-14  Enrol MFA (SMS/Email) (All Users)
+UC-15  Regenerate Recovery Codes (All Users)
+UC-16  View and Revoke Active Sessions (All Users)
+UC-17  Logout Current Session (All Users)
+UC-18  Logout All Sessions (All Users)
+UC-19  View Own Login History (All Users)
+UC-20  Vendor Document Upload and Re-upload (External Vendor)
+UC-21  Vendor Qualification Status Notification (External Vendor)
+UC-22  Create Procurement Requisition (Requester)
+UC-23  Save Requisition as Draft / Auto-save (Requester)
+UC-24  Recall Requisition Before Approval (Requester)
+UC-25  Submit Requisition for Approval (Requester)
+UC-26  Approve / Reject Requisition (Approver)
+UC-27  Submit Conflict-of-Interest Declaration (Approver)
+UC-28  Delegate Approval Authority (Approver)
+UC-29  Finance Director Sign-off on High-Value PO (Finance Officer)
+UC-30  Issue RFQ/RFP to Qualified Vendors (Finance Officer)
+UC-31  Sealed Bid Submission (External Vendor)
+UC-32  Bid Evaluation with Weighted Scoring (Finance Officer)
+UC-33  Generate Purchase Order with SAP Posting (Finance Officer)
+UC-34  Amend Purchase Order (Finance Officer)
+UC-35  Create Contract from PO (Finance Officer)
+UC-36  Bulk Import Contract Milestones (Finance Officer)
+UC-37  Apply e-Stamp to Contract (Finance Officer)
+UC-38  Record Contract Amendment with Digital Signature (Finance Officer)
+UC-39  Contract Expiry Notification Escalation (Finance Officer, Approver)
+UC-40  View Real-time Spend Dashboard (Finance Officer, Admin)
+UC-41  Drill-down from Dashboard to Transaction (Finance Officer, Admin, Auditor)
+UC-42  Custom Report Builder with Scheduled Delivery (Finance Officer, Admin)
+UC-43  Export Audit Log for Period (Auditor, Admin)
+UC-44  Verify Audit Log Hash Chain Integrity (Auditor)
+UC-45  Admin — Create Internal User Account (Admin)
+UC-46  Admin — Assign / Reassign Role (Admin)
+UC-47  Admin — Unlock User Account (Admin)
+UC-48  Admin — Force Password Reset (Admin)
+UC-49  Admin — Force MFA Re-enrolment (Admin)
+UC-50  Admin — Revoke All Sessions for a User (Admin)
+UC-51  Admin — Deactivate / Reactivate User (Admin)
+UC-52  Admin — MFA Reset with Identity Verification (Admin)
+UC-53  Session Timeout Warning and Extend (All Users)
+UC-54  Toggle UI Language Between English and Urdu (All Users)
+UC-55  Accept Updated Terms of Use on Next Login (All Users)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. TECHNICAL REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 Hosting
+- System must be hosted on Government of Pakistan approved on-premise infrastructure
+  or a CLOUD-PKI compliant cloud provider with data residency in Pakistan
+- Vendors must not have access to government data stored on external servers
+- Disaster recovery site shall be geographically separated from the primary site
+  by at least 100 km, with RPO ≤ 1 hour and RTO ≤ 4 hours
+- Environment separation: development, staging/UAT, and production environments
+  shall be physically and logically isolated with independent access controls
+
+5.2 Security
+- Multi-factor authentication mandatory for all internal users
+- End-to-end encryption for document uploads and contract storage
+- Penetration testing report required before go-live; all critical and high
+  findings remediated
+- OWASP Top 10 (2021) compliance mandatory across web and API surfaces
+- OWASP API Security Top 10 compliance mandatory for all exposed APIs
+- All passwords hashed with Argon2id or bcrypt cost ≥ 12
+- All sessions bound to client IP and user agent; session cookies HTTP-only,
+  Secure, SameSite=Lax
+- CSRF protection on all state-changing endpoints via synchronizer tokens
+- Content Security Policy header enforced with strict default-src
+- HTTP Strict Transport Security with min-age ≥ 1 year
+- Protection against account enumeration: identical user-facing responses for
+  existent and non-existent usernames/emails on login and reset flows
+- Rate limiting: login 5 req/min/IP, password reset 3 req/hour/account,
+  API 100 req/min per authenticated user, 20 req/min per unauthenticated client
+
+5.3 Integration
+- SAP ECC 6.0 integration for budget availability checks and PO posting
+- National Identity Database (NADRA) API for vendor NIC verification
+- Pakistan Post e-stamp API for digital contract stamping
+- Email/SMS notifications via SMTP and SMS gateway
+- OAuth 2.0 / OpenID Connect support for potential future SSO integration with
+  the Federal Government Enterprise IAM platform (not in current scope but
+  must not be architecturally precluded)
+
+5.4 Performance
+- System must support 400 concurrent users with < 3 second page load times at p95
+- Search operations shall return results in < 2 seconds at p95 under full load
+- 99.5% uptime SLA required during government working hours (8am–6pm PKT)
+- Document storage capacity: minimum 10TB expandable
+- Login throughput: sustained 50 logins/second with < 1 second response
+
+5.5 Accessibility and Usability
+- Bilingual interface (English and Urdu) across every user-facing screen,
+  including authentication flows
+- RTL layout correctness for Urdu
+- WCAG 2.1 Level AA conformance for all user-facing interfaces
+- Keyboard-only navigation for all workflows including login and MFA
+- Screen reader support for labels, form errors, and dynamic content
+
+5.6 Browser and Device Support
+- Current and immediately preceding major versions of Chrome, Firefox, Edge, Safari
+- Responsive layout for desktop, tablet, and mobile viewports
+- No ActiveX, Flash, Java applet, or browser plugin dependencies
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. BUSINESS RULES (INDICATIVE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BR-01  No vendor may receive an RFQ or RFP unless their qualification status is "Qualified" and not expired
+BR-02  An approver may not approve a requisition in which they or a first-degree relative have a declared interest
+BR-03  Requisitions above PKR 5,000,000 require Finance Director sign-off in addition to department approval tiers
+BR-04  Contract amendments that increase total value by more than 15% require re-approval at the original approval tier
+BR-05  Audit log entries are immutable; any attempt to modify or delete shall be rejected and logged as a security event
+BR-06  Vendor re-registration must be completed annually; bid submission is disabled after expiry until re-registration is accepted
+BR-07  A user may have only one active primary MFA method at a time
+BR-08  Password reset tokens are single-use and expire 15 minutes after issuance
+BR-09  Deactivated user accounts retain their audit history permanently
+BR-10  Display of any monetary value shall include the currency code and use thousands separators per Pakistani convention
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. DELIVERABLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The vendor shall deliver:
+1. Fully functional web portal (vendor-facing and internal)
+2. Mobile-responsive design (tablet and desktop)
+3. SAP integration module with test results
+4. NADRA verification integration with test results
+5. Pakistan Post e-Stamp integration with test results
+6. Data migration from legacy system (approximately 2,400 vendor records)
+7. User training materials and 2-day training sessions for 50 key staff
+8. Administrator operations runbook covering user management, MFA reset,
+   backup/restore, and incident response
+9. End-user quick-reference guides for vendor self-service and each internal role
+10. 12-month warranty and support post go-live
+11. Full source code and technical documentation
+12. OpenAPI 3.0 specifications for all exposed interfaces
+13. Database schema documentation with entity-relationship diagrams
+14. Security architecture document evidencing SBP-2024 and ISO 27001 controls
+15. Penetration test report and remediation evidence
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. TIMELINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Project kick-off: May 1, 2026
+- Identity & Access Management module beta: June 15, 2026
+- Vendor portal beta: July 1, 2026
+- Internal portal beta: August 1, 2026
+- UAT completion: September 15, 2026
+- Go-live: October 1, 2026
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. STAKEHOLDERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Project Sponsor: Additional Secretary (Finance), Mr. Khalid Mehmood
+- IT Lead: Director IT, Ms. Sana Baig
+- Procurement Lead: Director Procurement, Mr. Tariq Hussain
+- Information Security Officer: Mr. Asad Raza (accountable for SBP-2024 evidence)
+- Compliance Officer: Ms. Ayesha Malik (PPRA-2024 adherence)
+- External Auditor: Auditor General of Pakistan representative (observer role)
+- End Users: ~400 staff across 12 departments
+- External Vendors: estimated 2,400 existing + new registrations post go-live
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. EVALUATION CRITERIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Proposals will be evaluated on:
+- Technical approach and solution architecture (40%)
+- Vendor experience with government portals in Pakistan (20%)
+- Cost and value for money (25%)
+- Implementation timeline and project plan (15%)
+
+END OF RFP

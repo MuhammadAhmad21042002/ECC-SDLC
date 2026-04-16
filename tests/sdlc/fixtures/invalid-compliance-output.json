@@ -1,0 +1,27 @@
+{
+  "mode": "requirements",
+  "complianceFlags": [
+    {
+      "frameworkCode": "FAKE-FRAMEWORK",
+      "controlId": "",
+      "controlTitle": "",
+      "triggeredBy": "INVALID-ID",
+      "keyword": "",
+      "severity": "unknown",
+      "requiredEvidence": [],
+      "status": "unknown-status",
+      "detectedAt": "not-a-date"
+    }
+  ],
+  "requirementUpdates": [
+    {
+      "id": "INVALID-ID"
+    }
+  ],
+  "summary": {
+    "totalScanned": 4,
+    "flagged": 5,
+    "bySeverity": { "critical": 3, "high": 2, "medium": 0, "low": 0 },
+    "byFramework": {}
+  }
+}

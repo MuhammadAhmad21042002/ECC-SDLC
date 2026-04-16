@@ -1,0 +1,584 @@
+{
+  "frameworkId": "SBP-2024",
+  "frameworkName": "State Bank of Pakistan IT Governance Framework 2024",
+  "version": "2024.1",
+  "effectiveDate": "2024-01-01",
+  "applicability": "All licensed banks, microfinance institutions, and payment service providers operating under SBP jurisdiction in Pakistan",
+  "controls": [
+    {
+      "controlId": "SBP-SEC-001",
+      "title": "Data Encryption at Rest",
+      "description": "All customer financial data stored in databases, file systems, or backup media must be encrypted using SBP-approved cryptographic algorithms.",
+      "keywords": [
+        "data at rest encryption",
+        "AES-256 encryption",
+        "database encryption standard",
+        "customer data encryption",
+        "financial data encryption",
+        "backup media encryption",
+        "column-level encryption",
+        "transparent data encryption",
+        "encrypted storage requirement",
+        "cryptographic key management"
+      ],
+      "requiredEvidence": [
+        "Encryption algorithm and key length documented in SDS Security Architecture — Data Protection subsection",
+        "Key management policy specifying rotation schedule, HSM/KMS storage, and access controls documented in SDS Security Architecture section",
+        "Database encryption configuration referenced in SDS Database Schema section",
+        "Backup encryption standard documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-SEC-002",
+      "title": "Multi-Factor Authentication for System Access",
+      "description": "All users accessing banking systems, admin panels, and sensitive financial modules must authenticate using at least two independent authentication factors.",
+      "keywords": [
+        "multi-factor authentication",
+        "two-factor authentication",
+        "MFA enforcement banking",
+        "OTP-based login",
+        "biometric authentication banking",
+        "hardware token authentication",
+        "privileged user authentication",
+        "admin panel access control",
+        "authentication factor verification",
+        "secure login mechanism"
+      ],
+      "requiredEvidence": [
+        "MFA policy and supported factor types documented in SDS Security Architecture — Authentication subsection",
+        "Authentication flow diagram in SDS Section 1.1 Architecture Diagram showing MFA enforcement points",
+        "Admin and privileged user MFA requirements in SRS functional requirements (REQ-FUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-SEC-003",
+      "title": "Data Transmission Encryption",
+      "description": "All data transmitted between system components, client applications, and external integrations must use approved transport layer security protocols.",
+      "keywords": [
+        "TLS 1.2 enforcement",
+        "TLS 1.3 protocol",
+        "data in transit encryption",
+        "transport layer security banking",
+        "SSL certificate management",
+        "encrypted API communication",
+        "HTTPS enforcement banking",
+        "end-to-end encryption",
+        "network traffic encryption",
+        "cipher suite configuration"
+      ],
+      "requiredEvidence": [
+        "TLS version requirements and approved cipher suites documented in SDS Security Architecture — Data Protection subsection",
+        "API endpoint security confirming HTTPS enforcement documented in SDS API Contracts section",
+        "Certificate management policy referenced in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-SEC-004",
+      "title": "Privileged Access Management",
+      "description": "Privileged accounts with elevated system access must be governed by a formal access management policy including just-in-time access, session recording, and periodic review.",
+      "keywords": [
+        "privileged access management",
+        "privileged account control",
+        "just-in-time access provisioning",
+        "superuser account management",
+        "database administrator access control",
+        "system administrator privileges",
+        "privileged session recording",
+        "root account restrictions",
+        "elevated access approval workflow",
+        "access privilege review cycle"
+      ],
+      "requiredEvidence": [
+        "Privileged access management policy documented in SDS Security Architecture — Authorization subsection",
+        "Role definitions for privileged accounts documented in SDS Component Specifications section",
+        "Periodic access review process referenced in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-SEC-005",
+      "title": "Security Incident Response Plan",
+      "description": "A documented security incident response plan must exist covering detection, containment, eradication, and recovery for cyber security events with SBP breach notification timelines.",
+      "keywords": [
+        "security incident response",
+        "cyber incident management banking",
+        "breach notification SBP",
+        "incident containment protocol",
+        "security event escalation",
+        "data breach response plan",
+        "incident response team banking",
+        "security operations center",
+        "cyber threat remediation",
+        "incident post-mortem process"
+      ],
+      "requiredEvidence": [
+        "Incident response procedure with SBP breach notification timeline documented in SRS constraint requirements (REQ-CON-*)",
+        "Security incident escalation path documented in SDS Security Architecture section",
+        "SOC integration or incident detection mechanism described in SDS Integration Points section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-SEC-006",
+      "title": "Network Segmentation and Perimeter Security",
+      "description": "Banking system infrastructure must implement network segmentation separating production, testing, and management networks with firewall controls at each boundary.",
+      "keywords": [
+        "network segmentation banking",
+        "banking firewall policy",
+        "DMZ architecture banking",
+        "production network isolation",
+        "network perimeter security",
+        "inter-network access controls",
+        "VLAN segmentation banking",
+        "intrusion detection system banking",
+        "network access control list",
+        "network monitoring banking"
+      ],
+      "requiredEvidence": [
+        "Network segmentation architecture described in SDS Architecture Overview section and Section 1.1 Architecture Diagram",
+        "Firewall and network access control requirements documented in SDS Security Architecture section",
+        "Intrusion detection requirement referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-DATA-001",
+      "title": "Data Residency and Localisation",
+      "description": "All customer financial data and personally identifiable information of Pakistani citizens must be stored on servers physically located within Pakistan.",
+      "keywords": [
+        "data residency requirements",
+        "data localisation policy",
+        "Pakistan-based data storage",
+        "local data centre requirement",
+        "offshore data prohibition",
+        "customer data sovereignty",
+        "geographic data restriction",
+        "in-country data hosting",
+        "cross-border data transfer restriction",
+        "data centre location compliance"
+      ],
+      "requiredEvidence": [
+        "Data residency policy documented in SRS constraint requirements (REQ-CON-*) citing SBP IT Governance Framework 2024",
+        "Hosting provider and data centre location specified in SDS Integration Points section",
+        "Cross-border data transfer restrictions documented in SDS Security Architecture — Data Protection subsection"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-DATA-002",
+      "title": "Customer Data Classification and Handling",
+      "description": "All customer data must be classified by sensitivity level and handled according to defined procedures for each classification tier.",
+      "keywords": [
+        "data classification policy banking",
+        "PII data handling banking",
+        "sensitive financial data classification",
+        "customer data categorisation",
+        "personally identifiable information",
+        "financial record classification",
+        "data sensitivity levels",
+        "confidential customer data management",
+        "data labelling standards",
+        "information classification scheme"
+      ],
+      "requiredEvidence": [
+        "Data classification tiers and handling rules documented in SDS Security Architecture — Data Protection subsection",
+        "PII fields identified and annotated in SDS Database Schema section",
+        "Data handling procedures referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-DATA-003",
+      "title": "Data Retention and Secure Disposal",
+      "description": "Customer financial records must be retained for the regulatory minimum period and securely disposed of upon expiry per an approved retention schedule.",
+      "keywords": [
+        "data retention schedule banking",
+        "financial record retention period",
+        "data disposal policy",
+        "regulatory retention requirement",
+        "secure data deletion banking",
+        "data lifecycle management",
+        "transaction record archival",
+        "data purge procedure",
+        "electronic record management",
+        "retention period compliance"
+      ],
+      "requiredEvidence": [
+        "Data retention periods per data category documented in SRS constraint requirements (REQ-CON-*)",
+        "Secure disposal mechanism described in SDS Security Architecture — Data Protection subsection",
+        "Archival strategy for long-term financial records referenced in SDS Database Schema section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "SBP-DATA-004",
+      "title": "Data Loss Prevention Controls",
+      "description": "Technical and procedural controls must prevent unauthorised exfiltration of customer financial data through email, removable media, or unauthorised network channels.",
+      "keywords": [
+        "data loss prevention banking",
+        "data exfiltration prevention",
+        "unauthorised data transfer prevention",
+        "DLP policy enforcement",
+        "removable media controls banking",
+        "email data leakage prevention",
+        "sensitive data monitoring",
+        "data egress controls",
+        "outbound traffic inspection",
+        "data transfer monitoring"
+      ],
+      "requiredEvidence": [
+        "DLP controls documented in SDS Security Architecture — Data Protection subsection",
+        "Network egress controls described in SDS Integration Points section",
+        "Data transfer restrictions referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-DATA-005",
+      "title": "Customer Consent and Privacy Management",
+      "description": "Customer consent for data collection and processing must be obtained, recorded, and managed with mechanisms allowing consent withdrawal.",
+      "keywords": [
+        "customer consent management banking",
+        "data privacy policy banking",
+        "consent withdrawal mechanism",
+        "customer data rights banking",
+        "privacy notice banking system",
+        "personal data processing consent",
+        "opt-out mechanism banking",
+        "consent audit trail",
+        "privacy rights management",
+        "data subject rights"
+      ],
+      "requiredEvidence": [
+        "Customer consent requirements documented in SRS functional requirements (REQ-FUNC-*)",
+        "Consent management component described in SDS Component Specifications section",
+        "Privacy notice and consent UI described in SRS functional requirements with testable acceptance criteria"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-OPS-001",
+      "title": "System Availability and Business Continuity",
+      "description": "Core banking systems must maintain defined uptime SLAs and have tested business continuity plans covering failure scenarios and recovery objectives.",
+      "keywords": [
+        "business continuity plan banking",
+        "disaster recovery banking system",
+        "recovery time objective banking",
+        "recovery point objective",
+        "system availability SLA banking",
+        "high availability banking architecture",
+        "failover mechanism banking",
+        "redundancy requirements banking",
+        "banking system uptime guarantee",
+        "core banking continuity"
+      ],
+      "requiredEvidence": [
+        "Availability SLA and RTO/RPO targets documented in SRS non-functional requirements (REQ-NFUNC-*) with specific banking transaction benchmarks",
+        "High availability and failover architecture described in SDS Architecture Overview section",
+        "Disaster recovery strategy referenced in SDS Security Architecture section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-OPS-002",
+      "title": "Change Management and Release Control",
+      "description": "All changes to production banking systems must follow a formal change management process including impact assessment, approval, and rollback procedures.",
+      "keywords": [
+        "change management process banking",
+        "production deployment approval banking",
+        "release management policy",
+        "change advisory board banking",
+        "rollback procedure banking",
+        "change impact assessment",
+        "emergency change control banking",
+        "production change freeze",
+        "deployment approval workflow",
+        "system change documentation banking"
+      ],
+      "requiredEvidence": [
+        "Change management process referenced in SRS constraint requirements (REQ-CON-*)",
+        "Deployment pipeline and approval gates described in SDS Component Specifications section",
+        "Rollback procedure documented in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-OPS-003",
+      "title": "Patch Management and Vulnerability Remediation",
+      "description": "Security patches for operating systems, middleware, and application frameworks must be applied within defined timeframes based on vulnerability severity.",
+      "keywords": [
+        "patch management policy banking",
+        "vulnerability remediation timeline",
+        "security patch deployment banking",
+        "CVE remediation banking",
+        "software vulnerability scanning banking",
+        "operating system patching banking",
+        "third-party library vulnerability",
+        "penetration testing banking",
+        "vulnerability assessment schedule",
+        "security hardening standard"
+      ],
+      "requiredEvidence": [
+        "Patch management policy with severity-based timelines documented in SRS constraint requirements (REQ-CON-*)",
+        "Technology stack with version management referenced in SDS Component Specifications section",
+        "Vulnerability scanning requirement documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-OPS-004",
+      "title": "Capacity Planning and Performance Management",
+      "description": "Banking systems must undergo regular capacity planning to ensure performance SLAs are met under peak load conditions including month-end processing spikes.",
+      "keywords": [
+        "capacity planning banking system",
+        "peak load banking performance",
+        "transaction throughput capacity",
+        "banking load testing requirement",
+        "performance benchmark banking",
+        "resource utilisation monitoring",
+        "auto-scaling banking configuration",
+        "database performance banking",
+        "banking transaction volume capacity",
+        "month-end processing load"
+      ],
+      "requiredEvidence": [
+        "Performance and scalability requirements with banking transaction volume benchmarks documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Scalability and auto-scaling architecture described in SDS Architecture Overview section",
+        "Load testing requirements referenced in SDS Component Specifications section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "SBP-OPS-005",
+      "title": "Secure Software Development Lifecycle",
+      "description": "All banking software must be developed following a secure SDLC including security requirements, code review, static analysis, and security testing.",
+      "keywords": [
+        "secure software development lifecycle banking",
+        "SSDLC banking application",
+        "secure code review banking",
+        "static application security testing",
+        "OWASP compliance banking",
+        "dynamic application security testing",
+        "security requirements banking",
+        "DevSecOps banking pipeline",
+        "application security standards banking",
+        "security testing banking application"
+      ],
+      "requiredEvidence": [
+        "Secure SDLC requirement documented in SRS constraint requirements (REQ-CON-*) referencing OWASP Top 10",
+        "Security testing requirement documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Code review and SAST integration referenced in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-GOV-001",
+      "title": "IT Governance and Accountability Framework",
+      "description": "A formal IT governance structure must be established with defined roles, responsibilities, and accountability for technology decisions and risk management.",
+      "keywords": [
+        "IT governance framework banking",
+        "technology accountability structure",
+        "IT steering committee banking",
+        "board IT oversight banking",
+        "IT risk ownership banking",
+        "technology governance policy",
+        "digital banking governance",
+        "IT risk appetite statement",
+        "CIO responsibilities SBP",
+        "IT decision authority banking"
+      ],
+      "requiredEvidence": [
+        "IT governance roles and responsibilities documented in SRS constraint requirements (REQ-CON-*)",
+        "System ownership and accountability structure referenced in project scope documentation"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-GOV-002",
+      "title": "Third-Party and Vendor Risk Management",
+      "description": "All third-party technology vendors and outsourced service providers must be assessed for security and operational risk before engagement and monitored continuously.",
+      "keywords": [
+        "third-party risk assessment banking",
+        "vendor security evaluation banking",
+        "outsourcing risk management banking",
+        "cloud service provider assessment banking",
+        "fintech vendor due diligence",
+        "technology vendor contract requirements",
+        "third-party audit rights banking",
+        "vendor concentration risk",
+        "outsourced service monitoring",
+        "supplier security requirements banking"
+      ],
+      "requiredEvidence": [
+        "Third-party vendor risk assessment requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "External integrations and vendor dependencies listed in SDS Integration Points section",
+        "Vendor security requirements referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-GOV-003",
+      "title": "Regulatory Reporting and SBP Returns",
+      "description": "Systems collecting or processing regulatory data must support accurate and timely submission of SBP-mandated returns and reports.",
+      "keywords": [
+        "SBP regulatory reporting",
+        "central bank returns submission",
+        "AML reporting requirements SBP",
+        "suspicious transaction reporting SBP",
+        "financial intelligence unit reporting",
+        "SBP data portal integration",
+        "statutory reporting compliance",
+        "banking regulatory returns",
+        "CNIC verification SBP",
+        "regulatory data submission banking"
+      ],
+      "requiredEvidence": [
+        "Regulatory reporting requirements documented in SRS functional requirements (REQ-FUNC-*) with specific SBP return references",
+        "SBP reporting API or data portal integration documented in SDS Integration Points section",
+        "AML and suspicious activity reporting mechanism described in SDS Component Specifications section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-RISK-001",
+      "title": "Fraud Detection and Prevention Controls",
+      "description": "Real-time fraud detection mechanisms must be implemented for all financial transaction processing with configurable rule engines and alert thresholds.",
+      "keywords": [
+        "fraud detection banking system",
+        "real-time transaction monitoring banking",
+        "fraud prevention controls banking",
+        "anomaly detection banking",
+        "transaction fraud scoring",
+        "suspicious activity detection banking",
+        "financial fraud rules engine",
+        "account takeover prevention",
+        "transaction limit controls banking",
+        "fraud alert mechanism"
+      ],
+      "requiredEvidence": [
+        "Fraud detection requirements documented in SRS functional requirements (REQ-FUNC-*) with specific transaction monitoring rules",
+        "Fraud detection component described in SDS Component Specifications section",
+        "Alert and escalation mechanism documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-RISK-002",
+      "title": "Anti-Money Laundering Compliance",
+      "description": "Systems processing financial transactions must implement AML screening controls including customer due diligence, transaction monitoring, and sanctions list checking.",
+      "keywords": [
+        "anti-money laundering compliance",
+        "AML screening requirements banking",
+        "customer due diligence CDD",
+        "know your customer KYC banking",
+        "sanctions list screening banking",
+        "FATF compliance requirements",
+        "beneficial ownership verification",
+        "politically exposed persons PEP",
+        "transaction monitoring AML",
+        "financial crime compliance banking"
+      ],
+      "requiredEvidence": [
+        "AML and KYC requirements documented in SRS functional requirements (REQ-FUNC-*) referencing SBP AML/CFT Regulations",
+        "AML screening component and sanctions list integration described in SDS Component Specifications section",
+        "PEP and sanctions screening API documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-RISK-003",
+      "title": "Audit Trail and Immutable Logging",
+      "description": "All financial transactions, system access events, and configuration changes must be logged to an immutable audit trail accessible for regulatory inspection.",
+      "keywords": [
+        "immutable audit trail banking",
+        "financial transaction logging",
+        "regulatory audit log banking",
+        "tamper-proof logging banking",
+        "system access audit log",
+        "configuration change audit",
+        "audit log retention banking",
+        "SIEM integration banking",
+        "non-repudiation logging banking",
+        "audit trail integrity verification"
+      ],
+      "requiredEvidence": [
+        "Audit logging requirements with immutability and retention period documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Audit logging component described in SDS Security Architecture — Audit Logging subsection",
+        "SIEM or log aggregation integration referenced in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-RISK-004",
+      "title": "Cybersecurity Risk Assessment",
+      "description": "A formal cybersecurity risk assessment must be conducted before system go-live and periodically thereafter covering threat modelling and risk treatment plans.",
+      "keywords": [
+        "cybersecurity risk assessment banking",
+        "threat modelling banking",
+        "information security risk banking",
+        "cyber risk treatment plan",
+        "VAPT requirements banking",
+        "penetration testing banking system",
+        "security risk register banking",
+        "cyber threat assessment banking",
+        "risk rating methodology banking",
+        "security architecture review banking"
+      ],
+      "requiredEvidence": [
+        "Cybersecurity risk assessment requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Threat model and key risk areas described in SDS Security Architecture section",
+        "Penetration testing and VAPT requirement referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SBP-RISK-005",
+      "title": "Role-Based Access Control and Segregation of Duties",
+      "description": "Access to banking system functions must be governed by role-based access control with segregation of duties enforced for sensitive financial operations.",
+      "keywords": [
+        "role-based access control banking",
+        "segregation of duties banking",
+        "dual control requirement banking",
+        "four-eyes principle banking",
+        "maker-checker workflow banking",
+        "access control matrix banking",
+        "function-level authorisation banking",
+        "transaction authorisation limit",
+        "user role assignment policy banking",
+        "sensitive operation approval banking"
+      ],
+      "requiredEvidence": [
+        "RBAC model and role definitions documented in SDS Security Architecture — Authorization subsection",
+        "Maker-checker or dual-approval workflow described in SDS Component Specifications section",
+        "Segregation of duties requirements documented in SRS functional requirements (REQ-FUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SBP-GOV-004",
+      "title": "IT Asset Management and Inventory",
+      "description": "A complete and current inventory of all IT assets including hardware, software, and cloud resources must be maintained and reviewed periodically.",
+      "keywords": [
+        "IT asset inventory banking",
+        "software asset management banking",
+        "cloud resource inventory banking",
+        "technology asset register",
+        "hardware asset tracking banking",
+        "licence compliance management",
+        "end-of-life software tracking",
+        "shadow IT discovery banking",
+        "configuration management database",
+        "asset lifecycle management banking"
+      ],
+      "requiredEvidence": [
+        "Technology stack and component inventory documented in SDS Component Specifications section",
+        "Third-party libraries and dependencies listed in SDS Component Specifications section with version information",
+        "Cloud resource inventory referenced in SDS Integration Points section"
+      ],
+      "severity": "medium"
+    }
+  ]
+}

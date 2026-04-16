@@ -1,0 +1,408 @@
+{
+  "frameworkId": "PPRA-2024",
+  "frameworkName": "Public Procurement Regulatory Authority Rules 2024",
+  "version": "2024.1",
+  "effectiveDate": "2024-01-01",
+  "applicability": "All federal government ministries, divisions, departments, and agencies procuring goods, services, or works using public funds in Pakistan",
+  "controls": [
+    {
+      "controlId": "PPRA-PROC-001",
+      "title": "Competitive Bidding Requirement",
+      "description": "All public procurement above the prescribed threshold must be conducted through open competitive bidding to ensure transparency and value for money.",
+      "keywords": [
+        "competitive bidding requirement",
+        "open tender process",
+        "public procurement threshold",
+        "bid invitation notice",
+        "tender advertisement requirement",
+        "competitive procurement process",
+        "open market bidding",
+        "public tender publication",
+        "competitive tender requirement",
+        "procurement bidding method"
+      ],
+      "requiredEvidence": [
+        "Procurement method justification documented in SRS constraint requirements (REQ-CON-*) citing PPRA Rule 12 or applicable rule",
+        "Competitive bidding approach referenced in project scope documentation with estimated contract value",
+        "Tender advertisement plan documented in SRS constraint requirements confirming PPRA publication requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PPRA-PROC-002",
+      "title": "Single-Source Procurement Justification",
+      "description": "Procurement from a single source without competitive bidding must be formally justified with documented grounds and approval from the competent authority.",
+      "keywords": [
+        "single-source justification",
+        "sole-source procurement",
+        "direct contracting justification",
+        "non-competitive procurement basis",
+        "sole supplier justification",
+        "limited tender justification",
+        "proprietary procurement justification",
+        "single vendor selection basis",
+        "restricted tender justification",
+        "non-advertised procurement grounds"
+      ],
+      "requiredEvidence": [
+        "Single-source or sole-source justification documented in SRS constraint requirements (REQ-CON-*) with specific PPRA Rule 42 grounds cited",
+        "Competent authority approval for non-competitive procurement referenced in project scope documentation"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PPRA-PROC-003",
+      "title": "Procurement Planning and Budgetary Approval",
+      "description": "All public procurement must be planned in advance with confirmed budgetary allocation and included in the annual procurement plan before initiation.",
+      "keywords": [
+        "annual procurement plan",
+        "procurement planning requirement",
+        "budgetary allocation confirmation",
+        "public funds availability certificate",
+        "procurement initiation approval",
+        "budget head confirmation",
+        "PPRA annual plan publication",
+        "pre-procurement planning",
+        "procurement feasibility assessment",
+        "approved procurement schedule"
+      ],
+      "requiredEvidence": [
+        "Annual procurement plan inclusion referenced in project scope documentation with budget head details",
+        "Budgetary allocation and availability certificate referenced in SRS constraint requirements (REQ-CON-*)",
+        "Procurement initiation approval from competent authority documented in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-EVAL-001",
+      "title": "Bid Evaluation Criteria and Methodology",
+      "description": "Bid evaluation criteria must be predefined, published in the bidding documents, and applied consistently by the bid evaluation committee.",
+      "keywords": [
+        "bid evaluation criteria",
+        "tender evaluation methodology",
+        "technical evaluation criteria",
+        "financial evaluation weighting",
+        "QCBS evaluation method",
+        "Quality Cost-Based Selection",
+        "least cost selection criteria",
+        "bid evaluation committee",
+        "evaluation scorecard procurement",
+        "combined evaluation criteria"
+      ],
+      "requiredEvidence": [
+        "Bid evaluation criteria and weightings documented in SRS constraint requirements (REQ-CON-*) referencing PPRA evaluation rules",
+        "Evaluation methodology (QCBS, LCS, or other) justified in SRS constraint requirements with applicable PPRA rule reference"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PPRA-EVAL-002",
+      "title": "Technical Specification Compliance Verification",
+      "description": "Technical specifications in bidding documents must be generic and non-discriminatory, and bidder compliance with specifications must be systematically verified.",
+      "keywords": [
+        "technical specification compliance",
+        "non-discriminatory specification requirement",
+        "technical compliance letter",
+        "specification compliance verification",
+        "responsive bid determination",
+        "technically qualified bidder",
+        "specification compliance checklist",
+        "technical bid evaluation",
+        "technical responsiveness check",
+        "bidding document specification"
+      ],
+      "requiredEvidence": [
+        "Technical specifications documented as non-discriminatory and generic in SRS functional requirements (REQ-FUNC-*)",
+        "Technical compliance verification checklist referenced in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-EVAL-003",
+      "title": "Bid Opening Transparency",
+      "description": "All bids must be opened publicly at the specified date and time in the presence of bidders or their representatives with minutes of opening recorded.",
+      "keywords": [
+        "public bid opening procedure",
+        "bid opening transparency",
+        "bid opening minutes",
+        "bid opening ceremony",
+        "competitive bid unsealing",
+        "bid opening committee",
+        "tender opening procedure",
+        "bid price reading aloud",
+        "bid opening register",
+        "bid unsealing transparency"
+      ],
+      "requiredEvidence": [
+        "Bid opening procedure referenced in SRS constraint requirements (REQ-CON-*) per PPRA Rules",
+        "Bid opening minutes format and record-keeping requirement documented in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-EVAL-004",
+      "title": "Abnormally Low Bid Assessment",
+      "description": "Bids priced significantly below the estimated cost must be investigated and suppliers required to demonstrate their ability to deliver at the proposed price.",
+      "keywords": [
+        "abnormally low bid assessment",
+        "below-cost bid investigation",
+        "bid price reasonableness check",
+        "predatory pricing bid",
+        "unusually low tender price",
+        "bid price clarification request",
+        "cost reasonableness assessment",
+        "low-price bid scrutiny",
+        "bid viability assessment",
+        "suspiciously low tender price"
+      ],
+      "requiredEvidence": [
+        "Abnormally low bid policy documented in SRS constraint requirements (REQ-CON-*) per PPRA Rules",
+        "Cost reasonableness assessment procedure referenced in SRS constraint requirements"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "PPRA-DOC-001",
+      "title": "Bidding Document Completeness",
+      "description": "Bidding documents must contain all information necessary for a prospective bidder to prepare a responsive bid, including technical requirements, evaluation criteria, and contractual conditions.",
+      "keywords": [
+        "bidding document requirement",
+        "tender document completeness",
+        "request for proposal content",
+        "RFP completeness requirement",
+        "bid document publication",
+        "tender document checklist",
+        "procurement document standard",
+        "bidding package requirement",
+        "solicitation document content",
+        "tender notice content"
+      ],
+      "requiredEvidence": [
+        "Bidding document checklist referenced in SRS constraint requirements (REQ-CON-*) confirming PPRA standard bidding document use",
+        "Technical specifications included in SRS functional requirements (REQ-FUNC-*) for tender document preparation"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-DOC-002",
+      "title": "Procurement Documentation Trail",
+      "description": "A complete and auditable procurement documentation trail must be maintained from requisition through contract award and performance monitoring.",
+      "keywords": [
+        "procurement documentation trail",
+        "procurement audit record",
+        "contract award documentation",
+        "procurement file maintenance",
+        "tender record keeping",
+        "procurement process documentation",
+        "contract history record",
+        "procurement decision record",
+        "bid evaluation record keeping",
+        "procurement paper trail"
+      ],
+      "requiredEvidence": [
+        "Procurement documentation trail requirement documented in SRS constraint requirements (REQ-CON-*) per PPRA record-keeping rules",
+        "Document retention policy for procurement records referenced in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-DOC-003",
+      "title": "Contract Award Notice Publication",
+      "description": "The award of every public procurement contract must be publicly notified on the PPRA website and the procuring agency's website within the prescribed period.",
+      "keywords": [
+        "contract award notice publication",
+        "PPRA website award notification",
+        "public award announcement",
+        "procurement award transparency",
+        "contract award public disclosure",
+        "award notice PPRA portal",
+        "tender award publication",
+        "contract award notice requirement",
+        "successful bidder announcement",
+        "award decision publication"
+      ],
+      "requiredEvidence": [
+        "Contract award notice publication requirement documented in SRS constraint requirements (REQ-CON-*) citing PPRA Rule 47",
+        "PPRA website publication plan referenced in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-TRANS-001",
+      "title": "Conflict of Interest Declaration",
+      "description": "All members of evaluation committees and procurement officials must declare any conflict of interest and be excluded from procurement processes where a conflict exists.",
+      "keywords": [
+        "conflict of interest declaration",
+        "procurement conflict of interest",
+        "evaluation committee conflict",
+        "impartiality declaration procurement",
+        "bid committee independence",
+        "procurement officer conflict",
+        "related party procurement",
+        "conflict of interest policy procurement",
+        "recusal procurement process",
+        "impartiality requirement procurement"
+      ],
+      "requiredEvidence": [
+        "Conflict of interest declaration requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Evaluation committee independence safeguards referenced in SRS constraint requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PPRA-TRANS-002",
+      "title": "Anti-Corruption and Integrity Obligations",
+      "description": "All procurement processes must include integrity pact requirements and anti-corruption provisions binding on all participating bidders and procurement officials.",
+      "keywords": [
+        "integrity pact procurement",
+        "anti-corruption procurement clause",
+        "procurement integrity requirement",
+        "bribery prohibition procurement",
+        "collusion prevention procurement",
+        "kickback prohibition tender",
+        "procurement fraud prevention",
+        "corrupt practice prohibition",
+        "procurement ethics obligation",
+        "bid rigging prevention"
+      ],
+      "requiredEvidence": [
+        "Integrity pact and anti-corruption requirements documented in SRS constraint requirements (REQ-CON-*)",
+        "Anti-corruption clause inclusion in contract terms referenced in SRS constraint requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PPRA-TRANS-003",
+      "title": "Procurement Complaint and Redress Mechanism",
+      "description": "Bidders must have access to a formal complaint mechanism to challenge procurement decisions with defined resolution timelines and escalation paths.",
+      "keywords": [
+        "procurement complaint mechanism",
+        "bidder complaint process",
+        "tender complaint resolution",
+        "procurement grievance procedure",
+        "bid protest procedure",
+        "procurement appeal process",
+        "PPRA complaint redress",
+        "tenderer complaint right",
+        "procurement review mechanism",
+        "supplier complaint channel"
+      ],
+      "requiredEvidence": [
+        "Bidder complaint and redress procedure documented in SRS constraint requirements (REQ-CON-*) per PPRA Rules",
+        "Complaint resolution timeline referenced in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-TRANS-004",
+      "title": "Procurement Reporting and Disclosure Obligations",
+      "description": "Procuring agencies must report procurement activities to PPRA and disclose procurement data per the mandatory reporting schedule.",
+      "keywords": [
+        "PPRA procurement reporting",
+        "procurement disclosure obligation",
+        "procurement data submission PPRA",
+        "procurement transparency report",
+        "public procurement return",
+        "procurement activity disclosure",
+        "procurement monitoring report",
+        "PPRA quarterly reporting",
+        "procurement statistics disclosure",
+        "procurement compliance reporting"
+      ],
+      "requiredEvidence": [
+        "PPRA reporting obligation documented in SRS constraint requirements (REQ-CON-*) with reporting frequency",
+        "Procurement disclosure plan referenced in project scope documentation"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "PPRA-PROC-004",
+      "title": "Pre-Qualification of Bidders",
+      "description": "For complex or high-value procurements, a formal pre-qualification process must be conducted to assess bidder capability before invitation to tender.",
+      "keywords": [
+        "pre-qualification criteria",
+        "bidder pre-qualification process",
+        "supplier qualification requirement",
+        "pre-qualification tender",
+        "vendor prequalification",
+        "bidder capability assessment",
+        "pre-qualification shortlisting",
+        "expression of interest procurement",
+        "EOI procurement process",
+        "qualified bidder list"
+      ],
+      "requiredEvidence": [
+        "Pre-qualification requirement and criteria documented in SRS constraint requirements (REQ-CON-*) per PPRA Rules",
+        "Bidder capability requirements referenced in SRS constraint requirements with minimum qualification thresholds"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-PROC-005",
+      "title": "Framework Agreement and Rate Contract Compliance",
+      "description": "Procurements made under framework agreements or rate contracts must comply with the terms of the original competitive process and not exceed approved quantities or rates.",
+      "keywords": [
+        "framework agreement procurement",
+        "rate contract compliance",
+        "call-off order procurement",
+        "approved rate contract",
+        "procurement rate schedule",
+        "framework contract call-off",
+        "scheduled rate procurement",
+        "bulk procurement agreement",
+        "standing order procurement",
+        "rate contract ceiling"
+      ],
+      "requiredEvidence": [
+        "Framework agreement or rate contract compliance referenced in SRS constraint requirements (REQ-CON-*)",
+        "Applicable rate contract number and ceiling documented in SRS constraint requirements"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "PPRA-EVAL-005",
+      "title": "Financial Proposal Confidentiality",
+      "description": "Financial proposals submitted by bidders must remain sealed and confidential until the technical evaluation is completed and financial envelopes are opened.",
+      "keywords": [
+        "financial proposal confidentiality",
+        "sealed financial bid",
+        "two-envelope bidding system",
+        "financial envelope sealing",
+        "financial bid confidentiality",
+        "technical-financial separation",
+        "sealed bid financial",
+        "financial proposal unsealing",
+        "two-stage bid evaluation",
+        "price proposal confidentiality"
+      ],
+      "requiredEvidence": [
+        "Two-envelope bid procedure documented in SRS constraint requirements (REQ-CON-*) per PPRA two-stage evaluation rules",
+        "Financial proposal confidentiality safeguards referenced in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PPRA-DOC-004",
+      "title": "Contract Terms and Conditions Compliance",
+      "description": "All public procurement contracts must include mandatory PPRA contract conditions covering dispute resolution, performance security, and variation limits.",
+      "keywords": [
+        "PPRA contract conditions",
+        "performance security bond",
+        "procurement contract variation limit",
+        "contract dispute resolution",
+        "performance guarantee procurement",
+        "procurement contract amendment",
+        "contract variation approval",
+        "liquidated damages clause",
+        "force majeure procurement contract",
+        "procurement contract compliance"
+      ],
+      "requiredEvidence": [
+        "PPRA mandatory contract conditions referenced in SRS constraint requirements (REQ-CON-*)",
+        "Performance security requirement and percentage documented in SRS constraint requirements",
+        "Contract variation limit documented in SRS constraint requirements per PPRA Rules"
+      ],
+      "severity": "high"
+    }
+  ]
+}

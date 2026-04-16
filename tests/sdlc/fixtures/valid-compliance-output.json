@@ -1,0 +1,58 @@
+{
+  "mode": "requirements",
+  "complianceFlags": [
+    {
+      "frameworkCode": "SBP-2024",
+      "controlId": "SBP-SEC-001",
+      "controlTitle": "Data Encryption at Rest",
+      "triggeredBy": "REQ-NFUNC-001",
+      "keyword": "encryption / AES / customer data",
+      "severity": "critical",
+      "requiredEvidence": ["Encryption standard in SDS", "Key management procedure"],
+      "status": "pending-review",
+      "detectedAt": "2026-04-06T00:00:00Z"
+    },
+    {
+      "frameworkCode": "SBP-2024",
+      "controlId": "SBP-SEC-002",
+      "controlTitle": "Multi-Factor Authentication",
+      "triggeredBy": "REQ-FUNC-001",
+      "keyword": "authentication / login / access control",
+      "severity": "high",
+      "requiredEvidence": ["MFA policy in SDS", "Authentication flow diagram"],
+      "status": "pending-review",
+      "detectedAt": "2026-04-06T00:00:00Z"
+    },
+    {
+      "frameworkCode": "PPRA-2024",
+      "controlId": "PPRA-PROC-001",
+      "controlTitle": "Competitive Bidding Requirement",
+      "triggeredBy": "REQ-CON-001",
+      "keyword": "procurement / competitive bidding / tender",
+      "severity": "high",
+      "requiredEvidence": ["Procurement justification in SRS"],
+      "status": "pending-review",
+      "detectedAt": "2026-04-06T00:00:00Z"
+    }
+  ],
+  "requirementUpdates": [
+    {
+      "id": "REQ-FUNC-001",
+      "complianceFrameworks": ["SBP-2024"]
+    },
+    {
+      "id": "REQ-NFUNC-001",
+      "complianceFrameworks": ["SBP-2024"]
+    },
+    {
+      "id": "REQ-CON-001",
+      "complianceFrameworks": ["PPRA-2024"]
+    }
+  ],
+  "summary": {
+    "totalScanned": 4,
+    "flagged": 3,
+    "bySeverity": { "critical": 1, "high": 2, "medium": 0, "low": 0 },
+    "byFramework": { "SBP-2024": 2, "PPRA-2024": 1 }
+  }
+}

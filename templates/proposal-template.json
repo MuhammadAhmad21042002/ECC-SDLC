@@ -1,0 +1,659 @@
+{
+  "templateSchema": "ecc-sdlc.template.v1",
+  "templateId": "ecc-sdlc.proposal.v3",
+  "documentType": "proposal",
+  "version": 3,
+  "format": {
+    "page": {
+      "size": "A4",
+      "orientation": "portrait",
+      "marginsMm": {
+        "top": 25,
+        "right": 20,
+        "bottom": 25,
+        "left": 25
+      }
+    },
+    "defaults": {
+      "fontFamily": "Calibri",
+      "fontSizePt": 11,
+      "lineSpacing": 1.15,
+      "paragraphSpacingAfterPt": 10
+    },
+    "layout": {
+      "structure": "cover-toc-body",
+      "spacing": {
+        "paragraphAfterPt": 10,
+        "headingBeforePt": 20,
+        "headingAfterPt": 8,
+        "tableAfterPt": 14,
+        "h2BeforePt": 14
+      }
+    },
+    "styles": {
+      "title": {
+        "fontSizePt": 28,
+        "bold": true
+      },
+      "subtitle": {
+        "fontSizePt": 14,
+        "italic": true
+      },
+      "h1": {
+        "fontSizePt": 16,
+        "bold": true,
+        "spacingBeforePt": 20,
+        "spacingAfterPt": 8
+      },
+      "h2": {
+        "fontSizePt": 13,
+        "bold": true,
+        "spacingBeforePt": 14,
+        "spacingAfterPt": 6
+      },
+      "h3": {
+        "fontSizePt": 12,
+        "bold": true,
+        "spacingBeforePt": 10,
+        "spacingAfterPt": 4
+      },
+      "normal": {
+        "fontSizePt": 11
+      },
+      "tableHeader": {
+        "bold": true
+      },
+      "tableCell": {
+        "fontSizePt": 10
+      }
+    },
+    "header": {
+      "left": "{projectName}",
+      "right": "Technical Proposal",
+      "showOnFirstPage": false
+    },
+    "footer": {
+      "left": "Confidential \u2014 {clientName}",
+      "center": "v{documentVersion}  \u00b7  {generatedDate}",
+      "right": "Page {pageNumber} of {pageCount}"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "content": {
+        "title": "{projectName}",
+        "subtitle": "Technical Proposal",
+        "clientLine": "Prepared for: {clientName}",
+        "preparedByLine": "Prepared by: {preparedBy}",
+        "dateLine": "Date: {generatedDate}",
+        "versionLine": "Version: {documentVersion}",
+        "classificationLine": "Classification: Confidential"
+      }
+    },
+    {
+      "id": "toc",
+      "type": "tableOfContents",
+      "content": {
+        "title": "Table of Contents",
+        "includeHeadingLevels": [1, 2]
+      }
+    },
+    {
+      "id": "versionHistory",
+      "type": "table",
+      "content": {
+        "title": "Version History",
+        "columns": [
+          {
+            "key": "version",
+            "label": "Version",
+            "widthPct": 12
+          },
+          {
+            "key": "date",
+            "label": "Date",
+            "widthPct": 16
+          },
+          {
+            "key": "author",
+            "label": "Author",
+            "widthPct": 22
+          },
+          {
+            "key": "changes",
+            "label": "Change Summary",
+            "widthPct": 38
+          },
+          {
+            "key": "status",
+            "label": "Status",
+            "widthPct": 12
+          }
+        ],
+        "rows": "{versionHistory}"
+      }
+    },
+    {
+      "id": "documentPurpose",
+      "type": "contentBlock",
+      "content": {
+        "heading": "Document Purpose",
+        "paragraphs": "{documentPurposeParagraphs}"
+      }
+    },
+    {
+      "id": "intendedAudience",
+      "type": "contentBlock",
+      "content": {
+        "heading": "Intended Audience",
+        "paragraphs": "{intendedAudienceParagraphs}"
+      }
+    },
+    {
+      "key": "executiveSummary",
+      "title": "Executive Summary",
+      "order": 1,
+      "required": true,
+      "id": "executiveSummary",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1. Executive Summary",
+        "paragraphs": "{executiveSummaryParagraphs}"
+      }
+    },
+    {
+      "key": "understandingOfRequirement",
+      "title": "Understanding of Requirement",
+      "order": 2,
+      "required": true,
+      "id": "understandingOfRequirement",
+      "type": "contentBlock",
+      "content": {
+        "heading": "2. Understanding of Requirement",
+        "paragraphs": "{understandingOfRequirementParagraphs}",
+        "subsections": [
+          {
+            "heading": "2.1 Client Objectives",
+            "paragraphs": "{clientObjectivesParagraphs}"
+          },
+          {
+            "heading": "2.2 Regulatory Context",
+            "paragraphs": "{regulatoryContextParagraphs}"
+          },
+          {
+            "heading": "2.3 Key Success Criteria",
+            "bullets": "{keySuccessCriteriaBullets}"
+          },
+          {
+            "heading": "2.4 Assumptions & Constraints",
+            "paragraphs": "{assumptionsConstraintsParagraphs}",
+            "subsections": [
+              {
+                "heading": "2.4.1 Assumptions",
+                "bullets": "{assumptionsBullets}"
+              },
+              {
+                "heading": "2.4.2 Constraints",
+                "bullets": "{constraintsBullets}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "proposedSolution",
+      "title": "Proposed Solution",
+      "order": 3,
+      "required": true,
+      "id": "proposedSolution",
+      "type": "contentBlock",
+      "content": {
+        "heading": "3. Proposed Solution",
+        "paragraphs": "{proposedSolutionParagraphs}",
+        "subsections": [
+          {
+            "heading": "3.1 Solution Overview",
+            "paragraphs": "{solutionOverviewParagraphs}"
+          },
+          {
+            "heading": "3.2 Key Features",
+            "numbered": "{keyFeaturesNumbered}"
+          },
+          {
+            "heading": "3.3 Win Themes",
+            "paragraphs": "{winThemesParagraphs}"
+          }
+        ]
+      }
+    },
+    {
+      "key": "technicalApproach",
+      "title": "Technical Approach",
+      "order": 4,
+      "required": true,
+      "id": "technicalApproach",
+      "type": "contentBlock",
+      "content": {
+        "heading": "4. Technical Approach",
+        "paragraphs": "{technicalApproachParagraphs}",
+        "subsections": [
+          {
+            "heading": "4.1 System Architecture",
+            "paragraphs": "{systemArchitectureParagraphs}"
+          },
+          {
+            "heading": "4.2 Technology Stack",
+            "paragraphs": "{technologyStackParagraphs}"
+          },
+          {
+            "heading": "4.3 Development Methodology",
+            "paragraphs": "{developmentMethodologyParagraphs}"
+          },
+          {
+            "heading": "4.4 Quality Assurance",
+            "paragraphs": "{qualityAssuranceParagraphs}"
+          },
+          {
+            "heading": "4.5 Integration Flows",
+            "paragraphs": "{integrationFlowsParagraphs}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "architectureDiagramRendered",
+      "type": "diagram",
+      "renderCondition": "data.architecturePng !== null && data.architecturePng !== undefined",
+      "content": {
+        "heading": "4.1a High-Level Architecture Diagram",
+        "caption": "Figure 1 \u2014 System architecture overview",
+        "dataKey": "architecturePng",
+        "dimsKey": "architectureDims",
+        "widthPct": 90
+      }
+    },
+    {
+      "id": "networkDiagramProposal",
+      "type": "diagram",
+      "content": {
+        "heading": "4.1c Network Architecture Diagram",
+        "caption": "Figure 3 \u2014 Network zones and deployment topology",
+        "dataKey": "networkPng",
+        "dimsKey": "networkDims",
+        "widthPct": 95
+      }
+    },
+    {
+      "id": "sequenceDiagramsProposal",
+      "type": "sequenceDiagrams",
+      "content": {
+        "headingPrefix": "4.1d",
+        "captionStartIndex": 5,
+        "widthPct": 95
+      }
+    },
+    {
+      "id": "useCaseDiagramsProposal",
+      "type": "useCaseDiagrams",
+      "content": {
+        "headingPrefix": "4.2",
+        "captionStartIndex": 4,
+        "widthPct": 90
+      }
+    },
+    {
+      "id": "flowchartDiagramProposal",
+      "type": "diagram",
+      "content": {
+        "heading": "4.3 Core Transaction Process Flow",
+        "caption": "Figure \u2014 Core transaction process (maker-checker workflow)",
+        "dataKey": "flowchartPng",
+        "dimsKey": "flowchartDims",
+        "widthPct": 95
+      }
+    },
+    {
+      "id": "erDiagramProposal",
+      "type": "diagram",
+      "content": {
+        "heading": "4.4 Data Model Overview",
+        "caption": "Figure \u2014 Entity relationship diagram (key entities and relationships)",
+        "dataKey": "erDiagramPng",
+        "dimsKey": "erDiagramDims",
+        "widthPct": 100
+      }
+    },
+    {
+      "id": "deploymentDiagramProposal",
+      "type": "diagram",
+      "renderCondition": "data.deploymentPng !== null",
+      "content": {
+        "heading": "4.5 Deployment Architecture",
+        "caption": "Figure \u2014 Deployment topology and infrastructure zones",
+        "dataKey": "deploymentPng",
+        "dimsKey": "deploymentDims",
+        "widthPct": 95
+      }
+    },
+    {
+      "key": "teamProfiles",
+      "title": "Team Profiles",
+      "order": 5,
+      "required": true,
+      "id": "teamProfiles",
+      "type": "table",
+      "content": {
+        "title": "5. Team Profiles",
+        "columns": [
+          {
+            "key": "name",
+            "label": "Name",
+            "widthPct": 25
+          },
+          {
+            "key": "role",
+            "label": "Role",
+            "widthPct": 25
+          },
+          {
+            "key": "yearsExperience",
+            "label": "Years of Experience",
+            "widthPct": 20
+          },
+          {
+            "key": "relevantProjects",
+            "label": "Relevant Projects",
+            "widthPct": 30
+          }
+        ],
+        "rows": "{teamProfiles}"
+      }
+    },
+    {
+      "key": "projectTimeline",
+      "title": "Project Timeline",
+      "order": 6,
+      "required": true,
+      "id": "projectTimeline",
+      "type": "contentBlock",
+      "content": {
+        "heading": "6. Project Timeline",
+        "paragraphs": "{projectTimelineParagraphs}"
+      }
+    },
+    {
+      "id": "projectTimelineTable",
+      "type": "table",
+      "content": {
+        "title": "6.1 Phase-Based Delivery Schedule",
+        "columns": [
+          {
+            "key": "phase",
+            "label": "Phase",
+            "widthPct": 20
+          },
+          {
+            "key": "deliverables",
+            "label": "Deliverables",
+            "widthPct": 35
+          },
+          {
+            "key": "duration",
+            "label": "Duration (Weeks)",
+            "widthPct": 15
+          },
+          {
+            "key": "milestonePayment",
+            "label": "Milestone Payment",
+            "widthPct": 15
+          },
+          {
+            "key": "dependencies",
+            "label": "Dependencies",
+            "widthPct": 15
+          }
+        ],
+        "rows": "{projectTimelineRows}"
+      }
+    },
+    {
+      "key": "costBreakdown",
+      "title": "Cost Breakdown",
+      "order": 7,
+      "required": true,
+      "id": "costBreakdown",
+      "type": "contentBlock",
+      "content": {
+        "heading": "7. Cost Breakdown",
+        "paragraphs": "{costBreakdownParagraphs}"
+      }
+    },
+    {
+      "id": "costBreakdownTable",
+      "type": "table",
+      "content": {
+        "title": "7.1 Total Cost of Ownership (3-Year)",
+        "columns": [
+          {
+            "key": "item",
+            "label": "Cost Item",
+            "widthPct": 45
+          },
+          {
+            "key": "hours",
+            "label": "Effort (Hours)",
+            "widthPct": 15
+          },
+          {
+            "key": "rate",
+            "label": "Rate",
+            "widthPct": 20
+          },
+          {
+            "key": "total",
+            "label": "Total ({currency})",
+            "widthPct": 20
+          }
+        ],
+        "rows": "{costBreakdown}"
+      }
+    },
+    {
+      "id": "paymentScheduleTable",
+      "type": "table",
+      "content": {
+        "title": "7.2 Payment Schedule",
+        "columns": [
+          {
+            "key": "milestone",
+            "label": "Milestone",
+            "widthPct": 40
+          },
+          {
+            "key": "deliverable",
+            "label": "Deliverable Trigger",
+            "widthPct": 35
+          },
+          {
+            "key": "percentage",
+            "label": "% of Total",
+            "widthPct": 12
+          },
+          {
+            "key": "amount",
+            "label": "Amount ({currency})",
+            "widthPct": 13
+          }
+        ],
+        "rows": "{paymentSchedule}"
+      }
+    },
+    {
+      "key": "complianceStatement",
+      "title": "Compliance Statement",
+      "order": 8,
+      "required": true,
+      "id": "complianceStatement",
+      "type": "contentBlock",
+      "content": {
+        "heading": "8. Compliance Statement",
+        "paragraphs": "{complianceStatementParagraphs}",
+        "subsections": [
+          {
+            "heading": "8.1 Regulatory Framework Adherence",
+            "paragraphs": "{regulatoryFrameworkParagraphs}"
+          },
+          {
+            "heading": "8.2 Compliance Gaps and Mitigation",
+            "paragraphs": "{complianceGapsParagraphs}"
+          },
+          {
+            "heading": "8.3 Organizational Certifications",
+            "bullets": "{organizationalCertificationsBullets}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "complianceMatrixTable",
+      "type": "table",
+      "content": {
+        "title": "8.4 Compliance Matrix",
+        "columns": [
+          {
+            "key": "controlId",
+            "label": "Control ID",
+            "widthPct": 18
+          },
+          {
+            "key": "framework",
+            "label": "Framework",
+            "widthPct": 15
+          },
+          {
+            "key": "requirement",
+            "label": "Requirement",
+            "widthPct": 32
+          },
+          {
+            "key": "evidence",
+            "label": "Evidence Location",
+            "widthPct": 20
+          },
+          {
+            "key": "status",
+            "label": "Status",
+            "widthPct": 15
+          }
+        ],
+        "rows": "{complianceMatrix}"
+      }
+    },
+    {
+      "key": "appendices",
+      "title": "Appendices",
+      "order": 9,
+      "required": false,
+      "id": "appendices",
+      "type": "contentBlock",
+      "content": {
+        "heading": "9. Appendices",
+        "paragraphs": "{appendicesParagraphs}",
+        "subsections": [
+          {
+            "heading": "Appendix A: Company Profile",
+            "paragraphs": "{companyProfileParagraphs}"
+          },
+          {
+            "heading": "Appendix B: Past Performance References",
+            "bullets": "{pastPerformanceBullets}"
+          },
+          {
+            "heading": "Appendix C: Certifications",
+            "bullets": "{certificationsBullets}"
+          },
+          {
+            "heading": "Appendix D: Key Personnel CVs",
+            "paragraphs": "{keyPersonnelCVsParagraphs}"
+          },
+          {
+            "heading": "Appendix E: Technical Specifications",
+            "bullets": "{technicalSpecificationsBullets}"
+          }
+        ]
+      }
+    }
+  ],
+  "dataContract": {
+    "requiredFields": [
+      "projectName",
+      "clientName",
+      "preparedBy",
+      "generatedDate",
+      "documentVersion",
+      "currency",
+      "versionHistory",
+      "documentPurposeParagraphs",
+      "intendedAudienceParagraphs",
+      "executiveSummaryParagraphs",
+      "understandingOfRequirementParagraphs",
+      "clientObjectivesParagraphs",
+      "regulatoryContextParagraphs",
+      "keySuccessCriteriaBullets",
+      "assumptionsConstraintsParagraphs",
+      "assumptionsBullets",
+      "constraintsBullets",
+      "proposedSolutionParagraphs",
+      "solutionOverviewParagraphs",
+      "keyFeaturesNumbered",
+      "winThemesParagraphs",
+      "technicalApproachParagraphs",
+      "systemArchitectureParagraphs",
+      "technologyStackParagraphs",
+      "developmentMethodologyParagraphs",
+      "qualityAssuranceParagraphs",
+      "integrationFlowsParagraphs",
+      "teamProfiles",
+      "projectTimelineParagraphs",
+      "projectTimelineRows",
+      "costBreakdownParagraphs",
+      "costBreakdown",
+      "paymentSchedule",
+      "complianceStatementParagraphs",
+      "regulatoryFrameworkParagraphs",
+      "complianceGapsParagraphs",
+      "organizationalCertificationsBullets",
+      "complianceMatrix",
+      "appendicesParagraphs",
+      "companyProfileParagraphs",
+      "pastPerformanceBullets",
+      "certificationsBullets",
+      "keyPersonnelCVsParagraphs",
+      "technicalSpecificationsBullets",
+      "architectureDiagramLines"
+    ],
+    "optionalFields": [
+      "architecturePng",
+      "architectureDims",
+      "erDiagramPng",
+      "erDiagramDims",
+      "sequencePng",
+      "sequenceDims",
+      "dataFlowPng",
+      "dataFlowDims",
+      "networkPng",
+      "networkDims",
+      "flowchartPng",
+      "flowchartDims",
+      "useCasePng",
+      "useCaseDims",
+      "useCaseDiagrams",
+      "sequenceDiagrams",
+      "deploymentPng",
+      "deploymentDims"
+    ]
+  }
+}

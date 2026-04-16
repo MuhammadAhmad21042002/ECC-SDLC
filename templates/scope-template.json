@@ -1,0 +1,346 @@
+{
+  "templateSchema": "ecc-sdlc.template.v1",
+  "templateId": "ecc-sdlc.scope.v1",
+  "documentType": "scope",
+  "version": 2,
+  "format": {
+    "page": {
+      "size": "A4",
+      "orientation": "portrait",
+      "marginsMm": {
+        "top": 25,
+        "right": 20,
+        "bottom": 25,
+        "left": 25
+      }
+    },
+    "defaults": {
+      "fontFamily": "Calibri",
+      "fontSizePt": 11,
+      "lineSpacing": 1.15,
+      "paragraphSpacingAfterPt": 10
+    },
+    "layout": {
+      "structure": "cover-toc-body",
+      "spacing": {
+        "paragraphAfterPt": 10,
+        "headingBeforePt": 20,
+        "headingAfterPt": 8,
+        "tableAfterPt": 14,
+        "h2BeforePt": 14
+      }
+    },
+    "styles": {
+      "title": {
+        "fontSizePt": 28,
+        "bold": true
+      },
+      "subtitle": {
+        "fontSizePt": 14,
+        "italic": true
+      },
+      "h1": {
+        "fontSizePt": 16,
+        "bold": true,
+        "spacingBeforePt": 20,
+        "spacingAfterPt": 8
+      },
+      "h2": {
+        "fontSizePt": 13,
+        "bold": true,
+        "spacingBeforePt": 14,
+        "spacingAfterPt": 6
+      },
+      "h3": {
+        "fontSizePt": 12,
+        "bold": true,
+        "spacingBeforePt": 10,
+        "spacingAfterPt": 4
+      },
+      "normal": {
+        "fontSizePt": 11
+      },
+      "tableHeader": {
+        "bold": true
+      },
+      "tableCell": {
+        "fontSizePt": 10
+      }
+    },
+    "header": {
+      "left": "{projectName}",
+      "right": "Scope Document",
+      "showOnFirstPage": false
+    },
+    "footer": {
+      "left": "Confidential \u2014 {clientName}",
+      "center": "v{documentVersion}  \u00b7  {generatedDate}",
+      "right": "Page {pageNumber} of {pageCount}"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "content": {
+        "title": "{projectName}",
+        "subtitle": "Project Scope Document",
+        "clientLine": "Client: {clientName}",
+        "preparedByLine": "Prepared by: {preparedBy}",
+        "dateLine": "Date: {generatedDate}",
+        "versionLine": "Version: {documentVersion}"
+      }
+    },
+    {
+      "id": "toc",
+      "type": "tableOfContents",
+      "content": {
+        "title": "Table of Contents",
+        "includeHeadingLevels": [1, 2]
+      }
+    },
+    {
+      "id": "versionHistory",
+      "type": "table",
+      "content": {
+        "title": "Version History",
+        "columns": [
+          {
+            "key": "version",
+            "label": "Version",
+            "widthPct": 12
+          },
+          {
+            "key": "date",
+            "label": "Date",
+            "widthPct": 18
+          },
+          {
+            "key": "author",
+            "label": "Author",
+            "widthPct": 20
+          },
+          {
+            "key": "changes",
+            "label": "Change Summary",
+            "widthPct": 50
+          }
+        ],
+        "rows": "{versionHistory}"
+      }
+    },
+    {
+      "id": "projectOverview",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1. Project Overview",
+        "paragraphs": "{projectOverviewParagraphs}"
+      }
+    },
+    {
+      "id": "systemContextDiagram",
+      "type": "diagram",
+      "content": {
+        "heading": "1.1 System Context",
+        "caption": "Figure 1 \u2014 System context showing the project boundary and external actors.",
+        "dataKey": "systemContextPng",
+        "widthPct": 90,
+        "dimsKey": "systemContextDims"
+      }
+    },
+    {
+      "id": "objectives",
+      "type": "contentBlock",
+      "content": {
+        "heading": "2. Objectives",
+        "numbered": "{objectivesNumbered}"
+      }
+    },
+    {
+      "id": "inScope",
+      "type": "table",
+      "content": {
+        "title": "3. In Scope",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "widthPct": 14
+          },
+          {
+            "key": "title",
+            "label": "Feature",
+            "widthPct": 34
+          },
+          {
+            "key": "description",
+            "label": "Description",
+            "widthPct": 52
+          }
+        ],
+        "rows": "{inScope}"
+      }
+    },
+    {
+      "id": "outOfScope",
+      "type": "contentBlock",
+      "content": {
+        "heading": "4. Out of Scope",
+        "bullets": "{outOfScopeBullets}"
+      }
+    },
+    {
+      "id": "scopeBoundaryDiagram",
+      "type": "diagram",
+      "content": {
+        "heading": "4.1 Scope Boundary",
+        "caption": "Figure 2 \u2014 Visual scope boundary separating included and excluded features.",
+        "dataKey": "scopeBoundaryPng",
+        "widthPct": 90,
+        "dimsKey": "scopeBoundaryDims"
+      }
+    },
+    {
+      "id": "stakeholders",
+      "type": "table",
+      "content": {
+        "title": "5. Stakeholders",
+        "columns": [
+          {
+            "key": "name",
+            "label": "Name",
+            "widthPct": 28
+          },
+          {
+            "key": "role",
+            "label": "Role",
+            "widthPct": 24
+          },
+          {
+            "key": "organization",
+            "label": "Organisation",
+            "widthPct": 30
+          },
+          {
+            "key": "contactType",
+            "label": "Type",
+            "widthPct": 18
+          }
+        ],
+        "rows": "{stakeholders}"
+      }
+    },
+    {
+      "id": "assumptions",
+      "type": "contentBlock",
+      "content": {
+        "heading": "6. Assumptions",
+        "bullets": "{assumptionsBullets}"
+      }
+    },
+    {
+      "id": "constraints",
+      "type": "table",
+      "content": {
+        "title": "7. Constraints",
+        "columns": [
+          {
+            "key": "type",
+            "label": "Type",
+            "widthPct": 22
+          },
+          {
+            "key": "description",
+            "label": "Description",
+            "widthPct": 78
+          }
+        ],
+        "rows": "{constraints}"
+      }
+    },
+    {
+      "id": "risks",
+      "type": "table",
+      "content": {
+        "title": "8. Risks and Mitigations",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "widthPct": 12
+          },
+          {
+            "key": "description",
+            "label": "Risk",
+            "widthPct": 34
+          },
+          {
+            "key": "likelihood",
+            "label": "Likelihood",
+            "widthPct": 14
+          },
+          {
+            "key": "impact",
+            "label": "Impact",
+            "widthPct": 14
+          },
+          {
+            "key": "mitigation",
+            "label": "Mitigation",
+            "widthPct": 26
+          }
+        ],
+        "rows": "{risks}"
+      }
+    },
+    {
+      "id": "deliverables",
+      "type": "contentBlock",
+      "content": {
+        "heading": "9. Deliverables",
+        "numbered": "{deliverablesNumbered}"
+      }
+    },
+    {
+      "id": "timeline",
+      "type": "table",
+      "content": {
+        "title": "10. Timeline (if applicable)",
+        "columns": [
+          {
+            "key": "milestone",
+            "label": "Milestone",
+            "widthPct": 70
+          },
+          {
+            "key": "date",
+            "label": "Date",
+            "widthPct": 30
+          }
+        ],
+        "rows": "{timelineMilestones}"
+      },
+      "renderCondition": "data.timelineMilestones !== null && data.timelineMilestones !== undefined"
+    }
+  ],
+  "dataContract": {
+    "requiredFields": [
+      "projectName",
+      "clientName",
+      "preparedBy",
+      "generatedDate",
+      "documentVersion",
+      "versionHistory",
+      "projectOverviewParagraphs",
+      "objectivesNumbered",
+      "inScope",
+      "outOfScopeBullets",
+      "stakeholders",
+      "assumptionsBullets",
+      "constraints",
+      "risks",
+      "deliverablesNumbered",
+      "timelineMilestones"
+    ]
+  }
+}

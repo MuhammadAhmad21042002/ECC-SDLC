@@ -1,0 +1,37 @@
+{
+  "projectOverview": "",
+  "objectives": [],
+  "inScope": [
+    {
+      "id": "SCOPE-001",
+      "title": "Missing description example"
+    }
+  ],
+  "outOfScope": [],
+  "stakeholders": [
+    {
+      "name": "Ayesha Khan",
+      "role": "Project Sponsor",
+      "organization": "Demo Client"
+    }
+  ],
+  "assumptions": [],
+  "constraints": [
+    {
+      "type": "legal",
+      "description": ""
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "description": "Bad enum values for likelihood/impact",
+      "likelihood": "sometimes",
+      "impact": "severe",
+      "mitigation": ""
+    }
+  ],
+  "complianceFlags": [""],
+  "deliverables": []
+}
+

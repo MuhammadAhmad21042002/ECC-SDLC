@@ -1,0 +1,466 @@
+{
+  "frameworkId": "SAMA-2024",
+  "frameworkName": "Saudi Arabian Monetary Authority Cybersecurity Framework 2024",
+  "version": "2024.1",
+  "effectiveDate": "2024-01-01",
+  "applicability": "All banks, insurance companies, and financial institutions licensed and supervised by SAMA in the Kingdom of Saudi Arabia",
+  "controls": [
+    {
+      "controlId": "SAMA-CYB-001",
+      "title": "Cybersecurity Governance Framework",
+      "description": "A formal cybersecurity governance structure must be established with board oversight, defined roles, and a cybersecurity strategy aligned to SAMA requirements.",
+      "keywords": [
+        "cybersecurity governance SAMA",
+        "cybersecurity strategy SAMA",
+        "board cybersecurity oversight",
+        "CISO appointment SAMA",
+        "cybersecurity risk appetite",
+        "information security governance",
+        "cybersecurity accountability",
+        "SAMA cybersecurity policy",
+        "cybersecurity steering committee",
+        "digital security governance"
+      ],
+      "requiredEvidence": [
+        "Cybersecurity governance structure referenced in SRS constraint requirements (REQ-CON-*) citing SAMA Cybersecurity Framework",
+        "CISO or cybersecurity ownership documented in SRS constraint requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-002",
+      "title": "Identity and Access Management",
+      "description": "A comprehensive identity and access management programme must control access to systems, applications, and data across the organisation.",
+      "keywords": [
+        "identity access management SAMA",
+        "privileged identity management",
+        "single sign-on SAMA",
+        "identity lifecycle management",
+        "access certification SAMA",
+        "user provisioning deprovisioning",
+        "identity governance SAMA",
+        "IAM programme SAMA",
+        "access recertification",
+        "digital identity management"
+      ],
+      "requiredEvidence": [
+        "IAM requirements documented in SRS functional requirements (REQ-FUNC-*)",
+        "Identity lifecycle management described in SDS Component Specifications section",
+        "Privileged access controls documented in SDS Security Architecture — Authorization subsection"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-003",
+      "title": "Data and Information Protection",
+      "description": "Customer financial data and sensitive information must be classified, protected, and encrypted in accordance with SAMA data protection requirements.",
+      "keywords": [
+        "data protection SAMA",
+        "financial data encryption SAMA",
+        "customer data classification SAMA",
+        "sensitive information protection",
+        "data loss prevention SAMA",
+        "information asset protection",
+        "data security controls SAMA",
+        "financial information security",
+        "data handling SAMA",
+        "confidential data management SAMA"
+      ],
+      "requiredEvidence": [
+        "Data classification and protection requirements documented in SDS Security Architecture — Data Protection subsection",
+        "Customer financial data encryption standards documented in SDS Database Schema section",
+        "DLP controls referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-004",
+      "title": "Threat Intelligence and Monitoring",
+      "description": "Continuous monitoring for cyber threats must be implemented with integration to threat intelligence feeds and real-time alerting capabilities.",
+      "keywords": [
+        "threat intelligence SAMA",
+        "security monitoring SAMA",
+        "cyber threat monitoring",
+        "real-time security alerting",
+        "security information event management",
+        "SIEM implementation SAMA",
+        "threat detection SAMA",
+        "security operations centre SAMA",
+        "SOC monitoring",
+        "security event correlation"
+      ],
+      "requiredEvidence": [
+        "Security monitoring and SIEM requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Threat monitoring integration described in SDS Integration Points section",
+        "SOC or alerting mechanism referenced in SDS Security Architecture section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-005",
+      "title": "Cybersecurity Incident Management",
+      "description": "A documented cybersecurity incident management process must exist with defined roles, escalation paths, and SAMA reporting timelines.",
+      "keywords": [
+        "cybersecurity incident management SAMA",
+        "SAMA incident reporting",
+        "cyber incident escalation",
+        "security incident response SAMA",
+        "breach notification SAMA",
+        "incident containment SAMA",
+        "cyber crisis management",
+        "SAMA notification timeline",
+        "security incident handling",
+        "incident classification SAMA"
+      ],
+      "requiredEvidence": [
+        "Cybersecurity incident management procedure with SAMA reporting timelines documented in SRS constraint requirements (REQ-CON-*)",
+        "Incident detection and escalation mechanism described in SDS Security Architecture section",
+        "SAMA incident notification integration documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-006",
+      "title": "Third-Party Cybersecurity Risk Management",
+      "description": "Cybersecurity risks from third-party vendors, outsourced service providers, and supply chain must be assessed and managed continuously.",
+      "keywords": [
+        "third-party cyber risk SAMA",
+        "vendor cybersecurity assessment",
+        "supply chain security SAMA",
+        "outsourced service cyber risk",
+        "fintech third-party risk",
+        "supplier cybersecurity requirements",
+        "third-party security audit SAMA",
+        "cloud provider security SAMA",
+        "vendor risk management SAMA",
+        "supply chain cyber assessment"
+      ],
+      "requiredEvidence": [
+        "Third-party cybersecurity risk requirements documented in SRS constraint requirements (REQ-CON-*)",
+        "External system security requirements documented in SDS Integration Points section",
+        "Vendor security assessment referenced in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SAMA-CYB-007",
+      "title": "Vulnerability Management and Penetration Testing",
+      "description": "Regular vulnerability assessments and penetration tests must be conducted with findings remediated within defined timeframes.",
+      "keywords": [
+        "vulnerability management SAMA",
+        "penetration testing SAMA",
+        "VAPT SAMA requirement",
+        "security vulnerability scanning SAMA",
+        "ethical hacking SAMA",
+        "application penetration test",
+        "infrastructure security test",
+        "vulnerability remediation SAMA",
+        "red team exercise",
+        "security assessment SAMA"
+      ],
+      "requiredEvidence": [
+        "Penetration testing requirement documented in SRS non-functional requirements (REQ-NFUNC-*) with SAMA-mandated frequency",
+        "Vulnerability management process referenced in SRS constraint requirements (REQ-CON-*)",
+        "Security testing scope documented in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SAMA-CYB-008",
+      "title": "Secure Software Development",
+      "description": "All financial software must be developed following a secure development lifecycle with code review, security testing, and application security standards.",
+      "keywords": [
+        "secure development SAMA",
+        "application security SAMA",
+        "secure coding standards SAMA",
+        "code review SAMA",
+        "static code analysis SAMA",
+        "application security testing SAMA",
+        "OWASP SAMA compliance",
+        "secure SDLC SAMA",
+        "software security review",
+        "DevSecOps SAMA"
+      ],
+      "requiredEvidence": [
+        "Secure development lifecycle requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Application security testing documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Security code review process referenced in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SAMA-CYB-009",
+      "title": "Cryptography and Key Management",
+      "description": "Approved cryptographic algorithms and a formal key management lifecycle must be implemented for all sensitive financial data.",
+      "keywords": [
+        "cryptography requirements SAMA",
+        "cryptographic key management SAMA",
+        "encryption key lifecycle",
+        "approved algorithm SAMA",
+        "HSM key storage SAMA",
+        "key rotation policy SAMA",
+        "cryptographic controls SAMA",
+        "certificate management SAMA",
+        "PKI infrastructure SAMA",
+        "encryption standard SAMA"
+      ],
+      "requiredEvidence": [
+        "Approved cryptographic algorithms and key lengths documented in SDS Security Architecture — Data Protection subsection",
+        "Key management lifecycle including rotation and HSM storage documented in SDS Security Architecture section",
+        "Certificate management process referenced in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-010",
+      "title": "Network Security Architecture",
+      "description": "Network security must be implemented through segmentation, firewall controls, and monitoring at all network perimeters.",
+      "keywords": [
+        "network security SAMA",
+        "network segmentation SAMA",
+        "firewall controls SAMA",
+        "DMZ architecture SAMA",
+        "network monitoring SAMA",
+        "perimeter security SAMA",
+        "intrusion prevention SAMA",
+        "network access control SAMA",
+        "VLAN segmentation SAMA",
+        "network security architecture"
+      ],
+      "requiredEvidence": [
+        "Network segmentation architecture described in SDS Architecture Overview section and Section 1.1 Architecture Diagram",
+        "Firewall and network access controls documented in SDS Security Architecture section",
+        "Network monitoring requirements referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-011",
+      "title": "Business Continuity and Disaster Recovery",
+      "description": "Financial institutions must maintain business continuity and disaster recovery capabilities with tested plans meeting SAMA-prescribed RTO/RPO targets.",
+      "keywords": [
+        "business continuity SAMA",
+        "disaster recovery SAMA",
+        "RTO RPO SAMA requirement",
+        "business continuity testing",
+        "recovery time objective SAMA",
+        "disaster recovery testing SAMA",
+        "financial system continuity",
+        "backup and recovery SAMA",
+        "BC DR plan SAMA",
+        "resilience requirement SAMA"
+      ],
+      "requiredEvidence": [
+        "RTO/RPO targets documented in SRS non-functional requirements (REQ-NFUNC-*) with SAMA-prescribed timelines",
+        "High availability and disaster recovery architecture described in SDS Architecture Overview section",
+        "BC/DR plan requirement referenced in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-012",
+      "title": "Audit Logging and Monitoring",
+      "description": "Comprehensive audit logs must be maintained for all financial transactions, privileged access, and security events, retained for the SAMA-mandated period.",
+      "keywords": [
+        "audit logging SAMA",
+        "security event logging SAMA",
+        "financial transaction audit",
+        "privileged access logging SAMA",
+        "audit trail SAMA",
+        "log retention SAMA",
+        "tamper-proof log SAMA",
+        "security log analysis",
+        "audit log integrity",
+        "SAMA log retention period"
+      ],
+      "requiredEvidence": [
+        "Audit logging requirements with SAMA-mandated retention period documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Audit logging component described in SDS Security Architecture — Audit Logging subsection",
+        "Tamper-proof log mechanism referenced in SDS Component Specifications section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-013",
+      "title": "Cloud Security Requirements",
+      "description": "Cloud services used for financial system hosting must meet SAMA cloud computing framework requirements including data sovereignty.",
+      "keywords": [
+        "cloud security SAMA",
+        "cloud computing framework SAMA",
+        "KSA cloud hosting",
+        "Saudi Arabia data sovereignty",
+        "cloud provider approval SAMA",
+        "cloud risk assessment SAMA",
+        "data residency Saudi Arabia",
+        "cloud security controls SAMA",
+        "approved cloud provider SAMA",
+        "cloud compliance SAMA"
+      ],
+      "requiredEvidence": [
+        "Cloud provider compliance with SAMA cloud framework documented in SRS constraint requirements (REQ-CON-*)",
+        "Data sovereignty and hosting location documented in SDS Integration Points section",
+        "Cloud security controls referenced in SDS Security Architecture section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-014",
+      "title": "Endpoint Security",
+      "description": "All endpoints accessing financial systems must be protected with approved security controls including anti-malware, device management, and encryption.",
+      "keywords": [
+        "endpoint security SAMA",
+        "device management SAMA",
+        "anti-malware financial system",
+        "endpoint protection SAMA",
+        "mobile device management SAMA",
+        "MDM SAMA",
+        "endpoint encryption SAMA",
+        "device compliance SAMA",
+        "bring your own device SAMA",
+        "endpoint detection response"
+      ],
+      "requiredEvidence": [
+        "Endpoint security requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Device management and compliance controls referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SAMA-CYB-015",
+      "title": "Data Localisation for Saudi Financial Data",
+      "description": "All financial data of Saudi customers and institutions must be stored and processed on infrastructure physically located in the Kingdom of Saudi Arabia.",
+      "keywords": [
+        "data localisation Saudi Arabia",
+        "KSA data residency",
+        "Saudi data sovereignty",
+        "in-Kingdom data storage",
+        "Saudi Arabia hosting requirement",
+        "offshore data prohibition KSA",
+        "financial data KSA location",
+        "data centre Saudi Arabia",
+        "Saudi customer data residency",
+        "SAMA data localisation"
+      ],
+      "requiredEvidence": [
+        "KSA data residency requirement documented in SRS constraint requirements (REQ-CON-*) citing SAMA data localisation policy",
+        "Hosting infrastructure location documented in SDS Integration Points section confirming KSA-based data centres"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-016",
+      "title": "Fraud Prevention and Financial Crime Controls",
+      "description": "Real-time fraud detection and financial crime prevention controls must be implemented for all payment processing and financial transactions.",
+      "keywords": [
+        "fraud prevention SAMA",
+        "financial crime SAMA",
+        "payment fraud detection",
+        "real-time fraud monitoring",
+        "transaction fraud SAMA",
+        "anti-fraud controls SAMA",
+        "financial transaction monitoring",
+        "fraud scoring SAMA",
+        "fraud rules engine SAMA",
+        "suspicious transaction SAMA"
+      ],
+      "requiredEvidence": [
+        "Fraud detection requirements documented in SRS functional requirements (REQ-FUNC-*) with real-time monitoring rules",
+        "Fraud detection component described in SDS Component Specifications section",
+        "Suspicious transaction flagging mechanism documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-017",
+      "title": "AML and Sanctions Compliance",
+      "description": "Anti-money laundering screening and sanctions list checking must be implemented for all customer onboarding and transaction processing.",
+      "keywords": [
+        "AML compliance SAMA",
+        "anti-money laundering SAMA",
+        "sanctions screening SAMA",
+        "KYC requirements SAMA",
+        "customer due diligence SAMA",
+        "FATF compliance SAMA",
+        "sanctions list checking Saudi",
+        "beneficial owner SAMA",
+        "PEP screening SAMA",
+        "financial crime compliance SAMA"
+      ],
+      "requiredEvidence": [
+        "AML and KYC requirements documented in SRS functional requirements (REQ-FUNC-*) referencing SAMA AML Framework",
+        "Sanctions screening component described in SDS Component Specifications section",
+        "Sanctions API integration documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-018",
+      "title": "SAMA Regulatory Reporting Integration",
+      "description": "Systems must support timely and accurate submission of SAMA-mandated regulatory reports and returns.",
+      "keywords": [
+        "SAMA regulatory reporting",
+        "SAMA data submission",
+        "regulatory return SAMA",
+        "SAMA reporting portal",
+        "central bank reporting Saudi",
+        "financial report SAMA",
+        "SAMA data portal integration",
+        "statutory reporting SAMA",
+        "SAMA compliance reporting",
+        "SAMA supervisory data"
+      ],
+      "requiredEvidence": [
+        "SAMA reporting requirements documented in SRS functional requirements (REQ-FUNC-*) with specific return types",
+        "SAMA reporting portal or API integration documented in SDS Integration Points section",
+        "Regulatory data accuracy requirements documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "SAMA-CYB-019",
+      "title": "Cyber Risk Assessment and Treatment",
+      "description": "A formal cyber risk assessment must be conducted before system go-live and on a periodic basis, with a documented risk treatment plan.",
+      "keywords": [
+        "cyber risk assessment SAMA",
+        "risk treatment plan SAMA",
+        "cybersecurity risk register",
+        "cyber risk quantification",
+        "risk assessment methodology SAMA",
+        "cyber threat risk",
+        "information security risk SAMA",
+        "risk management framework SAMA",
+        "cyber risk scoring",
+        "security risk treatment"
+      ],
+      "requiredEvidence": [
+        "Cyber risk assessment requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Risk treatment plan and key risks described in SDS Security Architecture section",
+        "Periodic assessment schedule referenced in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "SAMA-CYB-020",
+      "title": "Open Banking and API Security",
+      "description": "Open banking APIs must implement strong authentication, authorisation, and API security controls per SAMA open banking framework requirements.",
+      "keywords": [
+        "open banking security SAMA",
+        "API security SAMA",
+        "open banking framework Saudi",
+        "financial API authentication",
+        "OAuth banking SAMA",
+        "open API security controls",
+        "PSD2-equivalent SAMA",
+        "third-party API access",
+        "banking API authorisation",
+        "open banking consent SAMA"
+      ],
+      "requiredEvidence": [
+        "API security requirements documented in SRS non-functional requirements (REQ-NFUNC-*) per SAMA open banking requirements",
+        "API authentication and authorisation documented in SDS API Contracts section",
+        "Open banking consent mechanism described in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    }
+  ]
+}

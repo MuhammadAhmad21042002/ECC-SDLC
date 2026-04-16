@@ -1,0 +1,89 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "11111111-2222-4333-8444-555555555555",
+  "projectName": "Demo Project",
+  "clientName": "Demo Client",
+  "currentPhase": "requirements",
+  "phaseHistory": [
+    { "phase": "discovery",    "startedAt": "2026-03-26T00:00:00Z", "completedAt": "2026-03-27T00:00:00Z" },
+    { "phase": "requirements", "startedAt": "2026-03-27T00:00:00Z", "completedAt": null }
+  ],
+  "artifacts": {
+    "scope":    { "path": ".sdlc/artifacts/scope-v1.docx", "version": 1, "hash": "sha256:abc123" },
+    "srs":      null,
+    "sds":      null,
+    "sts":      null,
+    "estimate": null,
+    "proposal": null
+  },
+  "requirements": [
+    {
+      "id": "WRONG-001",
+      "type": "functional",
+      "title": "Bad ID format",
+      "description": "This requirement has an ID that does not match REQ-FUNC-NNN pattern.",
+      "priority": "must",
+      "source": "RFP Section 1.1",
+      "status": "draft",
+      "acceptanceCriteria": ["Some criterion"],
+      "traceForward": { "designComponentIds": [], "testCaseIds": [], "costLineItemIds": [] }
+    },
+    {
+      "id": "REQ-FUNC-002",
+      "type": "functional",
+      "title": "",
+      "description": "This requirement has an empty title, which violates minLength: 1.",
+      "priority": "must",
+      "source": "RFP Section 1.2",
+      "status": "draft",
+      "acceptanceCriteria": ["Some criterion"],
+      "traceForward": { "designComponentIds": [], "testCaseIds": [], "costLineItemIds": [] }
+    },
+    {
+      "id": "REQ-FUNC-003",
+      "type": "functional",
+      "title": "Missing acceptanceCriteria",
+      "description": "This requirement has no acceptanceCriteria field at all.",
+      "priority": "must",
+      "source": "RFP Section 1.3",
+      "status": "draft",
+      "traceForward": { "designComponentIds": [], "testCaseIds": [], "costLineItemIds": [] }
+    },
+    {
+      "id": "REQ-FUNC-004",
+      "type": "functional",
+      "title": "Invalid priority value",
+      "description": "This requirement uses 'high' as priority, which is not a valid MoSCoW value.",
+      "priority": "high",
+      "source": "RFP Section 1.4",
+      "status": "draft",
+      "acceptanceCriteria": ["Some criterion"],
+      "traceForward": { "designComponentIds": [], "testCaseIds": [], "costLineItemIds": [] }
+    },
+    {
+      "id": "REQ-NFUNC-001",
+      "type": "non-functional",
+      "title": "Missing category on non-functional",
+      "description": "Non-functional requirements must have a category field. This one is missing it.",
+      "priority": "should",
+      "source": "RFP Section 2.1",
+      "status": "draft",
+      "acceptanceCriteria": ["Some criterion"],
+      "traceForward": { "designComponentIds": [], "testCaseIds": [], "costLineItemIds": [] }
+    },
+    {
+      "id": "REQ-FUNC-005",
+      "type": "functional",
+      "title": "Missing traceForward",
+      "description": "This requirement is missing the traceForward field entirely.",
+      "priority": "could",
+      "source": "RFP Section 1.5",
+      "status": "draft",
+      "acceptanceCriteria": ["Some criterion"]
+    }
+  ],
+  "designComponents": [],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

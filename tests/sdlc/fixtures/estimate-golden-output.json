@@ -1,0 +1,197 @@
+{
+  "estimatePlan": {
+    "templatePath": "templates/estimation-template.json",
+    "templateId": "ecc-sdlc.estimation.v1",
+    "projectId": "11111111-2222-4333-8444-555555555555",
+    "projectName": "FBR AI Knowledge Platform",
+    "clientName": "Federal Board of Revenue",
+    "generatedDate": "2026-03-20",
+    "documentVersion": "1.0",
+    "currency": "USD",
+    "totalFunctionPoints": 29,
+    "totalEffortHours": 232,
+    "totalCost": 12639,
+    "sheets": {
+      "effortBreakdown": [
+        {
+          "componentId": "DC-001",
+          "componentTitle": "Customer Database",
+          "componentType": "database",
+          "fpaType": "ILF",
+          "fpaTypeFullName": "Internal Logical File",
+          "complexity": "simple",
+          "functionPoints": 7,
+          "hoursPerFP": 8,
+          "effortHours": 56,
+          "phase": "development",
+          "requirementIds": "REQ-FUNC-001",
+          "notes": ""
+        },
+        {
+          "componentId": "DC-002",
+          "componentTitle": "Authentication API",
+          "componentType": "api",
+          "fpaType": "EO",
+          "fpaTypeFullName": "External Output",
+          "complexity": "average",
+          "functionPoints": 5,
+          "hoursPerFP": 8,
+          "effortHours": 40,
+          "phase": "development",
+          "requirementIds": "REQ-FUNC-002",
+          "notes": ""
+        },
+        {
+          "componentId": "DC-003",
+          "componentTitle": "Payment Gateway Integration",
+          "componentType": "integration",
+          "fpaType": "EIF",
+          "fpaTypeFullName": "External Interface File",
+          "complexity": "average",
+          "functionPoints": 7,
+          "hoursPerFP": 8,
+          "effortHours": 56,
+          "phase": "development",
+          "requirementIds": "REQ-FUNC-003",
+          "notes": ""
+        },
+        {
+          "componentId": "DC-004",
+          "componentTitle": "User Registration Form",
+          "componentType": "ui",
+          "fpaType": "EI",
+          "fpaTypeFullName": "External Input",
+          "complexity": "simple",
+          "functionPoints": 3,
+          "hoursPerFP": 8,
+          "effortHours": 24,
+          "phase": "development",
+          "requirementIds": "REQ-FUNC-004",
+          "notes": ""
+        },
+        {
+          "componentId": "DC-005",
+          "componentTitle": "Reporting Service",
+          "componentType": "service",
+          "fpaType": "EO",
+          "fpaTypeFullName": "External Output",
+          "complexity": "complex",
+          "functionPoints": 7,
+          "hoursPerFP": 8,
+          "effortHours": 56,
+          "phase": "development",
+          "requirementIds": "REQ-FUNC-005",
+          "notes": ""
+        },
+        {
+          "componentId": "DC-006",
+          "componentTitle": "Load Balancer",
+          "componentType": "infra",
+          "fpaType": "UNMAPPABLE",
+          "fpaTypeFullName": "UNMAPPABLE",
+          "complexity": "simple",
+          "functionPoints": 0,
+          "hoursPerFP": 8,
+          "effortHours": 0,
+          "phase": "development",
+          "requirementIds": "REQ-NFUNC-001",
+          "notes": "FLAGGED: DC type 'infra' has no FPA equivalent. Manual estimation required for this component."
+        }
+      ],
+      "resourcePlan": [
+        {
+          "role": "architect",
+          "roleLabel": "Solution Architect",
+          "seniorityLevel": "principal",
+          "allocationPct": 0.15,
+          "totalHours": 35,
+          "storyPoints": 5,
+          "hourlyRate": 80,
+          "currency": "USD",
+          "totalCost": 2800
+        },
+        {
+          "role": "seniorDev",
+          "roleLabel": "Senior Developer",
+          "seniorityLevel": "senior",
+          "allocationPct": 0.6,
+          "totalHours": 139,
+          "storyPoints": 18,
+          "hourlyRate": 50,
+          "currency": "USD",
+          "totalCost": 6950
+        },
+        {
+          "role": "juniorDev",
+          "roleLabel": "Junior Developer",
+          "seniorityLevel": "junior",
+          "allocationPct": 0.25,
+          "totalHours": 58,
+          "storyPoints": 8,
+          "hourlyRate": 30,
+          "currency": "USD",
+          "totalCost": 1740
+        }
+      ],
+      "costSummary": [
+        {
+          "category": "Solution Architect",
+          "description": "Solution Architect effort cost",
+          "role": "architect",
+          "hours": 35,
+          "hourlyRate": 80,
+          "currency": "USD",
+          "subtotal": 2800
+        },
+        {
+          "category": "Senior Developer",
+          "description": "Senior Developer effort cost",
+          "role": "seniorDev",
+          "hours": 139,
+          "hourlyRate": 50,
+          "currency": "USD",
+          "subtotal": 6950
+        },
+        {
+          "category": "Junior Developer",
+          "description": "Junior Developer effort cost",
+          "role": "juniorDev",
+          "hours": 58,
+          "hourlyRate": 30,
+          "currency": "USD",
+          "subtotal": 1740
+        },
+        {
+          "category": "Contingency",
+          "description": "10% contingency on total effort cost",
+          "role": "",
+          "hours": 0,
+          "hourlyRate": null,
+          "currency": "",
+          "subtotal": 1149
+        },
+        {
+          "category": "GRAND TOTAL",
+          "description": "Total project cost including contingency",
+          "role": "",
+          "hours": 232,
+          "hourlyRate": null,
+          "currency": "USD",
+          "subtotal": 12639
+        }
+      ]
+    },
+    "unmappableComponents": [
+      "DC-006: infra has no FPA equivalent. Manual estimation required."
+    ],
+    "missingRateCardRoles": [],
+    "validation": {
+      "totalFPMatchesBreakdown": true,
+      "totalHoursMatchesBreakdown": true,
+      "totalCostMatchesResourcePlan": true,
+      "allComponentsProcessed": true,
+      "unmappableCount": 1,
+      "missingRateCardRolesCount": 0
+    }
+  }
+}

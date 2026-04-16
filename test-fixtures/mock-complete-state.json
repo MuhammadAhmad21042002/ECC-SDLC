@@ -1,0 +1,321 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "aabb1122-ccdd-4eef-8012-334455667788",
+  "projectName": "FBR AI Knowledge Platform",
+  "clientName": "Federal Board of Revenue",
+  "eccRoot": "/home/user/.claude/plugins/everything-claude-code",
+  "currentPhase": "test-planning",
+  "phaseHistory": [
+    { "phase": "discovery",    "startedAt": "2026-03-17T08:00:00Z", "completedAt": "2026-03-17T16:00:00Z" },
+    { "phase": "requirements", "startedAt": "2026-03-18T08:00:00Z", "completedAt": "2026-03-18T16:00:00Z" },
+    { "phase": "design",       "startedAt": "2026-03-19T08:00:00Z", "completedAt": "2026-03-19T16:00:00Z" },
+    { "phase": "test-planning","startedAt": "2026-03-20T08:00:00Z", "completedAt": null }
+  ],
+  "artifacts": {
+    "scope": {
+      "path": ".sdlc/artifacts/scope-v1.docx",
+      "version": 1,
+      "hash": "sha256:aaaa1111bbbb2222cccc3333dddd4444eeee5555ffff6666000011112222333344",
+      "createdAt": "2026-03-17T16:00:00Z",
+      "status": "approved"
+    },
+    "srs": {
+      "path": ".sdlc/artifacts/srs-v1.docx",
+      "version": 1,
+      "hash": "sha256:bbbb2222cccc3333dddd4444eeee5555ffff6666000011112222333344445555aa",
+      "createdAt": "2026-03-18T16:00:00Z",
+      "status": "approved"
+    },
+    "sds": {
+      "path": ".sdlc/artifacts/sds-v1.docx",
+      "version": 1,
+      "hash": "sha256:cccc3333dddd4444eeee5555ffff6666000011112222333344445555aaaa6666bb",
+      "createdAt": "2026-03-19T16:00:00Z",
+      "status": "approved"
+    },
+    "sts": {
+      "path": ".sdlc/artifacts/sts-v1.docx",
+      "version": 1,
+      "hash": "sha256:dddd4444eeee5555ffff6666000011112222333344445555aaaa6666bbbb7777cc",
+      "createdAt": "2026-03-20T14:00:00Z",
+      "status": "draft"
+    },
+    "estimate": null,
+    "proposal": null
+  },
+  "requirements": [
+    {
+      "id": "REQ-FUNC-001",
+      "type": "functional",
+      "category": null,
+      "title": "AI-Powered Knowledge Base Search",
+      "description": "The system shall provide natural language search over FBR regulatory documents in Urdu and English.",
+      "priority": "must",
+      "source": "RFP Section 3.2.1, Page 12",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "Search returns results within 2 seconds at p95",
+        "Supports both Urdu and English query inputs",
+        "Returns ranked results with document source citations"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": ["PPRA-2024"],
+      "assumptions": [],
+      "deferralReason": null,
+      "traceForward": {
+        "designComponentIds": ["CMP-001"],
+        "testCaseIds": ["TC-001", "TC-002"],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-FUNC-002",
+      "type": "functional",
+      "category": null,
+      "title": "User Authentication via CNIC",
+      "description": "The system shall authenticate FBR staff via CNIC and password with mandatory MFA.",
+      "priority": "must",
+      "source": "RFP Section 4.1, Page 18",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "CNIC validation against NADRA format",
+        "OTP delivered within 30 seconds",
+        "Account locked after 5 consecutive failed attempts"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": ["SBP-2024", "ISO-27001"],
+      "assumptions": [],
+      "deferralReason": null,
+      "traceForward": {
+        "designComponentIds": ["CMP-002"],
+        "testCaseIds": ["TC-003"],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-FUNC-003",
+      "type": "functional",
+      "category": null,
+      "title": "Document Upload and Indexing",
+      "description": "The system shall allow authorized FBR officers to upload PDF documents for automatic indexing.",
+      "priority": "must",
+      "source": "RFP Section 3.3.2, Page 15",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "Supports PDF files up to 50 MB",
+        "Indexing completes within 60 seconds per document",
+        "Upload restricted to ADMIN and EDITOR roles"
+      ],
+      "dependencies": ["REQ-FUNC-002"],
+      "complianceFrameworks": ["PPRA-2024"],
+      "assumptions": [],
+      "deferralReason": null,
+      "traceForward": {
+        "designComponentIds": ["CMP-001", "CMP-003"],
+        "testCaseIds": ["TC-004"],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-NFUNC-001",
+      "type": "non-functional",
+      "category": "performance",
+      "title": "Search Response Time SLA",
+      "description": "The system shall render search results in under 3 seconds at p95 under 500 concurrent users.",
+      "priority": "must",
+      "source": "RFP Section 5.1, Page 22",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "p95 latency < 3s under 500 concurrent users in load test",
+        "p99 latency < 6s under same load"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": [],
+      "assumptions": [],
+      "deferralReason": null,
+      "traceForward": {
+        "designComponentIds": ["CMP-001"],
+        "testCaseIds": ["TC-005"],
+        "costLineItemIds": []
+      }
+    },
+    {
+      "id": "REQ-NFUNC-002",
+      "type": "non-functional",
+      "category": "availability",
+      "title": "System Uptime SLA",
+      "description": "The system shall maintain 99.9% uptime excluding scheduled maintenance windows.",
+      "priority": "must",
+      "source": "RFP Section 5.2, Page 23",
+      "status": "approved",
+      "acceptanceCriteria": [
+        "Monthly uptime ≥ 99.9% measured over rolling 30 days",
+        "Unplanned downtime < 8.7 hours per year"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": [],
+      "assumptions": [],
+      "deferralReason": null,
+      "traceForward": {
+        "designComponentIds": ["CMP-004"],
+        "testCaseIds": [],
+        "costLineItemIds": []
+      }
+    }
+  ],
+  "designComponents": [
+    {
+      "id": "CMP-001",
+      "name": "AI Search Engine",
+      "type": "service",
+      "description": "Vector-based semantic search service using OpenAI embeddings. Handles document indexing, query processing, and ranked result retrieval. Bilingual (Urdu/English) via separate embedding pipelines.",
+      "technology": "Node.js, Pinecone, OpenAI API",
+      "tracesTo": ["REQ-FUNC-001", "REQ-FUNC-003", "REQ-NFUNC-001"]
+    },
+    {
+      "id": "CMP-002",
+      "name": "Authentication Service",
+      "type": "service",
+      "description": "Stateless JWT-based auth service. Validates CNIC via NADRA regex, enforces MFA via TOTP, manages account lockout, and issues scoped access tokens.",
+      "technology": "Node.js, Redis (session store), TOTP",
+      "tracesTo": ["REQ-FUNC-002"]
+    },
+    {
+      "id": "CMP-003",
+      "name": "Document Ingestion Pipeline",
+      "type": "pipeline",
+      "description": "Async pipeline for PDF upload, text extraction, chunking, and embedding generation. Writes chunks to vector store and metadata to PostgreSQL.",
+      "technology": "Node.js, PDF.js, BullMQ, PostgreSQL",
+      "tracesTo": ["REQ-FUNC-003"]
+    },
+    {
+      "id": "CMP-004",
+      "name": "Infrastructure & HA Layer",
+      "type": "infrastructure",
+      "description": "Kubernetes deployment with auto-scaling, health checks, and multi-zone failover. Achieves 99.9% SLA via redundant pods and load balancing.",
+      "technology": "Kubernetes, AWS EKS, ALB",
+      "tracesTo": ["REQ-NFUNC-002"]
+    }
+  ],
+  "testCases": [
+    {
+      "id": "TC-001",
+      "title": "Natural language search returns ranked results",
+      "type": "functional",
+      "priority": "must",
+      "tracesTo": "REQ-FUNC-001",
+      "steps": ["POST /api/search with Urdu query", "Assert status 200", "Assert results array length >= 1", "Assert each result has source citation"],
+      "expectedResult": "Ranked results returned within 2s with source citations"
+    },
+    {
+      "id": "TC-002",
+      "title": "Search supports bilingual queries",
+      "type": "functional",
+      "priority": "must",
+      "tracesTo": "REQ-FUNC-001",
+      "steps": ["Submit Urdu query", "Submit equivalent English query", "Compare result sets"],
+      "expectedResult": "Both queries return semantically relevant results"
+    },
+    {
+      "id": "TC-003",
+      "title": "Account locks after 5 failed login attempts",
+      "type": "functional",
+      "priority": "must",
+      "tracesTo": "REQ-FUNC-002",
+      "steps": ["Attempt login with wrong password 5 times", "Attempt 6th login", "Assert 423 Locked response"],
+      "expectedResult": "Account locked, admin email notification sent"
+    },
+    {
+      "id": "TC-004",
+      "title": "PDF upload triggers indexing pipeline",
+      "type": "functional",
+      "priority": "must",
+      "tracesTo": "REQ-FUNC-003",
+      "steps": ["POST /api/documents with valid PDF", "Assert 202 Accepted", "Poll /api/documents/:id/status until indexed", "Assert status = indexed within 60s"],
+      "expectedResult": "Document indexed and searchable within 60 seconds"
+    },
+    {
+      "id": "TC-005",
+      "title": "Search p95 latency under load",
+      "type": "performance",
+      "priority": "must",
+      "tracesTo": "REQ-NFUNC-001",
+      "steps": ["Run k6 load test with 500 VUs for 5 minutes", "Collect p95 latency"],
+      "expectedResult": "p95 < 3000ms, p99 < 6000ms"
+    }
+  ],
+  "complianceFlags": [
+    {
+      "frameworkCode": "PPRA-2024",
+      "triggeredBy": "REQ-FUNC-001",
+      "keyword": "PPRA",
+      "detectedAt": "2026-03-18T10:00:00Z",
+      "status": "pending-review",
+      "severity": "high",
+      "description": "Public procurement rules apply — single-source justification required"
+    },
+    {
+      "frameworkCode": "SBP-2024",
+      "triggeredBy": "REQ-FUNC-002",
+      "keyword": "MFA",
+      "detectedAt": "2026-03-18T10:05:00Z",
+      "status": "pending-review",
+      "severity": "critical",
+      "description": "SBP IT Governance: MFA mandatory for all user-facing systems handling government data"
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "OQ-001",
+      "question": "REQ-FUNC-001 requires on-premise hosting but REQ-NFUNC-002 references AWS EKS deployment. Which takes precedence?",
+      "askedTo": "Dr. Tariq Mehmood (Project Sponsor)",
+      "status": "open",
+      "raisedAt": "2026-03-18T11:00:00Z"
+    },
+    {
+      "id": "OQ-002",
+      "question": "Is NADRA API access confirmed for CNIC validation, or should the system use regex-only validation as a fallback?",
+      "askedTo": "Ahmed Khan (Technical Lead, FBR)",
+      "status": "open",
+      "raisedAt": "2026-03-19T09:00:00Z"
+    }
+  ],
+  "traceabilityMatrix": {
+    "REQ-FUNC-001": {
+      "title": "AI-Powered Knowledge Base Search",
+      "designComponents": ["CMP-001"],
+      "testCases": ["TC-001", "TC-002"],
+      "costLineItems": [],
+      "coverageScore": 67
+    },
+    "REQ-FUNC-002": {
+      "title": "User Authentication via CNIC",
+      "designComponents": ["CMP-002"],
+      "testCases": ["TC-003"],
+      "costLineItems": [],
+      "coverageScore": 67
+    },
+    "REQ-FUNC-003": {
+      "title": "Document Upload and Indexing",
+      "designComponents": ["CMP-001", "CMP-003"],
+      "testCases": ["TC-004"],
+      "costLineItems": [],
+      "coverageScore": 67
+    },
+    "REQ-NFUNC-001": {
+      "title": "Search Response Time SLA",
+      "designComponents": ["CMP-001"],
+      "testCases": ["TC-005"],
+      "costLineItems": [],
+      "coverageScore": 67
+    },
+    "REQ-NFUNC-002": {
+      "title": "System Uptime SLA",
+      "designComponents": ["CMP-004"],
+      "testCases": [],
+      "costLineItems": [],
+      "coverageScore": 33
+    }
+  },
+  "lastSavedAt": "2026-03-20T14:30:00Z"
+}

@@ -1,0 +1,474 @@
+{
+  "templateSchema": "ecc-sdlc.template.v1",
+  "templateId": "ecc-sdlc.sts.v1",
+  "documentType": "sts",
+  "version": 1,
+  "format": {
+    "page": {
+      "size": "A4",
+      "orientation": "portrait",
+      "marginsMm": { "top": 25, "right": 20, "bottom": 25, "left": 20 }
+    },
+    "defaults": {
+      "fontFamily": "Calibri",
+      "fontSizePt": 11,
+      "lineSpacing": 1.15,
+      "paragraphSpacingAfterPt": 6
+    },
+    "layout": {
+      "structure": "cover-toc-body",
+      "spacing": {
+        "paragraphAfterPt": 6,
+        "headingBeforePt": 12,
+        "headingAfterPt": 6,
+        "tableAfterPt": 14,
+        "h2BeforePt": 10
+      }
+    },
+    "styles": {
+      "title":       { "fontSizePt": 20, "bold": true,  "spacingAfterPt": 12 },
+      "subtitle":    { "fontSizePt": 12, "italic": true, "spacingAfterPt": 18 },
+      "h1":          { "fontSizePt": 16, "bold": true,  "spacingBeforePt": 12, "spacingAfterPt": 6 },
+      "h2":          { "fontSizePt": 13, "bold": true,  "spacingBeforePt": 10, "spacingAfterPt": 4 },
+      "h3":          { "fontSizePt": 12, "bold": true,  "spacingBeforePt": 8,  "spacingAfterPt": 3 },
+      "normal":      { "fontSizePt": 11 },
+      "bullet":      { "indentLeftMm": 8, "hangingIndentMm": 4 },
+      "numbered":    { "indentLeftMm": 8, "hangingIndentMm": 4 },
+      "tableHeader": { "bold": true },
+      "tableCell":   { "fontSizePt": 10 },
+      "unit":        { "fillColor": "E2EFDA" },
+      "integration": { "fillColor": "FFF2CC" },
+      "system":      { "fillColor": "DDEBF7" },
+      "uat":         { "fillColor": "F4B084" },
+      "performance": { "fillColor": "D9D9D9" },
+      "security":    { "fillColor": "FCE4D6" },
+      "passed":      { "fillColor": "C6EFCE" },
+      "failed":      { "fillColor": "FFC7CE" },
+      "blocked":     { "fillColor": "FFEB9C" },
+      "notRun":      { "fillColor": "F2F2F2" }
+    },
+    "header": {
+      "left": "{projectName} — STS",
+      "right": "Version {documentVersion}",
+      "showOnFirstPage": false
+    },
+    "footer": {
+      "left": "Confidential",
+      "center": "{documentVersion} — {generatedDate}",
+      "right": "Page {pageNumber} of {pageCount}"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "content": {
+        "title": "{projectName}",
+        "subtitle": "Software Test Specification",
+        "clientLine": "Prepared for: {clientName}",
+        "preparedByLine": "Prepared by: {preparedBy}",
+        "dateLine": "Date: {generatedDate}",
+        "versionLine": "Version: {documentVersion}",
+        "classificationLine": "Classification: Confidential"
+      }
+    },
+    {
+      "id": "versionHistory",
+      "type": "table",
+      "content": {
+        "title": "Version History",
+        "columns": [
+          { "key": "version", "label": "Version",        "widthPct": 12 },
+          { "key": "date",    "label": "Date",           "widthPct": 18 },
+          { "key": "author",  "label": "Author",         "widthPct": 25 },
+          { "key": "changes", "label": "Change Summary", "widthPct": 35 },
+          { "key": "status",  "label": "Status",         "widthPct": 10 }
+        ],
+        "rows": "{versionHistory}"
+      }
+    },
+    {
+      "id": "toc",
+      "type": "tableOfContents",
+      "content": {
+        "title": "Table of Contents",
+        "includeHeadingLevels": [1, 2, 3]
+      }
+    },
+    {
+      "id": "intro1",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1. Introduction",
+        "subsections": [
+          { "heading": "1.1 Purpose", "paragraphs": "{purposeParagraphs}" },
+          { "heading": "1.2 Scope", "paragraphs": "{testScopeParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "intro13",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1.3 Definitions, Acronyms, and Abbreviations",
+        "subsections": []
+      }
+    },
+    {
+      "id": "definitionsTable",
+      "type": "table",
+      "content": {
+        "sortBy": "term",
+        "columns": [
+          { "key": "term",        "label": "Term",        "widthPct": 25, "format": "bold" },
+          { "key": "definition",  "label": "Definition",  "widthPct": 55 },
+          { "key": "source",      "label": "Source",      "widthPct": 20 }
+        ],
+        "rows": "{definitionsTable}"
+      }
+    },
+    {
+      "id": "intro14",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1.4 References",
+        "subsections": [
+          { "bullets": "{referencesBullets}" }
+        ]
+      }
+    },
+    {
+      "id": "intro15",
+      "type": "contentBlock",
+      "content": {
+        "heading": "1.5 Document Overview",
+        "subsections": [
+          { "paragraphs": "{overviewParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "testScope",
+      "type": "contentBlock",
+      "content": {
+        "heading": "2. Test Scope",
+        "subsections": [
+          { "heading": "2.1 Items to be Tested", "bullets": "{itemsToBeTestedBullets}" },
+          { "heading": "2.2 Items Not to be Tested", "bullets": "{itemsNotToBeTestedBullets}" },
+          { "heading": "2.3 Test Levels", "paragraphs": "{testLevelsParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "testStrategy",
+      "type": "contentBlock",
+      "content": {
+        "heading": "3. Test Strategy",
+        "subsections": [
+          { "heading": "3.1 Testing Approach", "paragraphs": "{testingApproachParagraphs}" },
+          { "heading": "3.2 Test Automation Strategy", "paragraphs": "{testAutomationParagraphs}" },
+          { "heading": "3.3 Entry Criteria", "bullets": "{entryCriteriaBullets}" },
+          { "heading": "3.4 Exit Criteria", "bullets": "{exitCriteriaBullets}" },
+          { "heading": "3.5 Suspension and Resumption Criteria", "paragraphs": "{suspensionCriteriaParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "testEnvironment",
+      "type": "contentBlock",
+      "content": {
+        "heading": "4. Test Environment",
+        "subsections": [
+          { "heading": "4.1 Hardware Requirements", "paragraphs": "{hardwareRequirementsParagraphs}" },
+          { "heading": "4.2 Software Requirements", "paragraphs": "{softwareRequirementsParagraphs}" },
+          { "heading": "4.3 Network Configuration", "paragraphs": "{networkConfigParagraphs}" },
+          { "heading": "4.4 Test Data Requirements", "paragraphs": "{testDataRequirementsParagraphs}" },
+          { "heading": "4.5 Environment Setup and Teardown", "paragraphs": "{environmentSetupParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "testCases",
+      "type": "table",
+      "content": {
+        "heading": "5. Test Cases",
+        "subheading": "5.1 Test Case Catalog",
+        "caption": "Table — Test Case Catalog",
+        "note": "Every test case must reference at least one requirement. Test case IDs follow the pattern TC-NNN.",
+        "groupBy": "testType",
+        "sortBy": ["testType", "testCaseId"],
+        "testTypeOrder": ["unit", "integration", "system", "uat", "performance", "security"],
+        "applyTestTypeRowColor": true,
+        "columns": [
+          { "key": "testCaseId", "label": "Test ID", "widthPct": 10, "required": true },
+          { "key": "linkedRequirements", "label": "Linked Requirements", "widthPct": 15, "format": "commaSeparated", "required": true },
+          { "key": "testType", "label": "Test Type", "widthPct": 12, "required": true },
+          { "key": "description", "label": "Test Description", "widthPct": 30, "required": true },
+          { "key": "steps", "label": "Test Steps", "widthPct": 18, "format": "numberedList", "required": true },
+          { "key": "expectedResult", "label": "Expected Result", "widthPct": 10, "required": true },
+          { "key": "status", "label": "Status", "widthPct": 5, "default": "not-run" }
+        ],
+        "rows": "{testCases}"
+      }
+    },
+    {
+      "id": "testCasesDetail",
+      "type": "repeatingBlock",
+      "content": {
+        "heading": "5.2 Detailed Test Case Specifications",
+        "note": "One block per test case, grouped by test type.",
+        "itemTemplate": {
+          "titleFormat": "{testCaseId} — {description}",
+          "fields": [
+            { "label": "Test Type", "key": "testType" },
+            { "label": "Linked Requirements", "key": "linkedRequirements", "format": "commaSeparated" },
+            { "label": "Linked Components", "key": "linkedComponents", "format": "commaSeparated", "optional": true },
+            { "label": "Test Steps", "key": "steps", "format": "numberedList" },
+            { "label": "Expected Result", "key": "expectedResult" },
+            { "label": "Status", "key": "status" }
+          ]
+        },
+        "rows": "{testCases}"
+      }
+    },
+    {
+      "id": "trace61",
+      "type": "contentBlock",
+      "content": {
+        "heading": "6. Requirements Traceability Matrix",
+        "subsections": [
+          { "heading": "6.1 Full Traceability Coverage", "subsections": [] }
+        ]
+      }
+    },
+    {
+      "id": "traceabilityMatrixTable",
+      "type": "table",
+      "content": {
+        "caption": "Requirements to Test Cases Traceability",
+        "sortBy": "reqId",
+        "columns": [
+          { "key": "reqId", "label": "Requirement ID", "widthPct": 15 },
+          { "key": "title", "label": "Title", "widthPct": 25 },
+          { "key": "designCoverage", "label": "Design Components", "widthPct": 15, "format": "commaSeparated" },
+          { "key": "testCoverage", "label": "Test Cases", "widthPct": 20, "format": "commaSeparated" },
+          { "key": "costCoverage", "label": "Cost Line Items", "widthPct": 15, "format": "commaSeparated" },
+          { "key": "overallStatus", "label": "Coverage %", "widthPct": 10 }
+        ],
+        "rows": "{traceabilityMatrix}"
+      }
+    },
+    {
+      "id": "coverage62",
+      "type": "contentBlock",
+      "content": {
+        "heading": "6.2 Coverage Analysis",
+        "subsections": [
+          { "heading": "Coverage Summary", "subsections": [] }
+        ]
+      }
+    },
+    {
+      "id": "coverageSummaryTable",
+      "type": "table",
+      "content": {
+        "columns": [
+          { "key": "requirementType", "label": "Requirement Type", "widthPct": 30 },
+          { "key": "totalCount", "label": "Total Requirements", "widthPct": 20 },
+          { "key": "coveredCount", "label": "Covered by Tests", "widthPct": 20 },
+          { "key": "coveragePercent", "label": "Coverage %", "widthPct": 15 },
+          { "key": "status", "label": "Status", "widthPct": 15 }
+        ],
+        "rows": "{coverageSummary}"
+      }
+    },
+    {
+      "id": "coverageGaps",
+      "type": "contentBlock",
+      "content": {
+        "heading": "Coverage Gaps",
+        "subsections": [
+          { "paragraphs": "{coverageGapsParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "schedule71",
+      "type": "contentBlock",
+      "content": {
+        "heading": "7. Test Schedule and Resources",
+        "subsections": [
+          { "heading": "7.1 Test Schedule", "subsections": [] }
+        ]
+      }
+    },
+    {
+      "id": "testScheduleTable",
+      "type": "table",
+      "content": {
+        "columns": [
+          { "key": "phase", "label": "Test Phase", "widthPct": 25 },
+          { "key": "startDate", "label": "Start Date", "widthPct": 15 },
+          { "key": "endDate", "label": "End Date", "widthPct": 15 },
+          { "key": "duration", "label": "Duration", "widthPct": 15 },
+          { "key": "owner", "label": "Owner", "widthPct": 20 },
+          { "key": "status", "label": "Status", "widthPct": 10 }
+        ],
+        "rows": "{testSchedule}"
+      }
+    },
+    {
+      "id": "resource72",
+      "type": "contentBlock",
+      "content": {
+        "heading": "7.2 Resource Allocation",
+        "subsections": []
+      }
+    },
+    {
+      "id": "resourceAllocationTable",
+      "type": "table",
+      "content": {
+        "columns": [
+          { "key": "role", "label": "Role", "widthPct": 25 },
+          { "key": "name", "label": "Name", "widthPct": 20 },
+          { "key": "allocation", "label": "Allocation %", "widthPct": 15 },
+          { "key": "startDate", "label": "Start Date", "widthPct": 15 },
+          { "key": "endDate", "label": "End Date", "widthPct": 15 },
+          { "key": "responsibilities", "label": "Responsibilities", "widthPct": 10 }
+        ],
+        "rows": "{resourceAllocation}"
+      }
+    },
+    {
+      "id": "deliverables73",
+      "type": "contentBlock",
+      "content": {
+        "heading": "7.3 Test Deliverables",
+        "subsections": [
+          { "bullets": "{testDeliverablesBullets}" }
+        ]
+      }
+    },
+    {
+      "id": "defect81",
+      "type": "contentBlock",
+      "content": {
+        "heading": "8. Defect Management",
+        "subsections": [
+          { "heading": "8.1 Defect Reporting Process", "paragraphs": "{defectReportingParagraphs}" },
+          { "heading": "8.2 Defect Severity Classification", "subsections": [] }
+        ]
+      }
+    },
+    {
+      "id": "defectSeverityTable",
+      "type": "table",
+      "content": {
+        "columns": [
+          { "key": "severity", "label": "Severity", "widthPct": 15 },
+          { "key": "description", "label": "Description", "widthPct": 40 },
+          { "key": "example", "label": "Example", "widthPct": 30 },
+          { "key": "sla", "label": "Resolution SLA", "widthPct": 15 }
+        ],
+        "rows": "{defectSeverityClassification}"
+      }
+    },
+    {
+      "id": "defect83",
+      "type": "contentBlock",
+      "content": {
+        "heading": "8.3 Defect Tracking and Resolution",
+        "subsections": [
+          { "paragraphs": "{defectTrackingParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "risk91",
+      "type": "contentBlock",
+      "content": {
+        "heading": "9. Risk Management",
+        "subsections": [
+          { "heading": "9.1 Test Risks", "subsections": [] }
+        ]
+      }
+    },
+    {
+      "id": "testRisksTable",
+      "type": "table",
+      "content": {
+        "columns": [
+          { "key": "riskId", "label": "Risk ID", "widthPct": 10 },
+          { "key": "description", "label": "Risk Description", "widthPct": 30 },
+          { "key": "probability", "label": "Probability", "widthPct": 12 },
+          { "key": "impact", "label": "Impact", "widthPct": 12 },
+          { "key": "severity", "label": "Severity", "widthPct": 12 },
+          { "key": "mitigation", "label": "Mitigation", "widthPct": 24 }
+        ],
+        "rows": "{testRisks}"
+      }
+    },
+    {
+      "id": "risk92",
+      "type": "contentBlock",
+      "content": {
+        "heading": "9.2 Mitigation Strategies",
+        "subsections": [
+          { "paragraphs": "{mitigationStrategiesParagraphs}" }
+        ]
+      }
+    },
+    {
+      "id": "appendixTestData",
+      "type": "appendix",
+      "renderCondition": "testDataSpecificationsParagraphs.length > 0 || testToolsParagraphs.length > 0",
+      "content": {
+        "title": "Appendix A — Test Data and Tools",
+        "subsections": [
+          { "heading": "Test Data Specifications", "paragraphs": "{testDataSpecificationsParagraphs}", "optional": true },
+          { "heading": "Test Tools and Automation Frameworks", "paragraphs": "{testToolsParagraphs}", "optional": true }
+        ]
+      }
+    },
+    {
+      "id": "appendixSignOff",
+      "type": "table",
+      "content": {
+        "title": "Appendix B — Test Plan Approval and Sign-off",
+        "note": "Sign-off required from all stakeholders before test execution.",
+        "columns": [
+          { "key": "name", "label": "Name", "widthPct": 30 },
+          { "key": "title", "label": "Title", "widthPct": 25 },
+          { "key": "signature", "label": "Signature", "widthPct": 25 },
+          { "key": "date", "label": "Date", "widthPct": 20 }
+        ],
+        "rows": "{signOffRows}",
+        "required": false
+      }
+    },
+    {
+      "id": "index",
+      "type": "index",
+      "content": {
+        "title": "Index",
+        "note": "Keywords and section references generated from test case IDs, requirement IDs, and section headings.",
+        "rows": "{indexEntries}"
+      }
+    }
+  ],
+  "dataContract": {
+    "requiredFields": [
+      "projectName", "clientName", "preparedBy", "generatedDate", "documentVersion", "versionHistory",
+      "purposeParagraphs", "testScopeParagraphs", "definitionsTable", "referencesBullets", "overviewParagraphs",
+      "itemsToBeTestedBullets", "itemsNotToBeTestedBullets", "testLevelsParagraphs",
+      "testingApproachParagraphs", "testAutomationParagraphs", "entryCriteriaBullets", "exitCriteriaBullets",
+      "suspensionCriteriaParagraphs", "hardwareRequirementsParagraphs", "softwareRequirementsParagraphs",
+      "networkConfigParagraphs", "testDataRequirementsParagraphs", "environmentSetupParagraphs",
+      "testCases", "testCaseId", "description", "traceabilityMatrix", "coverageGapsParagraphs", "coverageSummary",
+      "testSchedule", "resourceAllocation", "testDeliverablesBullets", "defectReportingParagraphs",
+      "defectSeverityClassification", "defectTrackingParagraphs", "testRisks", "mitigationStrategiesParagraphs",
+      "testDataSpecificationsParagraphs", "testToolsParagraphs", "signOffRows", "indexEntries"
+    ]
+  }
+}

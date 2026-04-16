@@ -1,0 +1,29 @@
+{
+  "id": "DC-001",
+  "title": "Authentication service",
+  "description": "Provides authentication and session management for users, including login, logout, and access token verification.",
+  "type": "service",
+  "status": "draft",
+  "requirementIds": ["REQ-FUNC-001"],
+  "responsibilities": [
+    "Validate user credentials",
+    "Issue and validate sessions/tokens"
+  ],
+  "interfaces": [
+    {
+      "name": "POST /auth/login",
+      "kind": "api",
+      "description": "Authenticates a user and returns a session token."
+    }
+  ],
+  "dependencies": [],
+  "dataStores": ["users", "sessions"],
+  "assumptions": ["Identity provider selection is TBD"],
+  "risks": [
+    {
+      "risk": "Weak password policies could increase account compromise risk.",
+      "mitigation": "Enforce strong password policies and rate limiting; consider MFA requirements."
+    }
+  ]
+}
+

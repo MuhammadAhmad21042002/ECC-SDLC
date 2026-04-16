@@ -1,0 +1,450 @@
+{
+  "frameworkId": "GDPR",
+  "frameworkName": "EU General Data Protection Regulation (2016/679)",
+  "version": "2018.1",
+  "effectiveDate": "2018-05-25",
+  "applicability": "All organisations processing personal data of EU/EEA data subjects, regardless of where the organisation is located",
+  "controls": [
+    {
+      "controlId": "GDPR-ART6-001",
+      "title": "Lawful Basis for Processing Personal Data",
+      "description": "Personal data may only be processed where a lawful basis exists under Article 6 GDPR.",
+      "keywords": [
+        "lawful basis processing",
+        "personal data processing",
+        "legitimate interest",
+        "legal basis data",
+        "consent-based processing",
+        "contractual necessity",
+        "legal obligation processing",
+        "data processing justification",
+        "processing personal information",
+        "Article 6 GDPR"
+      ],
+      "requiredEvidence": [
+        "Lawful basis for each personal data processing activity documented in SRS constraint requirements (REQ-CON-*)",
+        "Data processing register or inventory referenced in SRS constraint requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "GDPR-ART7-001",
+      "title": "Consent Management",
+      "description": "Where consent is the lawful basis, it must be freely given, specific, informed, and unambiguous, with records of consent maintained.",
+      "keywords": [
+        "consent management GDPR",
+        "explicit consent requirement",
+        "consent withdrawal mechanism",
+        "consent record keeping",
+        "freely given consent",
+        "data subject consent",
+        "opt-in consent",
+        "granular consent",
+        "consent audit trail",
+        "revoke consent"
+      ],
+      "requiredEvidence": [
+        "Consent collection and management mechanism documented in SRS functional requirements (REQ-FUNC-*)",
+        "Consent withdrawal workflow described in SDS Component Specifications section",
+        "Consent audit trail documented in SDS Security Architecture — Audit Logging subsection"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "GDPR-ART13-001",
+      "title": "Transparency and Privacy Notice",
+      "description": "Data subjects must be informed at the point of data collection about who processes their data, why, and what their rights are.",
+      "keywords": [
+        "privacy notice requirement",
+        "data processing transparency",
+        "data subject information",
+        "privacy policy disclosure",
+        "data controller identity",
+        "processing purpose disclosure",
+        "data retention period disclosure",
+        "right to access notice",
+        "GDPR transparency obligation",
+        "fair processing notice"
+      ],
+      "requiredEvidence": [
+        "Privacy notice content and display mechanism documented in SRS functional requirements (REQ-FUNC-*)",
+        "Data controller identity and contact details referenced in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART17-001",
+      "title": "Right to Erasure",
+      "description": "Data subjects have the right to request deletion of their personal data under defined circumstances.",
+      "keywords": [
+        "right to erasure",
+        "right to be forgotten",
+        "data deletion request",
+        "personal data removal",
+        "data subject deletion right",
+        "erasure request mechanism",
+        "data purge on request",
+        "GDPR deletion obligation",
+        "remove personal data",
+        "data subject rights erasure"
+      ],
+      "requiredEvidence": [
+        "Right to erasure workflow documented in SRS functional requirements (REQ-FUNC-*) with acceptance criteria",
+        "Data deletion mechanism described in SDS Component Specifications section",
+        "Erasure propagation to downstream systems documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "GDPR-ART20-001",
+      "title": "Right to Data Portability",
+      "description": "Data subjects have the right to receive their personal data in a structured, commonly used, machine-readable format.",
+      "keywords": [
+        "data portability right",
+        "personal data export",
+        "machine-readable data format",
+        "data subject data export",
+        "structured data export",
+        "portable data format",
+        "data download request",
+        "GDPR portability obligation",
+        "data export functionality",
+        "transfer to another controller"
+      ],
+      "requiredEvidence": ["Data portability export functionality documented in SRS functional requirements (REQ-FUNC-*)", "Export format and data structure described in SDS API Contracts section"],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART25-001",
+      "title": "Data Protection by Design and by Default",
+      "description": "Privacy must be considered from the earliest stages of system design, with only necessary data collected and processed by default.",
+      "keywords": [
+        "privacy by design",
+        "data protection by design",
+        "privacy by default",
+        "data minimisation principle",
+        "minimum necessary data",
+        "privacy-first architecture",
+        "built-in privacy controls",
+        "default privacy settings",
+        "GDPR Article 25",
+        "privacy engineering"
+      ],
+      "requiredEvidence": [
+        "Data minimisation approach documented in SDS Architecture Overview section",
+        "Privacy by design considerations documented in SDS Security Architecture — Data Protection subsection",
+        "Default privacy settings described in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART30-001",
+      "title": "Records of Processing Activities",
+      "description": "A register of all personal data processing activities must be maintained with defined mandatory fields.",
+      "keywords": [
+        "records of processing activities",
+        "data processing register",
+        "ROPA GDPR",
+        "processing activity inventory",
+        "Article 30 GDPR",
+        "data flow mapping",
+        "processing register maintenance",
+        "controller processor records",
+        "data inventory GDPR",
+        "processing activity documentation"
+      ],
+      "requiredEvidence": [
+        "Data processing register requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Data flows and processing activities described in SDS Integration Points section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART32-001",
+      "title": "Security of Processing",
+      "description": "Appropriate technical and organisational measures must be implemented to ensure security appropriate to the risk of processing personal data.",
+      "keywords": [
+        "security of processing GDPR",
+        "personal data encryption",
+        "pseudonymisation requirement",
+        "data integrity confidentiality",
+        "security risk assessment GDPR",
+        "personal data security measures",
+        "encryption pseudonymisation",
+        "access control personal data",
+        "data security technical measures",
+        "GDPR security obligation"
+      ],
+      "requiredEvidence": [
+        "Personal data security measures documented in SDS Security Architecture — Data Protection subsection",
+        "Pseudonymisation or encryption of personal data fields described in SDS Database Schema section",
+        "Security risk assessment requirement documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "GDPR-ART33-001",
+      "title": "Personal Data Breach Notification",
+      "description": "Personal data breaches must be notified to the supervisory authority within 72 hours and to affected data subjects without undue delay.",
+      "keywords": [
+        "personal data breach notification",
+        "72-hour breach notification",
+        "data breach reporting GDPR",
+        "breach notification supervisory authority",
+        "data subject breach notification",
+        "incident response GDPR",
+        "breach detection mechanism",
+        "data breach procedure",
+        "GDPR breach obligation",
+        "supervisory authority reporting"
+      ],
+      "requiredEvidence": [
+        "72-hour breach notification procedure documented in SRS constraint requirements (REQ-CON-*)",
+        "Breach detection and alerting mechanism described in SDS Security Architecture section",
+        "Incident response procedure referencing GDPR timelines documented in SRS constraint requirements"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "GDPR-ART35-001",
+      "title": "Data Protection Impact Assessment",
+      "description": "A DPIA must be conducted prior to processing that is likely to result in high risk to individuals.",
+      "keywords": [
+        "data protection impact assessment",
+        "DPIA requirement",
+        "high risk processing",
+        "privacy impact assessment",
+        "systematic monitoring",
+        "large-scale processing assessment",
+        "automated decision making risk",
+        "sensitive data processing risk",
+        "GDPR Article 35",
+        "risk assessment personal data"
+      ],
+      "requiredEvidence": [
+        "DPIA requirement documented in SRS constraint requirements (REQ-CON-*) where high-risk processing is involved",
+        "High-risk processing activities identified and referenced in SDS Architecture Overview section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART44-001",
+      "title": "International Data Transfer Restrictions",
+      "description": "Personal data may only be transferred to third countries with adequate protection or subject to appropriate safeguards.",
+      "keywords": [
+        "international data transfer",
+        "cross-border data transfer GDPR",
+        "third country transfer",
+        "adequacy decision EU",
+        "standard contractual clauses",
+        "SCCs data transfer",
+        "data transfer safeguards",
+        "EU data export restriction",
+        "GDPR transfer mechanism",
+        "binding corporate rules"
+      ],
+      "requiredEvidence": [
+        "International data transfer restrictions and applicable transfer mechanisms documented in SRS constraint requirements (REQ-CON-*)",
+        "Third-country data flows and transfer basis documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "GDPR-ART28-001",
+      "title": "Data Processor Obligations",
+      "description": "Data processors must act only on documented instructions from the controller and implement required security measures.",
+      "keywords": [
+        "data processor agreement",
+        "data processing agreement",
+        "processor instructions",
+        "controller processor contract",
+        "sub-processor management",
+        "DPA GDPR requirement",
+        "processor security obligations",
+        "third-party data processor",
+        "processor liability GDPR",
+        "data processing contract"
+      ],
+      "requiredEvidence": [
+        "Data processor obligations and DPA requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Third-party processors and their data access documented in SDS Integration Points section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART15-001",
+      "title": "Right of Access by Data Subject",
+      "description": "Data subjects have the right to obtain confirmation of processing and a copy of their personal data.",
+      "keywords": [
+        "right of access GDPR",
+        "subject access request",
+        "SAR processing",
+        "personal data copy request",
+        "data subject access right",
+        "access to personal data",
+        "data access request mechanism",
+        "GDPR access obligation",
+        "data subject information request",
+        "response to access request"
+      ],
+      "requiredEvidence": [
+        "Subject access request handling mechanism documented in SRS functional requirements (REQ-FUNC-*)",
+        "SAR response workflow described in SDS Component Specifications section",
+        "30-day response timeline referenced in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART5-001",
+      "title": "Data Minimisation and Purpose Limitation",
+      "description": "Personal data must be adequate, relevant, limited to what is necessary, and processed only for specified purposes.",
+      "keywords": [
+        "data minimisation GDPR",
+        "purpose limitation principle",
+        "data adequacy requirement",
+        "relevant personal data only",
+        "specified purpose processing",
+        "proportionality personal data",
+        "excess data collection",
+        "data collection limitation",
+        "purpose specification GDPR",
+        "unnecessary data prohibition"
+      ],
+      "requiredEvidence": [
+        "Data minimisation approach and fields collected documented in SRS functional requirements (REQ-FUNC-*)",
+        "Purpose limitation documented in SRS constraint requirements (REQ-CON-*)",
+        "Database schema limited to necessary fields documented in SDS Database Schema section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART5-002",
+      "title": "Data Accuracy and Rectification",
+      "description": "Personal data must be accurate and kept up to date, with data subjects able to request rectification of inaccurate data.",
+      "keywords": [
+        "data accuracy GDPR",
+        "right to rectification",
+        "data correction mechanism",
+        "personal data update",
+        "inaccurate data correction",
+        "data rectification request",
+        "GDPR accuracy principle",
+        "data quality obligation",
+        "correct personal data",
+        "data amendment request"
+      ],
+      "requiredEvidence": [
+        "Data rectification mechanism documented in SRS functional requirements (REQ-FUNC-*)",
+        "Data update propagation to all systems documented in SDS Integration Points section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "GDPR-ART5-003",
+      "title": "Storage Limitation",
+      "description": "Personal data must not be kept in a form that permits identification of data subjects for longer than necessary.",
+      "keywords": [
+        "storage limitation GDPR",
+        "personal data retention limit",
+        "data deletion schedule",
+        "retention period personal data",
+        "automated data deletion",
+        "GDPR retention obligation",
+        "data expiry mechanism",
+        "personal data lifecycle",
+        "retention policy GDPR",
+        "data archival deletion"
+      ],
+      "requiredEvidence": [
+        "Personal data retention periods documented in SRS constraint requirements (REQ-CON-*) per data category",
+        "Automated data deletion or archival mechanism described in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART22-001",
+      "title": "Automated Decision-Making and Profiling",
+      "description": "Data subjects must not be subject to solely automated decisions that significantly affect them without appropriate safeguards.",
+      "keywords": [
+        "automated decision making",
+        "profiling GDPR",
+        "automated processing decision",
+        "algorithmic decision making",
+        "human review automated decision",
+        "significant effect automated",
+        "GDPR Article 22",
+        "right to human intervention",
+        "AI decision making",
+        "automated scoring system"
+      ],
+      "requiredEvidence": [
+        "Automated decision-making processes identified in SRS functional requirements (REQ-FUNC-*) with human review mechanism",
+        "Right to human intervention documented in SRS functional requirements where automated decisions are made"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART37-001",
+      "title": "Data Protection Officer Designation",
+      "description": "A DPO must be designated where required by Article 37 and their contact details published.",
+      "keywords": [
+        "data protection officer",
+        "DPO designation requirement",
+        "DPO contact details",
+        "GDPR Article 37",
+        "privacy officer appointment",
+        "DPO obligation",
+        "data protection responsibility",
+        "DPO role GDPR",
+        "privacy officer GDPR",
+        "DPO publication"
+      ],
+      "requiredEvidence": [
+        "DPO designation requirement and contact details referenced in SRS constraint requirements (REQ-CON-*)",
+        "DPO contact information inclusion in privacy notice documented in SRS functional requirements"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "GDPR-ART21-001",
+      "title": "Right to Object to Processing",
+      "description": "Data subjects have the right to object to processing of their personal data for direct marketing and other purposes.",
+      "keywords": [
+        "right to object GDPR",
+        "objection to processing",
+        "opt-out direct marketing",
+        "direct marketing objection",
+        "processing objection mechanism",
+        "data subject objection right",
+        "GDPR Article 21",
+        "marketing opt-out",
+        "profiling objection",
+        "processing restriction request"
+      ],
+      "requiredEvidence": ["Right to object mechanism documented in SRS functional requirements (REQ-FUNC-*)", "Marketing opt-out workflow described in SDS Component Specifications section"],
+      "severity": "high"
+    },
+    {
+      "controlId": "GDPR-ART18-001",
+      "title": "Right to Restriction of Processing",
+      "description": "Data subjects have the right to restrict processing of their personal data under defined circumstances.",
+      "keywords": [
+        "restriction of processing GDPR",
+        "processing restriction request",
+        "data processing freeze",
+        "suspend data processing",
+        "data subject restriction right",
+        "GDPR Article 18",
+        "restrict personal data use",
+        "processing limitation request",
+        "temporary processing restriction",
+        "data hold request"
+      ],
+      "requiredEvidence": [
+        "Processing restriction mechanism documented in SRS functional requirements (REQ-FUNC-*)",
+        "Technical implementation of processing restriction described in SDS Component Specifications section"
+      ],
+      "severity": "medium"
+    }
+  ]
+}

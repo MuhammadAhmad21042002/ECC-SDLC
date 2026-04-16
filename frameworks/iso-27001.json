@@ -1,0 +1,454 @@
+{
+  "frameworkId": "ISO-27001",
+  "frameworkName": "ISO/IEC 27001:2022 Information Security Management System",
+  "version": "2022.1",
+  "effectiveDate": "2022-10-25",
+  "applicability": "All organisations seeking or maintaining ISO/IEC 27001 certification or implementing an Information Security Management System",
+  "controls": [
+    {
+      "controlId": "ISO-A5-001",
+      "title": "Information Security Policies",
+      "description": "Information security policies must be defined, approved, published, and reviewed at planned intervals.",
+      "keywords": [
+        "information security policy",
+        "security policy approval",
+        "security policy review",
+        "ISMS policy",
+        "information security framework",
+        "security governance policy",
+        "cybersecurity policy document",
+        "security policy management",
+        "ISO 27001 policy",
+        "security policy lifecycle"
+      ],
+      "requiredEvidence": ["Information security policy requirement documented in SRS constraint requirements (REQ-CON-*)", "Security policy governance referenced in SRS constraint requirements"],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A5-002",
+      "title": "Information Classification",
+      "description": "Information must be classified in terms of legal requirements, value, and sensitivity to unauthorised disclosure or modification.",
+      "keywords": [
+        "data classification scheme",
+        "information classification",
+        "sensitive data labelling",
+        "confidential information",
+        "data sensitivity classification",
+        "classified information handling",
+        "information asset classification",
+        "data protection classification",
+        "security classification",
+        "information security labelling"
+      ],
+      "requiredEvidence": [
+        "Information classification scheme documented in SDS Security Architecture — Data Protection subsection",
+        "Classification levels and handling rules documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-001",
+      "title": "Access Control Policy",
+      "description": "Access to information and systems must be restricted based on business and security requirements through a formal access control policy.",
+      "keywords": [
+        "access control policy",
+        "role-based access control",
+        "RBAC implementation",
+        "access restriction policy",
+        "need-to-know principle",
+        "least privilege access",
+        "user access management",
+        "access rights management",
+        "authorisation controls",
+        "access control matrix"
+      ],
+      "requiredEvidence": [
+        "Access control policy and RBAC model documented in SDS Security Architecture — Authorization subsection",
+        "Least privilege and need-to-know requirements documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-002",
+      "title": "Cryptography Policy",
+      "description": "A policy on the use of cryptographic controls must be developed and implemented to protect information.",
+      "keywords": [
+        "cryptography policy",
+        "encryption policy",
+        "cryptographic controls",
+        "key management policy",
+        "encryption standard",
+        "approved algorithm",
+        "symmetric encryption",
+        "asymmetric encryption",
+        "cryptographic key lifecycle",
+        "TLS policy"
+      ],
+      "requiredEvidence": [
+        "Cryptography policy and approved algorithms documented in SDS Security Architecture — Data Protection subsection",
+        "Key management lifecycle documented in SDS Security Architecture section",
+        "Encryption requirements documented in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-003",
+      "title": "Secure Development Lifecycle",
+      "description": "Rules for secure development of software and systems must be established and applied to within-organisation development activities.",
+      "keywords": [
+        "secure development lifecycle",
+        "secure coding standards",
+        "application security testing",
+        "security code review",
+        "static analysis security",
+        "dynamic security testing",
+        "OWASP compliance",
+        "security requirements definition",
+        "DevSecOps practice",
+        "software security standards"
+      ],
+      "requiredEvidence": [
+        "Secure development lifecycle requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Security testing requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Code review and SAST process referenced in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-004",
+      "title": "System Acquisition Security Requirements",
+      "description": "Information security requirements must be included in requirements for new information systems or enhancements to existing systems.",
+      "keywords": [
+        "security requirements specification",
+        "system acquisition security",
+        "security in requirements",
+        "information security requirements",
+        "non-functional security requirements",
+        "security design requirements",
+        "system security specification",
+        "security architecture requirements",
+        "security baseline requirements",
+        "functional security requirements"
+      ],
+      "requiredEvidence": [
+        "Information security requirements documented in SRS non-functional requirements (REQ-NFUNC-*) with explicit ISO 27001 reference",
+        "Security design requirements included in SDS Security Architecture section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "ISO-A8-005",
+      "title": "Protection of Test Data",
+      "description": "Test data must be selected carefully, protected, and controlled to avoid exposure of production personal or sensitive data in test environments.",
+      "keywords": [
+        "test data protection",
+        "production data in test",
+        "data masking testing",
+        "test environment security",
+        "sensitive data masking",
+        "data anonymisation testing",
+        "synthetic test data",
+        "test data management",
+        "non-production data security",
+        "test data anonymisation"
+      ],
+      "requiredEvidence": [
+        "Test data protection requirement documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Data masking or synthetic data generation approach referenced in SDS Component Specifications section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "ISO-A8-006",
+      "title": "Monitoring and Logging",
+      "description": "Systems must be monitored and security events logged with logs protected from tampering and retained for the required period.",
+      "keywords": [
+        "security event logging",
+        "audit log retention",
+        "log integrity protection",
+        "security monitoring system",
+        "event log analysis",
+        "tamper-evident logging",
+        "security information management",
+        "log centralisation",
+        "audit trail integrity",
+        "SIEM implementation"
+      ],
+      "requiredEvidence": [
+        "Logging and monitoring requirements documented in SRS non-functional requirements (REQ-NFUNC-*) with retention periods",
+        "Audit logging component described in SDS Security Architecture — Audit Logging subsection",
+        "Log integrity protection mechanism referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-007",
+      "title": "Vulnerability Management",
+      "description": "Technical vulnerabilities in systems must be identified, evaluated, and treated in a timely manner.",
+      "keywords": [
+        "vulnerability management process",
+        "security vulnerability assessment",
+        "CVE management",
+        "patch management",
+        "vulnerability scanning",
+        "security patching",
+        "vulnerability remediation",
+        "penetration testing",
+        "security scan findings",
+        "vulnerability risk treatment"
+      ],
+      "requiredEvidence": [
+        "Vulnerability management process documented in SRS constraint requirements (REQ-CON-*) with remediation timelines",
+        "Vulnerability scanning requirement documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Technology stack version management referenced in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A5-003",
+      "title": "Supplier Relationships Security",
+      "description": "Requirements for addressing information security within supplier relationships must be agreed and documented.",
+      "keywords": [
+        "supplier security requirements",
+        "third-party security agreement",
+        "vendor security assessment",
+        "supply chain security",
+        "outsourcing security",
+        "supplier security policy",
+        "third-party risk management",
+        "supplier audit rights",
+        "cloud provider security requirements",
+        "managed service security"
+      ],
+      "requiredEvidence": [
+        "Supplier security requirements documented in SRS constraint requirements (REQ-CON-*)",
+        "Third-party vendor security requirements referenced in SDS Integration Points section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A6-001",
+      "title": "Information Security Incident Management",
+      "description": "Responsibilities and procedures must be established to ensure a quick, effective, and orderly response to information security incidents.",
+      "keywords": [
+        "incident management procedure",
+        "security incident response",
+        "incident response plan",
+        "security event escalation",
+        "incident classification",
+        "security incident reporting",
+        "incident containment",
+        "security breach response",
+        "incident post-incident review",
+        "incident management team"
+      ],
+      "requiredEvidence": [
+        "Security incident management procedure documented in SRS constraint requirements (REQ-CON-*)",
+        "Incident detection and escalation mechanism described in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-008",
+      "title": "Network Security Controls",
+      "description": "Networks must be managed and controlled to protect information in systems and applications.",
+      "keywords": [
+        "network security controls",
+        "network access control",
+        "network segmentation",
+        "firewall configuration",
+        "network monitoring",
+        "DMZ implementation",
+        "perimeter security controls",
+        "network traffic filtering",
+        "intrusion detection",
+        "network security architecture"
+      ],
+      "requiredEvidence": [
+        "Network security controls described in SDS Architecture Overview section",
+        "Firewall and segmentation requirements documented in SDS Security Architecture section",
+        "Network monitoring requirements referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A6-002",
+      "title": "Business Continuity Information Security",
+      "description": "Information security continuity must be embedded in the organisation's business continuity management systems.",
+      "keywords": [
+        "business continuity security",
+        "information security continuity",
+        "disaster recovery security",
+        "BCP security requirements",
+        "continuity plan security",
+        "system availability requirement",
+        "redundancy security",
+        "recovery security controls",
+        "business continuity planning",
+        "security in disaster recovery"
+      ],
+      "requiredEvidence": [
+        "Business continuity and availability requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Recovery architecture described in SDS Architecture Overview section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "ISO-A5-004",
+      "title": "Compliance with Legal and Contractual Requirements",
+      "description": "All relevant legal, statutory, regulatory, and contractual requirements must be identified and documented for each information system.",
+      "keywords": [
+        "regulatory compliance requirements",
+        "legal compliance",
+        "statutory requirement",
+        "contractual security requirement",
+        "compliance obligation",
+        "legal obligation information security",
+        "data protection legislation",
+        "regulatory security requirement",
+        "compliance framework",
+        "legal security requirement"
+      ],
+      "requiredEvidence": [
+        "Applicable legal and regulatory requirements documented in SRS constraint requirements (REQ-CON-*)",
+        "Compliance obligations listed with specific regulation references in SRS constraint requirements"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-009",
+      "title": "User Authentication and Password Management",
+      "description": "User authentication must be controlled through secure management of secret authentication information including passwords.",
+      "keywords": [
+        "user authentication control",
+        "password management policy",
+        "strong authentication",
+        "password complexity requirement",
+        "multi-factor authentication",
+        "authentication control",
+        "password policy",
+        "credential management",
+        "authentication mechanism",
+        "secure login"
+      ],
+      "requiredEvidence": [
+        "Authentication and password policy requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Authentication mechanism described in SDS Security Architecture — Authentication subsection"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-010",
+      "title": "Physical and Environmental Security",
+      "description": "Physical security perimeters must be defined and used to protect areas that contain sensitive or critical information and systems.",
+      "keywords": [
+        "physical security controls",
+        "data centre physical security",
+        "environmental security",
+        "physical access control",
+        "secure facility",
+        "physical perimeter security",
+        "data centre access",
+        "physical security policy",
+        "server room security",
+        "environmental monitoring"
+      ],
+      "requiredEvidence": [
+        "Physical security requirements for hosting environment documented in SRS constraint requirements (REQ-CON-*)",
+        "Data centre physical security referenced in SDS Integration Points section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "ISO-A8-011",
+      "title": "Backup and Recovery",
+      "description": "Backup copies of information, software, and system images must be taken and tested regularly in accordance with an agreed backup policy.",
+      "keywords": [
+        "backup policy",
+        "data backup requirement",
+        "backup testing",
+        "recovery testing",
+        "backup frequency",
+        "offsite backup",
+        "data recovery procedure",
+        "backup integrity verification",
+        "system backup",
+        "disaster recovery backup"
+      ],
+      "requiredEvidence": [
+        "Backup policy and frequency documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Backup and recovery architecture described in SDS Architecture Overview section",
+        "Backup testing requirement referenced in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-012",
+      "title": "Change Management",
+      "description": "Changes to the organisation's systems must be managed through formal change management procedures.",
+      "keywords": [
+        "change management procedure",
+        "change control process",
+        "system change approval",
+        "change management policy",
+        "release change management",
+        "production change control",
+        "change impact assessment",
+        "change rollback procedure",
+        "change advisory board",
+        "configuration change management"
+      ],
+      "requiredEvidence": [
+        "Change management procedure referenced in SRS constraint requirements (REQ-CON-*)",
+        "Deployment and change approval gates described in SDS Component Specifications section"
+      ],
+      "severity": "medium"
+    },
+    {
+      "controlId": "ISO-A5-005",
+      "title": "Risk Assessment and Treatment",
+      "description": "Information security risk assessments must be performed at planned intervals and when significant changes occur.",
+      "keywords": [
+        "information security risk assessment",
+        "risk treatment plan",
+        "risk assessment methodology",
+        "risk register",
+        "security risk identification",
+        "risk evaluation criteria",
+        "risk treatment options",
+        "residual risk acceptance",
+        "risk assessment schedule",
+        "risk management process"
+      ],
+      "requiredEvidence": [
+        "Information security risk assessment requirement documented in SRS constraint requirements (REQ-CON-*)",
+        "Threat model and key risks described in SDS Security Architecture section",
+        "Risk treatment approach referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "ISO-A8-013",
+      "title": "Data Loss Prevention",
+      "description": "Data loss prevention measures must be applied to systems, networks, and other devices that process, store, or transmit sensitive information.",
+      "keywords": [
+        "data loss prevention",
+        "DLP controls",
+        "data exfiltration prevention",
+        "sensitive data leakage",
+        "data leakage prevention",
+        "information loss prevention",
+        "data egress monitoring",
+        "unauthorised data transfer prevention",
+        "DLP policy",
+        "data protection controls"
+      ],
+      "requiredEvidence": [
+        "DLP requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "DLP controls described in SDS Security Architecture — Data Protection subsection",
+        "Network egress monitoring referenced in SDS Integration Points section"
+      ],
+      "severity": "high"
+    }
+  ]
+}

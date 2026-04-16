@@ -1,0 +1,53 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "11111111-2222-4333-8444-555555555555",
+  "projectName": "Demo Project",
+  "clientName": "Demo Client",
+  "eccRoot": "/home/user/.claude/plugins/everything-claude-code",
+  "currentPhase": "discovery",
+  "phaseHistory": [
+    {
+      "phase": "discovery",
+      "startedAt": "2026-03-26T00:00:00Z",
+      "completedAt": null
+    }
+  ],
+  "artifacts": {
+    "scope": null,
+    "srs": null,
+    "sds": null,
+    "sts": null,
+    "estimate": null,
+    "proposal": null,
+    "compliance": null
+  },
+  "requirements": [
+    {
+      "id": "REQ-FUNC-001",
+      "type": "functional",
+      "title": "User authentication",
+      "description": "The system shall authenticate users using username/email and password, and maintain a secure session for authorized access to protected features.",
+      "priority": "must",
+      "source": "RFP Section 3.1",
+      "status": "draft",
+      "acceptanceCriteria": [
+        "Given valid credentials, the user can successfully sign in",
+        "Given invalid credentials, the system rejects the login attempt with an error message",
+        "Authenticated users can access protected routes; unauthenticated users are blocked"
+      ],
+      "dependencies": [],
+      "complianceFrameworks": [],
+      "traceForward": {
+        "designComponentIds": [],
+        "testCaseIds": [],
+        "costLineItemIds": []
+      },
+      "assumptions": [],
+      "deferralReason": null
+    }
+  ],
+  "designComponents": [],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

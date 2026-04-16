@@ -1,0 +1,77 @@
+{
+  "projectOverview": "This project will deliver a secure, role-based web portal for internal staff to manage onboarding, approvals, and reporting. The solution will integrate with existing identity and data systems and will include audit logging for compliance.\n\nThe initial release focuses on core workflows and reporting. Future enhancements (e.g., advanced analytics) are explicitly excluded from this scope.",
+  "objectives": [
+    "Reduce manual processing time for onboarding and approvals",
+    "Provide a single source of truth for workflow status and reporting",
+    "Ensure traceable, auditable operations for compliance reviews"
+  ],
+  "inScope": [
+    {
+      "id": "SCOPE-001",
+      "title": "User authentication and role-based access",
+      "description": "Implement login and authorization for staff roles (e.g., Admin, Reviewer, Viewer) with session management."
+    },
+    {
+      "id": "SCOPE-002",
+      "title": "Onboarding workflow management",
+      "description": "Create, review, approve, and track onboarding requests with status history and assigned owners."
+    }
+  ],
+  "outOfScope": [
+    "Mobile application development",
+    "Integration with third-party analytics platforms"
+  ],
+  "stakeholders": [
+    {
+      "name": "Ayesha Khan",
+      "role": "Project Sponsor",
+      "organization": "Demo Client",
+      "contactType": "client sponsor"
+    },
+    {
+      "name": "Operations Team",
+      "role": "End Users",
+      "organization": "Demo Client",
+      "contactType": "end user group"
+    }
+  ],
+  "assumptions": [
+    "Client will provide access to required APIs and test environments within the first week of development.",
+    "User roles and permissions matrix will be finalized during discovery."
+  ],
+  "constraints": [
+    {
+      "type": "timeline",
+      "description": "Initial release must be delivered within 8 weeks."
+    },
+    {
+      "type": "regulatory",
+      "description": "All user actions must be auditable with immutable logs."
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "description": "Delays in API access could block integration work.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Request credentials early and implement stubs/mocks for integration points."
+    }
+  ],
+  "complianceFlags": ["SBP", "GDPR"],
+  "deliverables": [
+    "Scope Document (DOCX)",
+    "SRS (DOCX)",
+    "Deployment and configuration notes"
+  ],
+  "timeline": {
+    "startDate": "2026-04-01",
+    "endDate": "2026-05-27",
+    "milestones": [
+      { "milestone": "Discovery complete", "date": "2026-04-04" },
+      { "milestone": "MVP build complete", "date": "2026-05-09" },
+      { "milestone": "UAT sign-off", "date": "2026-05-27" }
+    ]
+  }
+}
+

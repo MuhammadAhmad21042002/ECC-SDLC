@@ -1,0 +1,48 @@
+{
+  "$schema": "../schemas/sdlc-state.schema.json",
+  "projectId": "33333333-2222-4333-8444-555555555555",
+  "projectName": "Rate Card Test Project",
+  "clientName": "Test Client",
+  "currentPhase": "design",
+  "phaseHistory": [
+    { "phase": "discovery",    "startedAt": "2026-03-17T08:00:00Z", "completedAt": "2026-03-17T17:00:00Z" },
+    { "phase": "requirements", "startedAt": "2026-03-18T08:00:00Z", "completedAt": "2026-03-18T17:00:00Z" },
+    { "phase": "design",       "startedAt": "2026-03-19T08:00:00Z", "completedAt": null }
+  ],
+  "artifacts": {
+    "scope":    { "path": ".sdlc/artifacts/scope-v1.md",  "version": 1, "hash": "sha256:aaa", "createdAt": "2026-03-17T17:00:00Z" },
+    "srs":      { "path": ".sdlc/artifacts/srs-v1.docx",  "version": 1, "hash": "sha256:bbb", "createdAt": "2026-03-18T17:00:00Z" },
+    "sds":      { "path": ".sdlc/artifacts/sds-v1.docx",  "version": 1, "hash": "sha256:ccc", "createdAt": "2026-03-19T17:00:00Z" },
+    "sts":      null,
+    "estimate": null,
+    "proposal": null
+  },
+  "rateCard": {
+    "juniorDev": { "hourlyRate": 30, "currency": "USD" },
+    "seniorDev": { "hourlyRate": 50, "currency": "USD" },
+    "architect": { "hourlyRate": 80, "currency": "USD" }
+  },
+  "requirements": [],
+  "designComponents": [
+    {
+      "id": "DC-001",
+      "title": "Authentication API",
+      "description": "Single api component — average complexity. Used to verify rate card multiplication: cost = hours × hourlyRate exactly.",
+      "type": "api",
+      "status": "approved",
+      "requirementIds": ["REQ-FUNC-001"],
+      "complexity": "average",
+      "responsibilities": [
+        "Validate credentials",
+        "Issue JWT tokens"
+      ],
+      "interfaces": [
+        { "name": "POST /auth/login", "kind": "api", "description": "Accepts credentials, returns JWT" }
+      ],
+      "dataStores": []
+    }
+  ],
+  "testCases": [],
+  "complianceFlags": [],
+  "traceabilityMatrix": {}
+}

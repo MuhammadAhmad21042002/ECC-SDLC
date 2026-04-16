@@ -1,0 +1,23 @@
+{
+  "id": "REQ-FUNC-001",
+  "type": "functional",
+  "title": "User authentication",
+  "description": "The system shall authenticate users using username/email and password, and maintain a secure session for authorized access to protected features.",
+  "priority": "must",
+  "source": "RFP Section 3.1",
+  "status": "draft",
+  "acceptanceCriteria": [
+    "Given valid credentials, the user can successfully sign in",
+    "Given invalid credentials, the system rejects the login attempt with an error message",
+    "Authenticated users can access protected routes; unauthenticated users are blocked"
+  ],
+  "dependencies": [],
+  "complianceFrameworks": [],
+  "traceForward": {
+    "designComponentIds": [],
+    "testCaseIds": [],
+    "costLineItemIds": []
+  },
+  "assumptions": [],
+  "deferralReason": null
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ecc-sdlc.compliance.v1",
+  "title": "ECC-SDLC Compliance Assessment Output Schema",
+  "description": "Validates the JSON artifact produced by the /compliance command. Written to .sdlc/artifacts/compliance-vN.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mode", "complianceMatrix", "complianceFlags", "gapAnalysis", "summary"],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": ["full", "requirements-only"],
+      "description": "Assessment mode. 'full' includes design-component evidence; 'requirements-only' scans requirements alone."
+    },
+    "complianceMatrix": {
+      "type": "array",
+      "description": "One entry per triggered control across all frameworks.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["frameworkCode", "controlId", "controlTitle", "triggeredBy", "keyword", "severity", "requiredEvidence", "status"],
+        "properties": {
+          "frameworkCode": { "type": "string", "minLength": 1 },
+          "controlId": { "type": "string", "minLength": 1 },
+          "controlTitle": { "type": "string", "minLength": 1 },
+          "triggeredBy": {
+            "description": "REQ-* or DC-* IDs that triggered this control.",
+            "oneOf": [
+              { "type": "string", "minLength": 1 },
+              { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+            ]
+          },
+          "keyword": { "type": "string", "minLength": 1 },
+          "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+          "requiredEvidence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "evidenceFound": { "type": "array", "items": { "type": "string" } },
+          "gaps": { "type": "array", "items": { "type": "string" } },
+          "status": { "type": "string", "enum": ["compliant", "partial", "non-compliant", "pending-review", "not-applicable"] },
+          "remediationSuggestions": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "complianceFlags": {
+      "type": "array",
+      "description": "Flat list of flags suitable for merging into state.json complianceFlags[].",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["frameworkCode", "controlId", "severity", "status"],
+        "properties": {
+          "frameworkCode": { "type": "string", "minLength": 1 },
+          "controlId": { "type": "string", "minLength": 1 },
+          "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+          "status": { "type": "string", "enum": ["compliant", "partial", "non-compliant", "pending-review", "not-applicable"] }
+        }
+      }
+    },
+    "requirementUpdates": {
+      "type": "array",
+      "description": "Per-requirement complianceFrameworks updates to merge back into state.json.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "complianceFrameworks"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^REQ-(FUNC|NFUNC|CON)-[0-9]{3}$" },
+          "complianceFrameworks": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    },
+    "gapAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["totalControls", "compliant", "partial", "nonCompliant", "notApplicable"],
+      "properties": {
+        "totalControls": { "type": "integer", "minimum": 0 },
+        "compliant": { "type": "integer", "minimum": 0 },
+        "partial": { "type": "integer", "minimum": 0 },
+        "nonCompliant": { "type": "integer", "minimum": 0 },
+        "notApplicable": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "criticalGaps": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frameworksCovered", "overallRiskLevel", "recommendation"],
+      "properties": {
+        "frameworksCovered": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "overallRiskLevel": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+        "recommendation": { "type": "string", "minLength": 1 },
+        "totalScanned": { "type": "integer", "minimum": 0 },
+        "flagged": { "type": "integer", "minimum": 0 },
+        "skippedFrameworks": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

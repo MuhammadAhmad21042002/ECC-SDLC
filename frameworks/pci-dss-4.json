@@ -1,0 +1,285 @@
+{
+  "frameworkId": "PCI-DSS-4",
+  "frameworkName": "Payment Card Industry Data Security Standard Version 4.0",
+  "version": "4.0",
+  "effectiveDate": "2024-03-31",
+  "applicability": "All entities that store, process, or transmit cardholder data or sensitive authentication data, including merchants, payment processors, acquirers, issuers, and service providers",
+  "controls": [
+    {
+      "controlId": "PCI-REQ-01",
+      "title": "Network Security Controls",
+      "description": "Network security controls must be installed and maintained to protect the cardholder data environment, including firewalls, routers, and network segmentation isolating the CDE from untrusted networks.",
+      "keywords": [
+        "PCI DSS network segmentation",
+        "cardholder data environment firewall",
+        "CDE network isolation",
+        "payment network firewall rules",
+        "PCI scope reduction network",
+        "cardholder data network boundary",
+        "payment processing network security",
+        "PCI DMZ architecture",
+        "network access control PCI",
+        "CDE perimeter security"
+      ],
+      "requiredEvidence": [
+        "Network segmentation architecture isolating CDE documented in SDS Architecture Overview and Section 1.1 Architecture Diagram",
+        "Firewall rules and network access controls described in SDS Security Architecture section",
+        "CDE boundary and scope documented in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PCI-REQ-02",
+      "title": "Secure Configuration Standards",
+      "description": "All system components must be configured securely, with vendor default credentials changed, unnecessary services disabled, and a configuration hardening standard applied before deployment.",
+      "keywords": [
+        "PCI secure configuration standard",
+        "default password change PCI",
+        "system hardening PCI DSS",
+        "vendor default credential removal",
+        "configuration management PCI",
+        "unnecessary service disable PCI",
+        "secure baseline configuration PCI",
+        "CIS benchmark PCI compliance",
+        "hardening standard payment system",
+        "configuration drift PCI"
+      ],
+      "requiredEvidence": [
+        "Secure configuration and hardening requirements documented in SRS constraint requirements (REQ-CON-*)",
+        "Technology stack with version and hardening references documented in SDS Component Specifications section",
+        "Configuration management process referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PCI-REQ-03",
+      "title": "Cardholder Data Protection",
+      "description": "Stored cardholder data must be protected using strong cryptography. Primary Account Numbers must be rendered unreadable in storage using tokenisation, truncation, or encryption. Sensitive authentication data must never be stored after authorisation.",
+      "keywords": [
+        "cardholder data encryption PCI",
+        "PAN encryption storage",
+        "tokenisation payment card data",
+        "card number truncation PCI",
+        "primary account number protection",
+        "sensitive authentication data PCI",
+        "CVV storage prohibition",
+        "PCI data at rest encryption",
+        "cardholder data minimisation",
+        "payment card data vault"
+      ],
+      "requiredEvidence": [
+        "Cardholder data protection strategy (tokenisation, encryption, truncation) documented in SDS Security Architecture — Data Protection subsection",
+        "PAN storage and handling rules documented in SDS Database Schema section",
+        "Sensitive authentication data prohibition documented in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PCI-REQ-04",
+      "title": "Data Transmission Encryption",
+      "description": "Cardholder data transmitted over open public networks must be encrypted using strong cryptography including TLS 1.2 or higher. Weak protocols must be disabled.",
+      "keywords": [
+        "PCI transmission encryption",
+        "TLS cardholder data",
+        "payment data in transit encryption",
+        "HTTPS payment processing",
+        "TLS 1.2 PCI requirement",
+        "SSL disabled PCI",
+        "payment API encryption",
+        "card data transport security",
+        "cipher suite PCI DSS",
+        "end-to-end encryption payment"
+      ],
+      "requiredEvidence": [
+        "TLS version requirements and cipher suite standards documented in SDS Security Architecture — Data Protection subsection",
+        "API endpoint HTTPS enforcement documented in SDS API Contracts section",
+        "Weak protocol prohibition documented in SRS constraint requirements (REQ-CON-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PCI-REQ-05",
+      "title": "Malware Protection",
+      "description": "All system components must be protected against malware including anti-malware solutions on all applicable systems with regular definition updates and scanning.",
+      "keywords": [
+        "PCI antimalware requirement",
+        "anti-virus PCI DSS",
+        "malware protection payment system",
+        "endpoint protection PCI",
+        "malware scanning PCI DSS",
+        "malware definition updates PCI",
+        "anti-malware policy payment",
+        "phishing protection PCI",
+        "ransomware protection payment",
+        "malicious software prevention PCI"
+      ],
+      "requiredEvidence": [
+        "Malware protection requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Anti-malware controls referenced in SDS Security Architecture section",
+        "Endpoint protection strategy documented in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PCI-REQ-06",
+      "title": "Secure Development and Vulnerability Management",
+      "description": "All software and system components must be developed securely following a formal SSDLC. Vulnerabilities must be identified and remediated within defined timeframes based on risk rating.",
+      "keywords": [
+        "PCI secure development lifecycle",
+        "OWASP PCI compliance",
+        "PCI vulnerability management",
+        "secure coding standard PCI",
+        "code review PCI DSS",
+        "SAST payment application",
+        "DAST PCI DSS requirement",
+        "patch management PCI",
+        "CVE remediation PCI",
+        "penetration testing PCI DSS"
+      ],
+      "requiredEvidence": [
+        "Secure SDLC and OWASP Top 10 compliance documented in SRS constraint requirements (REQ-CON-*)",
+        "Vulnerability management and patch timelines referenced in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Code review and security testing requirements documented in SDS Component Specifications section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PCI-REQ-07",
+      "title": "Restrict Access to Cardholder Data",
+      "description": "Access to system components and cardholder data must be restricted to only individuals whose job requires such access, enforced through a need-to-know access control policy.",
+      "keywords": [
+        "PCI access restriction cardholder data",
+        "need-to-know access PCI",
+        "least privilege PCI DSS",
+        "cardholder data access control",
+        "PCI role-based access control",
+        "data access minimisation PCI",
+        "CDE access restriction",
+        "authorised user cardholder data",
+        "access control policy PCI",
+        "payment data access management"
+      ],
+      "requiredEvidence": [
+        "Least-privilege and need-to-know access policy documented in SDS Security Architecture — Authorization subsection",
+        "Role definitions and CDE access restrictions described in SDS Component Specifications section",
+        "Access control requirements documented in SRS functional requirements (REQ-FUNC-*)"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PCI-REQ-08",
+      "title": "User Authentication and Access Management",
+      "description": "Individual user accounts must be assigned to all users accessing system components. Multi-factor authentication must be enforced for all access into the CDE and for all non-console administrative access.",
+      "keywords": [
+        "PCI multi-factor authentication",
+        "MFA CDE access PCI",
+        "individual user account PCI",
+        "shared account prohibition PCI",
+        "password policy PCI DSS",
+        "MFA admin access PCI",
+        "authentication management PCI",
+        "user identity PCI DSS",
+        "account lifecycle PCI",
+        "privileged account MFA PCI"
+      ],
+      "requiredEvidence": [
+        "MFA requirement for CDE and admin access documented in SDS Security Architecture — Authentication subsection",
+        "User account management policy referenced in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Password policy and account lifecycle documented in SDS Component Specifications section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PCI-REQ-09",
+      "title": "Physical Access Restrictions",
+      "description": "Physical access to system components storing, processing, or transmitting cardholder data must be restricted and controlled with visitor logs, physical access controls, and media destruction procedures.",
+      "keywords": [
+        "PCI physical access control",
+        "data centre physical security PCI",
+        "physical media destruction PCI",
+        "visitor access log PCI",
+        "server room access PCI",
+        "physical security cardholder data",
+        "media handling PCI DSS",
+        "CCTV data centre PCI",
+        "physical environment PCI",
+        "hardware security PCI"
+      ],
+      "requiredEvidence": [
+        "Physical access controls for hosting environment referenced in SDS Integration Points section",
+        "Media handling and destruction procedures documented in SRS constraint requirements (REQ-CON-*)",
+        "Hosting provider physical security attestation referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PCI-REQ-10",
+      "title": "Logging, Monitoring and Audit Trails",
+      "description": "All access to network resources and cardholder data must be logged. Logs must be protected from modification and reviewed daily. Audit log retention must cover at least 12 months.",
+      "keywords": [
+        "PCI audit log requirement",
+        "cardholder data access logging PCI",
+        "log integrity PCI DSS",
+        "daily log review PCI",
+        "SIEM PCI compliance",
+        "log retention 12 months PCI",
+        "immutable logging PCI",
+        "transaction audit PCI DSS",
+        "activity monitoring PCI",
+        "log tampering prevention PCI"
+      ],
+      "requiredEvidence": [
+        "Audit logging requirements with 12-month retention documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Audit logging component described in SDS Security Architecture — Audit Logging subsection",
+        "SIEM or log aggregation integration referenced in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "PCI-REQ-11",
+      "title": "Security Testing and Vulnerability Scanning",
+      "description": "System vulnerabilities must be identified through regular scanning and penetration testing. Internal and external scans must be conducted quarterly and after significant changes. Penetration testing must be performed at least annually.",
+      "keywords": [
+        "PCI vulnerability scanning",
+        "penetration testing PCI DSS",
+        "quarterly scan PCI requirement",
+        "PCI ASV scan",
+        "internal scan PCI",
+        "external vulnerability scan PCI",
+        "pen test PCI DSS annual",
+        "security assessment PCI",
+        "VAPT PCI compliance",
+        "vulnerability remediation PCI"
+      ],
+      "requiredEvidence": [
+        "Vulnerability scanning and penetration testing requirements documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Security testing frequency and scope documented in SRS constraint requirements (REQ-CON-*)",
+        "Vulnerability remediation process referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "PCI-REQ-12",
+      "title": "Security Policy and Risk Management",
+      "description": "An organisational information security policy must address all PCI DSS requirements. An annual risk assessment must be conducted to identify threats and vulnerabilities.",
+      "keywords": [
+        "PCI information security policy",
+        "PCI DSS risk assessment",
+        "security policy payment card",
+        "annual risk assessment PCI",
+        "security awareness programme PCI",
+        "acceptable use policy PCI",
+        "incident response policy PCI",
+        "security responsibility PCI",
+        "data classification policy PCI",
+        "security governance PCI DSS"
+      ],
+      "requiredEvidence": [
+        "Information security policy compliance documented in SRS constraint requirements (REQ-CON-*) referencing PCI DSS v4.0",
+        "Annual risk assessment requirement referenced in SRS constraint requirements",
+        "Security awareness and training programme referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    }
+  ]
+}

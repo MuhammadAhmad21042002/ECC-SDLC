@@ -1,0 +1,239 @@
+{
+  "frameworkId": "CBUAE-2024",
+  "frameworkName": "Central Bank of the UAE — Information Assurance Regulation 2024",
+  "version": "2024.1",
+  "effectiveDate": "2024-01-01",
+  "applicability": "All banks, financial institutions, exchange houses, payment service providers, and insurance companies licensed and supervised by the Central Bank of the UAE",
+  "controls": [
+    {
+      "controlId": "CBUAE-IA-001",
+      "title": "Information Security Governance",
+      "description": "Licensed financial institutions must establish a formal information security governance structure with board-level accountability, an appointed CISO, and an information security policy aligned to CBUAE requirements.",
+      "keywords": [
+        "CBUAE information security governance",
+        "UAE bank information security policy",
+        "CISO appointment UAE financial institution",
+        "board cybersecurity oversight UAE",
+        "information security strategy UAE bank",
+        "digital banking governance UAE",
+        "UAE financial sector security framework",
+        "information assurance regulation CBUAE",
+        "cybersecurity accountability UAE",
+        "UAE banking security committee"
+      ],
+      "requiredEvidence": [
+        "Information security governance roles documented in SRS constraint requirements (REQ-CON-*) citing CBUAE Information Assurance Regulation",
+        "CISO or security ownership referenced in project scope documentation",
+        "Information security policy framework referenced in SDS Security Architecture section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-IA-002",
+      "title": "Data Protection and Privacy",
+      "description": "Customer personal and financial data must be protected in accordance with UAE Federal Data Protection Law and CBUAE privacy requirements, including consent management and data subject rights.",
+      "keywords": [
+        "UAE data protection law financial",
+        "CBUAE customer data privacy",
+        "personal data protection UAE bank",
+        "UAE Federal Law No. 45 compliance",
+        "customer consent UAE banking",
+        "data subject rights UAE",
+        "financial data privacy UAE",
+        "UAE PII protection banking",
+        "privacy by design UAE financial",
+        "customer data rights UAE bank"
+      ],
+      "requiredEvidence": [
+        "Data protection requirements documented in SRS constraint requirements (REQ-CON-*) referencing UAE Federal Data Protection Law",
+        "Customer consent management component described in SDS Component Specifications section",
+        "Privacy controls documented in SDS Security Architecture — Data Protection subsection"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-IA-003",
+      "title": "Cyber Incident Response and Reporting",
+      "description": "Licensed institutions must maintain a documented cyber incident response plan and report significant cyber incidents to CBUAE within defined notification timelines.",
+      "keywords": [
+        "CBUAE cyber incident reporting",
+        "UAE financial institution incident response",
+        "cybersecurity incident notification CBUAE",
+        "UAE bank breach reporting",
+        "cyber incident management UAE",
+        "financial sector incident response UAE",
+        "CBUAE breach notification timeline",
+        "incident escalation UAE banking",
+        "cyber event reporting UAE regulator",
+        "security incident response UAE"
+      ],
+      "requiredEvidence": [
+        "Incident response plan with CBUAE notification timeline documented in SRS constraint requirements (REQ-CON-*)",
+        "Security incident escalation path described in SDS Security Architecture section",
+        "Incident detection mechanism referenced in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-IA-004",
+      "title": "Cryptography and Key Management",
+      "description": "Cryptographic controls must protect data at rest and in transit using CBUAE-approved algorithms, with formal key management procedures covering generation, storage, rotation, and destruction.",
+      "keywords": [
+        "CBUAE cryptography requirements",
+        "UAE bank encryption standard",
+        "key management UAE financial institution",
+        "data encryption UAE banking",
+        "AES encryption UAE bank",
+        "TLS UAE financial services",
+        "HSM key management UAE",
+        "cryptographic key lifecycle UAE",
+        "encryption policy UAE bank",
+        "data at rest encryption UAE"
+      ],
+      "requiredEvidence": [
+        "Encryption algorithm and key management policy documented in SDS Security Architecture — Data Protection subsection citing CBUAE requirements",
+        "Key storage and rotation procedures referenced in SDS Security Architecture section",
+        "API encryption requirements documented in SDS API Contracts section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-IA-005",
+      "title": "Access Control and Identity Management",
+      "description": "A comprehensive identity and access management framework must enforce role-based access control, multi-factor authentication, and privileged access management across all systems.",
+      "keywords": [
+        "CBUAE access control requirement",
+        "UAE bank identity management",
+        "multi-factor authentication UAE bank",
+        "role-based access control UAE financial",
+        "privileged access management UAE",
+        "UAE banking MFA requirement",
+        "identity governance UAE financial",
+        "access certification UAE bank",
+        "zero-trust access UAE banking",
+        "UAE financial sector IAM"
+      ],
+      "requiredEvidence": [
+        "RBAC model and MFA requirements documented in SDS Security Architecture — Authentication and Authorization subsections",
+        "Privileged access management policy referenced in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Identity lifecycle management described in SDS Component Specifications section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-IA-006",
+      "title": "Network Security and Architecture",
+      "description": "Financial institution networks must implement segmentation, intrusion detection, and perimeter security controls to protect banking systems from unauthorised access and cyber threats.",
+      "keywords": [
+        "CBUAE network security requirement",
+        "UAE bank network segmentation",
+        "intrusion detection UAE financial",
+        "network perimeter security UAE bank",
+        "UAE banking firewall requirement",
+        "DMZ architecture UAE financial",
+        "network monitoring UAE bank",
+        "VLAN segmentation UAE banking",
+        "IDS IPS UAE financial institution",
+        "cyber threat protection UAE bank"
+      ],
+      "requiredEvidence": [
+        "Network segmentation architecture described in SDS Architecture Overview and Section 1.1 Architecture Diagram",
+        "Firewall and intrusion detection requirements documented in SDS Security Architecture section",
+        "Network security controls referenced in SRS non-functional requirements (REQ-NFUNC-*)"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "CBUAE-IA-007",
+      "title": "Third-Party and Cloud Risk Management",
+      "description": "All third-party service providers and cloud platforms used by licensed institutions must undergo formal risk assessment and ongoing monitoring per CBUAE outsourcing guidelines.",
+      "keywords": [
+        "CBUAE third party risk assessment",
+        "UAE bank cloud vendor assessment",
+        "outsourcing risk UAE financial",
+        "cloud service provider UAE bank",
+        "third-party security assessment UAE",
+        "UAE banking vendor due diligence",
+        "fintech vendor UAE financial institution",
+        "cloud risk management UAE banking",
+        "supplier security UAE bank",
+        "outsourced service monitoring UAE"
+      ],
+      "requiredEvidence": [
+        "Third-party risk assessment requirements documented in SRS constraint requirements (REQ-CON-*) citing CBUAE outsourcing guidelines",
+        "External vendors and cloud dependencies listed in SDS Integration Points section",
+        "Vendor security requirements referenced in SDS Security Architecture section"
+      ],
+      "severity": "high"
+    },
+    {
+      "controlId": "CBUAE-IA-008",
+      "title": "Business Continuity and Operational Resilience",
+      "description": "Licensed institutions must maintain tested business continuity and disaster recovery plans ensuring operational resilience of critical banking services within CBUAE-defined recovery objectives.",
+      "keywords": [
+        "CBUAE business continuity requirement",
+        "UAE bank disaster recovery",
+        "operational resilience UAE financial",
+        "RTO RPO UAE banking",
+        "critical service continuity UAE",
+        "UAE bank high availability",
+        "disaster recovery plan UAE financial",
+        "failover UAE banking system",
+        "business continuity testing UAE",
+        "UAE financial sector resilience"
+      ],
+      "requiredEvidence": [
+        "RTO/RPO targets and availability SLA documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "High availability and failover architecture described in SDS Architecture Overview section",
+        "Business continuity strategy referenced in SDS Security Architecture section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-AML-001",
+      "title": "AML/CFT Compliance Controls",
+      "description": "Financial systems must implement AML and counter-terrorism financing controls including customer due diligence, transaction monitoring, and suspicious activity reporting per UAE AML legislation.",
+      "keywords": [
+        "AML compliance UAE bank",
+        "CFT requirements UAE financial",
+        "customer due diligence UAE",
+        "KYC requirements UAE bank",
+        "suspicious activity reporting UAE",
+        "UAE AML legislation compliance",
+        "FATF UAE financial institution",
+        "beneficial ownership UAE bank",
+        "transaction monitoring UAE banking",
+        "UAE financial crime compliance"
+      ],
+      "requiredEvidence": [
+        "AML/CFT requirements documented in SRS functional requirements (REQ-FUNC-*) referencing UAE AML Law and CBUAE AML guidelines",
+        "KYC and CDD component described in SDS Component Specifications section",
+        "Suspicious transaction reporting integration documented in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    },
+    {
+      "controlId": "CBUAE-AUDIT-001",
+      "title": "Audit Trail and Activity Logging",
+      "description": "All financial transactions, privileged access events, and system configuration changes must be logged to an immutable audit trail retained for the regulatory minimum period.",
+      "keywords": [
+        "audit trail UAE bank",
+        "CBUAE audit logging requirement",
+        "immutable log UAE financial",
+        "transaction audit UAE banking",
+        "activity logging UAE financial institution",
+        "access event logging UAE bank",
+        "tamper-proof logging UAE",
+        "SIEM integration UAE banking",
+        "log retention UAE financial",
+        "non-repudiation UAE bank"
+      ],
+      "requiredEvidence": [
+        "Audit logging requirements with retention period documented in SRS non-functional requirements (REQ-NFUNC-*)",
+        "Audit logging component described in SDS Security Architecture — Audit Logging subsection",
+        "Log aggregation or SIEM integration referenced in SDS Integration Points section"
+      ],
+      "severity": "critical"
+    }
+  ]
+}

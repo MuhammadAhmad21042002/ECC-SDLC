@@ -1,0 +1,66 @@
+ECC SAMPLE BANKING RFP FIXTURE
+State Bank of Pakistan — Core Banking System Modernisation
+Document Reference: SBP-RFP-2024-CBM-001
+Version: 1.0 (Test Fixture — 10 explicit requirements)
+
+═══════════════════════════════════════════════════════════
+SECTION 3 — FUNCTIONAL REQUIREMENTS
+═══════════════════════════════════════════════════════════
+
+3.1 The system must provide a real-time account balance inquiry
+    facility for all account types (current, savings, fixed deposit)
+    accessible via both web portal and mobile application.
+
+3.2 The system must support multi-currency transactions including
+    PKR, USD, EUR, and GBP with automatic exchange rate conversion
+    sourced from the SBP inter-bank rate feed.
+
+3.3 The system must generate automated daily reconciliation reports
+    for all branch accounts and submit them to the head office
+    treasury module by 23:59 PKT each business day.
+
+3.4 The system must allow relationship managers to initiate and
+    track loan applications end-to-end, from document collection
+    through credit scoring, approval workflow, and disbursement.
+
+3.5 The system must integrate with the RAAST instant payment
+    infrastructure to process inbound and outbound transfers
+    within 10 seconds of instruction receipt.
+
+═══════════════════════════════════════════════════════════
+SECTION 4 — NON-FUNCTIONAL REQUIREMENTS
+═══════════════════════════════════════════════════════════
+
+4.1 The system must encrypt all customer data at rest using
+    AES-256 encryption and all customer PII in transit using
+    TLS 1.3 or higher — in full compliance with SBP-2024
+    data protection directives and ISO-27001 controls.
+
+4.2 The system must maintain 99.95% uptime availability measured
+    on a rolling 30-day window, excluding pre-approved maintenance
+    windows not exceeding 4 hours per month.
+
+4.3 The system must support a minimum of 5,000 concurrent users
+    with transaction response times not exceeding 2 seconds at
+    95th percentile under peak load conditions.
+
+═══════════════════════════════════════════════════════════
+SECTION 5 — COMPLIANCE AND SECURITY REQUIREMENTS
+═══════════════════════════════════════════════════════════
+
+5.1 The system must maintain a tamper-evident audit log of all
+    user actions, administrative changes, and transaction events.
+    Audit logs must be retained for a minimum of 7 years per
+    SBP-2024 record retention requirements. All access to audit
+    logs must require MFA authentication.
+
+5.2 The procurement of this system is subject to PPRA-2024
+    regulations. The vendor must submit a single-source justification
+    or participate in open tender evaluation. The evaluation committee
+    will score submissions on technical merit (60%) and commercial
+    terms (40%).
+
+═══════════════════════════════════════════════════════════
+END OF FIXTURE — TOTAL EXPLICIT REQUIREMENTS: 10
+(3.1, 3.2, 3.3, 3.4, 3.5, 4.1, 4.2, 4.3, 5.1, 5.2)
+═══════════════════════════════════════════════════════════

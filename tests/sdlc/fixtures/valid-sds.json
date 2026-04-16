@@ -1,0 +1,128 @@
+{
+  "projectName": "WAI Industries Client Portal",
+  "clientName": "Punjab Revenue Authority (PRA)",
+  "preparedBy": "ECC-SDLC",
+  "generatedDate": "2026-04-02",
+  "documentVersion": "1.0",
+  "versionHistory": [
+    {
+      "version": "1.0",
+      "date": "2026-04-02",
+      "author": "ECC-SDLC",
+      "changes": "Initial SDS draft",
+      "status": "Draft"
+    }
+  ],
+  "architectureOverviewParagraphs": [
+    "This document describes the target architecture, key components, database design, APIs, integrations, and security design for the WAI Industries Client Portal."
+  ],
+  "architectureDiagramMermaid": [
+    "```mermaid",
+    "flowchart LR",
+    "  Client[Web Client] --> API[API Gateway]",
+    "  API --> Auth[Auth Service]",
+    "  API --> Sub[Submission Service]",
+    "  Sub --> DB[(Database)]",
+    "  Sub --> Obj[(Object Storage)]",
+    "  API --> Notify[Notification Service]",
+    "```"
+  ],
+  "architectureDecisionsNumbered": [
+    "Use role-based access control (RBAC) with separate client and PRA staff roles.",
+    "Store uploaded documents in object storage and metadata in the database.",
+    "Expose REST endpoints for submissions, status updates, and document retrieval."
+  ],
+  "designComponents": [
+    {
+      "id": "DC-001",
+      "name": "API Gateway",
+      "responsibility": "Routes requests, enforces authentication, rate limits, and request validation.",
+      "interfaces": "REST over HTTPS",
+      "tracesToReq": ["REQ-FUNC-001", "REQ-NFUNC-002"]
+    },
+    {
+      "id": "DC-002",
+      "name": "Submission Service",
+      "responsibility": "Creates submissions, tracks status, and manages document metadata.",
+      "interfaces": "Internal HTTP + database",
+      "tracesToReq": ["REQ-FUNC-002"]
+    }
+  ],
+  "databaseSchemaIntroParagraphs": [
+    "The portal stores core entities including users, submissions, and submission documents. Audit logs capture administrative actions for compliance."
+  ],
+  "databaseErDiagramMermaid": [
+    "```mermaid",
+    "erDiagram",
+    "  USER ||--o{ SUBMISSION : creates",
+    "  SUBMISSION ||--o{ SUBMISSION_DOCUMENT : contains",
+    "```"
+  ],
+  "databaseTables": [
+    {
+      "table": "users",
+      "primaryKey": "id",
+      "fields": "id, email, password_hash, role, created_at",
+      "relationships": "users.id -> submissions.user_id"
+    },
+    {
+      "table": "submissions",
+      "primaryKey": "id",
+      "fields": "id, user_id, tax_year, status, created_at",
+      "relationships": "submissions.id -> submission_documents.submission_id"
+    }
+  ],
+  "apiEndpoints": [
+    {
+      "method": "POST",
+      "path": "/api/submissions",
+      "description": "Create a new submission for a selected tax year.",
+      "request": "{ taxYear: string }",
+      "response": "{ id: string, status: string }"
+    },
+    {
+      "method": "GET",
+      "path": "/api/submissions/{id}",
+      "description": "Fetch a submission including its status timeline.",
+      "request": "path: id",
+      "response": "{ id: string, status: string, timeline: [] }"
+    }
+  ],
+  "integrationIntroParagraphs": [
+    "The system integrates with external identity verification and outbound email delivery services."
+  ],
+  "integrationPointsBullets": [
+    "Identity verification API (SSO / token exchange).",
+    "SMTP or email provider API for notifications."
+  ],
+  "securityArchitectureParagraphs": [
+    "Security controls include authentication, authorization, encryption, and audit logging."
+  ],
+  "securityAuthParagraphs": [
+    "Users authenticate with email and password, with optional MFA depending on client policy."
+  ],
+  "securityAuthorizationParagraphs": [
+    "Authorization is enforced via RBAC and resource ownership checks on submission resources."
+  ],
+  "securityDataProtectionParagraphs": [
+    "All traffic uses TLS. Sensitive fields are encrypted at rest. Uploaded documents are stored with restricted access policies."
+  ],
+  "securityAuditLoggingParagraphs": [
+    "Administrative actions are recorded with actor identity, timestamp, target entity, and action type."
+  ],
+  "traceabilityMatrixRows": [
+    {
+      "reqId": "REQ-FUNC-001",
+      "requirementTitle": "User authentication and role-based access",
+      "designComponentIds": ["DC-001"],
+      "coverage": 33
+    },
+    {
+      "reqId": "REQ-FUNC-002",
+      "requirementTitle": "Submission creation and status tracking",
+      "designComponentIds": ["DC-002"],
+      "coverage": "Design traced"
+    }
+  ]
+}
+

@@ -11,7 +11,7 @@ const os = require('os');
  *   1. CLAUDE_PLUGIN_ROOT env var (set by Claude Code for hooks, or by user)
  *   2. Standard install location (~/.claude/) — when scripts exist there
  *   3. Exact legacy plugin roots under ~/.claude/plugins/
- *   4. Plugin cache auto-detection — scans ~/.claude/plugins/cache/everything-claude-code/
+ *   4. Plugin cache auto-detection — scans ~/.claude/plugins/cache/ecc-sdlc/
  *   5. Fallback to ~/.claude/ (original behaviour)
  *
  * @param {object} [options]
@@ -42,9 +42,9 @@ function resolveEccRoot(options = {}) {
   // Exact legacy plugin install locations. These preserve backwards
   // compatibility without scanning arbitrary plugin trees.
   const legacyPluginRoots = [
-    path.join(claudeDir, 'plugins', 'everything-claude-code'),
-    path.join(claudeDir, 'plugins', 'everything-claude-code@everything-claude-code'),
-    path.join(claudeDir, 'plugins', 'marketplace', 'everything-claude-code')
+    path.join(claudeDir, 'plugins', 'ecc-sdlc'),
+    path.join(claudeDir, 'plugins', 'ecc-sdlc@ecc-sdlc'),
+    path.join(claudeDir, 'plugins', 'marketplace', 'ecc-sdlc')
   ];
 
   for (const candidate of legacyPluginRoots) {
@@ -56,7 +56,7 @@ function resolveEccRoot(options = {}) {
   // Plugin cache — Claude Code stores marketplace plugins under
   // ~/.claude/plugins/cache/<plugin-name>/<org>/<version>/
   try {
-    const cacheBase = path.join(claudeDir, 'plugins', 'cache', 'everything-claude-code');
+    const cacheBase = path.join(claudeDir, 'plugins', 'cache', 'ecc-sdlc');
     const orgDirs = fs.readdirSync(cacheBase, { withFileTypes: true });
 
     for (const orgEntry of orgDirs) {
@@ -96,7 +96,7 @@ function resolveEccRoot(options = {}) {
  *   const _r = <paste INLINE_RESOLVE>;
  *   const sm = require(_r + '/scripts/lib/session-manager');
  */
-const INLINE_RESOLVE = `(()=>{var e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim())return e.trim();var p=require('path'),f=require('fs'),h=require('os').homedir(),d=p.join(h,'.claude'),q=p.join('scripts','lib','utils.js');if(f.existsSync(p.join(d,q)))return d;for(var l of [p.join(d,'plugins','everything-claude-code'),p.join(d,'plugins','everything-claude-code@everything-claude-code'),p.join(d,'plugins','marketplace','everything-claude-code')])if(f.existsSync(p.join(l,q)))return l;try{var b=p.join(d,'plugins','cache','everything-claude-code');for(var o of f.readdirSync(b,{withFileTypes:true})){if(!o.isDirectory())continue;for(var v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){if(!v.isDirectory())continue;var c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,q)))return c}}}catch(x){}return d})()`;
+const INLINE_RESOLVE = `(()=>{var e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim())return e.trim();var p=require('path'),f=require('fs'),h=require('os').homedir(),d=p.join(h,'.claude'),q=p.join('scripts','lib','utils.js');if(f.existsSync(p.join(d,q)))return d;for(var l of [p.join(d,'plugins','ecc-sdlc'),p.join(d,'plugins','ecc-sdlc@ecc-sdlc'),p.join(d,'plugins','marketplace','ecc-sdlc')])if(f.existsSync(p.join(l,q)))return l;try{var b=p.join(d,'plugins','cache','ecc-sdlc');for(var o of f.readdirSync(b,{withFileTypes:true})){if(!o.isDirectory())continue;for(var v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){if(!v.isDirectory())continue;var c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,q)))return c}}}catch(x){}return d})()`;
 
 module.exports = {
   resolveEccRoot,

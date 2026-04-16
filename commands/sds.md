@@ -69,9 +69,9 @@ function resolveEccDir() {
   const home = os.homedir();
   const claudeDir = path.join(home, '.claude');
   const candidates = [
-    path.join(claudeDir, 'plugins', 'everything-claude-code'),
-    path.join(claudeDir, 'plugins', 'everything-claude-code@everything-claude-code'),
-    path.join(claudeDir, 'plugins', 'marketplace', 'everything-claude-code'),
+    path.join(claudeDir, 'plugins', 'ecc-sdlc'),
+    path.join(claudeDir, 'plugins', 'ecc-sdlc@ecc-sdlc'),
+    path.join(claudeDir, 'plugins', 'marketplace', 'ecc-sdlc'),
     path.join(claudeDir, 'ecc'),
   ];
   for (const c of candidates) { if (hasEccRuntime(c)) return c; }
@@ -497,7 +497,7 @@ The generated document follows this section mapping:
 | technical-writer missing fields              | Ask architect to supply missing fields, retry Step 3 + 3.2                                                                                                                                                                                                                                                                                                     |
 | traceability fails                           | Ask agent to revise DC mappings, retry from Step 2                                                                                                                                                                                                                                                                                                             |
 | ERR: from generate-sds-doc.js                | Verify eccRoot in state.json, check node_modules/docx                                                                                                                                                                                                                                                                                                          |
-| Architecture/ER diagrams show as code blocks | Diagram rendering requires `@dagrejs/dagre` and `sharp`. Fix: `cd <everything-claude-code> && npm install @dagrejs/dagre sharp` then re-run `/sds`. No browser or Chrome needed. If packages are installed but diagrams still fail, run `ECC_MERMAID_DEBUG=1 node scripts/generate-sds-doc.js --data .sdlc/tmp/sds-data.json --out test.docx` for diagnostics. |
+| Architecture/ER diagrams show as code blocks | Diagram rendering requires `@dagrejs/dagre` and `sharp`. Fix: `cd <ecc-sdlc> && npm install @dagrejs/dagre sharp` then re-run `/sds`. No browser or Chrome needed. If packages are installed but diagrams still fail, run `ECC_MERMAID_DEBUG=1 node scripts/generate-sds-doc.js --data .sdlc/tmp/sds-data.json --out test.docx` for diagnostics. |
 
 ---
 

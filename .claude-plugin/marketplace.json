@@ -1,26 +1,26 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "everything-claude-code",
-  "description": "Battle-tested Claude Code configurations from an Anthropic hackathon winner — agents, skills, hooks, commands, and rules evolved over 10+ months of intensive daily use",
+  "name": "ecc-sdlc",
+  "description": "Everything Claude Code extended with an SDLC pipeline — scope, SRS, SDS, STS, estimate, and proposal generation for pre-development artifacts",
   "owner": {
-    "name": "Affaan Mustafa",
-    "email": "me@affaanmustafa.com"
+    "name": "Muhammad Ahmad",
+    "email": "jauharabad2002@gmail.com"
   },
   "metadata": {
-    "description": "Battle-tested Claude Code configurations from an Anthropic hackathon winner"
+    "description": "ECC with the SDLC pipeline extension for pre-development artifacts"
   },
   "plugins": [
     {
-      "name": "everything-claude-code",
+      "name": "ecc-sdlc",
       "source": "./",
-      "description": "The most comprehensive Claude Code plugin — 14+ agents, 56+ skills, 33+ commands, and production-ready hooks for TDD, security scanning, code review, and continuous learning",
+      "description": "Claude Code plugin with agents, skills, hooks, commands, and an SDLC pipeline (scope → SRS → SDS → STS → estimate → proposal). Fork of Affaan Mustafa's everything-claude-code with SDLC extensions.",
       "version": "1.9.0",
       "author": {
-        "name": "Affaan Mustafa",
-        "email": "me@affaanmustafa.com"
+        "name": "Muhammad Ahmad",
+        "email": "jauharabad2002@gmail.com"
       },
-      "homepage": "https://github.com/affaan-m/everything-claude-code",
-      "repository": "https://github.com/affaan-m/everything-claude-code",
+      "homepage": "https://github.com/MuhammadAhmad21042002/ECC-SDLC",
+      "repository": "https://github.com/MuhammadAhmad21042002/ECC-SDLC",
       "license": "MIT",
       "keywords": [
         "agents",

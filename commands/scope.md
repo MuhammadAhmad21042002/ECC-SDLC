@@ -139,9 +139,9 @@ function resolveEccDir() {
   const home = os.homedir();
   const claudeDir = path.join(home, '.claude');
   const candidates = [
-    path.join(claudeDir, 'plugins', 'everything-claude-code'),
-    path.join(claudeDir, 'plugins', 'everything-claude-code@everything-claude-code'),
-    path.join(claudeDir, 'plugins', 'marketplace', 'everything-claude-code'),
+    path.join(claudeDir, 'plugins', 'ecc-sdlc'),
+    path.join(claudeDir, 'plugins', 'ecc-sdlc@ecc-sdlc'),
+    path.join(claudeDir, 'plugins', 'marketplace', 'ecc-sdlc'),
     path.join(claudeDir, 'ecc'),
   ];
   for (const c of candidates) {

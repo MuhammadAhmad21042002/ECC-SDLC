@@ -1,13 +1,13 @@
 {
-  "name": "everything-claude-code",
+  "name": "ecc-sdlc",
   "version": "1.9.0",
-  "description": "Complete collection of battle-tested Claude Code configs from an Anthropic hackathon winner - agents, skills, hooks, and rules evolved over 10+ months of intensive daily use",
+  "description": "Everything Claude Code extended with an SDLC pipeline (scope → SRS → SDS → STS → estimate → proposal) — agents, skills, hooks, commands, and rules for pre-development and implementation work.",
   "author": {
-    "name": "Affaan Mustafa",
-    "url": "https://x.com/affaanmustafa"
+    "name": "Muhammad Ahmad",
+    "url": "https://github.com/MuhammadAhmad21042002"
   },
-  "homepage": "https://github.com/affaan-m/everything-claude-code",
-  "repository": "https://github.com/affaan-m/everything-claude-code",
+  "homepage": "https://github.com/MuhammadAhmad21042002/ECC-SDLC",
+  "repository": "https://github.com/MuhammadAhmad21042002/ECC-SDLC",
   "license": "MIT",
   "keywords": [
     "claude-code",
